@@ -1,0 +1,62 @@
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
+import QuizModule from "./QuizModule";
+
+// Mock the startQuiz function
+const mockStartQuiz = jest.fn();
+
+const defaultProps = {
+  img: "quiz-image.png",
+  position: "0px",
+  isCompleted: false,
+  quiz: "quiz-1",
+  text: "Sample Quiz",
+  startQuiz: mockStartQuiz,
+};
+
+describe("QuizModule Component", () => {
+  it("renders the component with default props", () => {
+    const { getByText } = render(<QuizModule {...defaultProps} />);
+
+    // Check if the component renders with the correct text
+    expect(getByText("Sample Quiz")).toBeInTheDocument();
+  });
+
+  it("handles mouse enter and leave events", () => {
+    const { getByAltText } = render(<QuizModule {...defaultProps} />);
+
+    const quizImage = getByAltText("Question");
+
+    // Simulate mouse enter event
+    fireEvent.mouseEnter(quizImage);
+    expect(quizImage).toHaveStyle("transform: scale(1.05)");
+
+    // Simulate mouse leave event
+    fireEvent.mouseLeave(quizImage);
+    expect(quizImage).toHaveStyle("transform: scale(1)");
+  });
+
+  it("triggers startQuiz when clicking on the image and text", () => {
+    const { getByAltText, getByText } = render(<QuizModule {...defaultProps} />);
+
+    const quizImage = getByAltText("Question");
+    const quizText = getByText("Sample Quiz");
+
+    // Simulate click on image
+    fireEvent.click(quizImage);
+    expect(mockStartQuiz).toHaveBeenCalledWith("quiz-1");
+
+    // Simulate click on text
+    fireEvent.click(quizText);
+    expect(mockStartQuiz).toHaveBeenCalledWith("quiz-1");
+  });
+
+  it('applies the "gold" outline when isCompleted is true', () => {
+    const { getByAltText } = render(<QuizModule {...defaultProps} isCompleted={true} />);
+
+    const quizImage = getByAltText("Question");
+
+    // Check if the "gold" outline is applied
+    expect(quizImage).toHaveStyle("outline: 5px solid gold");
+  });
+});
