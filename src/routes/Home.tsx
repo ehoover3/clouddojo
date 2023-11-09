@@ -9,6 +9,7 @@ const Home = () => {
     textAlign: "center",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     marginBottom: "20px",
+    margin: "20px",
   };
 
   const linkStyle = {
@@ -23,9 +24,10 @@ const Home = () => {
 
   return (
     <div>
+      <h2 style={{ textAlign: "center" }}>Explore Certifications</h2>
       <div className='card-container' style={{ display: "flex", justifyContent: "space-around", alignItems: "center", marginTop: "50px" }}>
         <div className='card' style={cardStyle}>
-          <h3>AWS Certification</h3>
+          <h3>AWS</h3>
           <p>Explore AWS certifications and advance your cloud skills.</p>
           <Link to='/aws' style={linkStyle}>
             Learn More
@@ -33,7 +35,7 @@ const Home = () => {
         </div>
 
         <div className='card' style={cardStyle}>
-          <h3>Azure Certification</h3>
+          <h3>Azure</h3>
           <p>Discover Azure certifications for a successful career in the cloud.</p>
           <Link to='/azure' style={linkStyle}>
             Learn More
@@ -41,7 +43,7 @@ const Home = () => {
         </div>
 
         <div className='card' style={cardStyle}>
-          <h3>CompTIA Certification</h3>
+          <h3>CompTIA</h3>
           <p>Get certified with CompTIA and excel in IT and cybersecurity.</p>
           <Link to='/comptia' style={linkStyle}>
             Learn More
