@@ -9,7 +9,7 @@ function QuizView({ questionIndex, selectedAnswer, setSelectedAnswer, questions,
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key >= "1" && event.key <= "4" && !isFeedbackShowing) {
-        const optionIndex = parseInt(event.key) - 1; // Convert key press to index
+        const optionIndex = parseInt(event.key) - 1;
         setSelectedAnswer(optionIndex);
         handleButtonClick(optionIndex);
       }

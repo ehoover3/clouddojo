@@ -17,14 +17,13 @@ import AWSSAPOnAWSSpecialty from "./routes/AWSSAPOnAWSSpecialty";
 import Azure from "./routes/Azure";
 import CompTIA from "./routes/CompTIA";
 import NoMatch from "./routes/NoMatch";
+import Navigation from "./layouts/Navigation";
 
 export default function App() {
   return (
     <div>
-      <h1>CloudDojo</h1>
-
       <Routes>
-        <Route path='/' element={<Layout />}>
+        <Route path='/' element={<Navigation />}>
           <Route index element={<Home />} />
 
           <Route path='aws' element={<AWS />} />
@@ -48,29 +47,6 @@ export default function App() {
           <Route path='*' element={<NoMatch />} />
         </Route>
       </Routes>
-    </div>
-  );
-}
-
-function Layout() {
-  return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to='/aws'>AWS</Link>
-          </li>
-          <li>
-            <Link to='/azure'>Azure</Link>
-          </li>
-          <li>
-            <Link to='/comptia'>CompTIA</Link>
-          </li>
-        </ul>
-      </nav>
-      <hr />
-
-      <Outlet />
     </div>
   );
 }
