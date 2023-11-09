@@ -1,3 +1,7 @@
 export default function CompTia() {
-  return <div>CompTia</div>;
+  return (
+    <div>
+      <h2>CompTIA</h2>
+    </div>
+  );
 }

@@ -1,7 +1,7 @@
 import "../Menu/Menu.css";
 
 import { QuestionType } from "../../types/Question";
-import QuizModule from "./QuizModule";
+import QuizModule, { QuizModuleType } from "./QuizModule";
 
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ import { AWS_CloudPractitioner_Path } from "../../data/learningPaths/AWS_CloudPr
 import PathTitle from "./PathTitle";
 
 function PathView({ startQuiz }: { startQuiz: (questions: QuestionType[]) => void }) {
-  const [modules, setModules] = useState<any[]>(AWS_CloudPractitioner_Path);
+  const [modules, setModules] = useState<QuizModuleType[]>(AWS_CloudPractitioner_Path);
 
   return (
     <div>

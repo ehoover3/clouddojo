@@ -12,7 +12,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import CloudIcon from "@mui/icons-material/Cloud";
 
 const pages = ["AWS", "Azure", "CompTIA"];
@@ -42,22 +41,25 @@ function ResponsiveAppBar() {
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <CloudIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant='h6'
-            noWrap
-            component='a'
-            href='#app-bar-with-responsive-menu'
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}>
-            CloudDojo
-          </Typography>
+          <Link to={`/`} style={{ textDecoration: "none", color: "white" }}>
+            <Typography
+              variant='h6'
+              noWrap
+              component='a'
+              //   href='#app-bar-with-responsive-menu'
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}>
+              {" "}
+              CloudDojo{" "}
+            </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size='large'

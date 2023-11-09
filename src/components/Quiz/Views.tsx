@@ -31,7 +31,6 @@ function Views() {
     setQuestionIndex(0);
     setQuestions(questions);
     setUserAnswersLog([]);
-
     setView(questions.length > 0 ? "QuizView" : "CompleteView");
   };
 

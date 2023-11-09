@@ -1,9 +1,7 @@
-import React from "react";
-
 interface MenuCardProps {
-  questions: any; // Replace 'any' with the actual type of 'questions'
-  subtitle: string; // Change 'string' to the appropriate type for 'subtitle'
-  startQuiz: (questions: any) => void; // Update 'any' with the actual type of 'questions'
+  questions: any;
+  subtitle: string;
+  startQuiz: (questions: any) => void;
 }
 
 function MenuCard(props: MenuCardProps) {

@@ -1,7 +1,8 @@
 import "../Menu/Menu.css";
 import { useState } from "react";
-
-interface QuizModuleProps {
+import React from "react";
+import { QuestionType } from "../../types/Question";
+export interface QuizModuleType {
   img: string;
   position: string;
   isCompleted: boolean;
@@ -10,7 +11,7 @@ interface QuizModuleProps {
   startQuiz: any;
 }
 
-function QuizModule({ img, position, isCompleted, quiz, text, startQuiz }: QuizModuleProps) {
+function QuizModule({ img, position, isCompleted, quiz, text, startQuiz }: QuizModuleType) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
