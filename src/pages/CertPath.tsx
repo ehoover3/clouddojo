@@ -72,7 +72,6 @@ export default function CertPath({ certification }: any) {
 
 //
 //
-//
 // import "../Menu/Menu.css";
 
 // import { QuestionType } from "../../types/Question";
