@@ -1,7 +1,14 @@
 import "../Menu/Menu.css";
 import { useState } from "react";
-import React from "react";
-import { QuestionType } from "../../types/Question";
+
+type QuestionType = {
+  domain: string;
+  questionText: string;
+  options: { answer: string; reason: string }[];
+  hint: string;
+  correctAnswer: string;
+};
+
 export interface QuizModuleType {
   img: string;
   position: string;

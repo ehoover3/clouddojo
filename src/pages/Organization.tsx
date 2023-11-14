@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Organization({ organization }: any) {
+export default function Organization({ title, organization }: any) {
   const cardStyle: React.CSSProperties = {
     border: "1px solid #ccc",
     borderRadius: "8px",
@@ -35,7 +35,7 @@ export default function Organization({ organization }: any) {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>AWS Certifications</h2>
+      <h2 style={{ textAlign: "center" }}>{title}</h2>
       <ul style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
         {organization.map((item: any) => renderCard(item.certification, item.description, item.url))}
       </ul>

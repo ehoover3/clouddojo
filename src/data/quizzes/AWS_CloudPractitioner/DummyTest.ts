@@ -1,4 +1,10 @@
-import { QuestionType } from "../../../types/Question";
+type QuestionType = {
+  domain: string;
+  questionText: string;
+  options: { answer: string; reason: string }[];
+  hint: string;
+  correctAnswer: string;
+};
 
 export const Dummy_Test_Quiz: QuestionType[] = [
   {

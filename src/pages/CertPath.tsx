@@ -1,18 +1,27 @@
 import { useState } from "react";
 
-// types
-import { QuestionType } from "../types/Question";
-import { UserAnswerType } from "../types/UserAnswer";
-
 // components
 import PathView from "../components/LearningPath/PathView";
-import QuizView from "../components/Quiz/QuizView";
+import Quiz from "./Quiz";
 import Feedback from "../components/Quiz/Feedback";
 import CompleteView from "../components/Quiz/CompleteView";
 
-export default function CertPath({ certification }: any) {
-  const [view, setView] = useState<"PathView" | "QuizView" | "CompleteView">("PathView");
+// types
+type QuestionType = {
+  domain: string;
+  questionText: string;
+  options: { answer: string; reason: string }[];
+  hint: string;
+  correctAnswer: string;
+};
 
+type UserAnswerType = {
+  answer: { answer: string; reason: string };
+  isCorrect: boolean;
+};
+
+export default function CertPath({ pathTitle, cert }: any) {
+  const [view, setView] = useState<"PathView" | "QuizView" | "CompleteView">("PathView");
   const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [questionIndex, setQuestionIndex] = useState<number>(0);
   const [userAnswersLog, setUserAnswersLog] = useState<UserAnswerType[]>([]);
@@ -34,7 +43,7 @@ export default function CertPath({ certification }: any) {
     setView(questions.length > 0 ? "QuizView" : "CompleteView");
   };
 
-  const QuizViewData = {
+  const QuizData = {
     isFeedbackShowing,
     questionIndex,
     selectedAnswer,
@@ -55,12 +64,11 @@ export default function CertPath({ certification }: any) {
 
   return (
     <div className='App'>
-      {view === "PathView" && <PathView startQuiz={startQuiz} />}
+      {view === "PathView" && <PathView pathTitle={pathTitle} startQuiz={startQuiz} />}
 
       {view === "QuizView" && (
         <>
-          <h1>Quiz</h1>
-          <QuizView {...QuizViewData} />
+          <Quiz {...QuizData} />
           {isFeedbackShowing && <Feedback {...feedbackData} />}
         </>
       )}
@@ -69,8 +77,6 @@ export default function CertPath({ certification }: any) {
     </div>
   );
 }
-
-//
 //
 // import "../Menu/Menu.css";
 

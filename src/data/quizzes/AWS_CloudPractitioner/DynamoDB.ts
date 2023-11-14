@@ -1,4 +1,11 @@
-import { QuestionType } from "../../../types/Question";
+type QuestionType = {
+  domain: string;
+  questionText: string;
+  options: { answer: string; reason: string }[];
+  hint: string;
+  correctAnswer: string;
+};
+
 export const DynamoDB_Quiz: QuestionType[] = [
   {
     domain: "",
