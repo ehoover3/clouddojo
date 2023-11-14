@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import TestingDeleteLater from "../components/TestingDeleteLater";
 
 const Home = () => {
   const cardStyle: React.CSSProperties = {
@@ -24,6 +25,7 @@ const Home = () => {
 
   return (
     <div>
+      <TestingDeleteLater />
       <h2 style={{ textAlign: "center" }}>Explore Certifications</h2>
       <div className='card-container' style={{ display: "flex", justifyContent: "space-around", alignItems: "center", marginTop: "50px" }}>
         <div className='card' style={cardStyle}>

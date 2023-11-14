@@ -41,24 +41,8 @@ function ResponsiveAppBar() {
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <CloudIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Link to={`/`} style={{ textDecoration: "none", color: "white" }}>
-            <Typography
-              variant='h6'
-              noWrap
-              component='a'
-              //   href='#app-bar-with-responsive-menu'
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}>
-              {" "}
-              CloudDojo{" "}
-            </Typography>
+          <Link to={`/`} style={{ textDecoration: "none", color: "white", fontWeight: 700 }}>
+            CloudDojo
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -135,7 +119,7 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>{" "}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
