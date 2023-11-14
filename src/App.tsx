@@ -1,23 +1,28 @@
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import Home from "./routes/Home";
-import AWS from "./routes/AWS";
-import AWSCloudPractitioner from "./routes/AWSCloudPractitioner";
-import AWSSolutionsArchitectAssociate from "./routes/AWSSolutionsArchitectAssociate";
-import AWSDeveloperAssociate from "./routes/AWSDeveloperAssociate";
-import AWSSysOpsAdministratorAssociate from "./routes/AWSSysOpsAdministratorAssociate";
-import AWSSolutionsArchitectProfessional from "./routes/AWSSolutionsArchitectProfessional";
-import AWSDevOpsProfessional from "./routes/AWSDevOpsProfessional";
-import AWSAdvancedNetworkingSpecialty from "./routes/AWSAdvancedNetworkingSpecialty";
-import AWSSDataAnalyticsSpecialty from "./routes/AWSDataAnalyticsSpecialty";
-import AWSDatabaseSpecialty from "./routes/AWSDatabaseSpecialty";
-import AWSMachineLearningSpecialty from "./routes/AWSMachineLearningSpecialty";
-import AWSSecuritySpecialty from "./routes/AWSSecuritySpecialty";
-import AWSSAPOnAWSSpecialty from "./routes/AWSSAPOnAWSSpecialty";
-
-import Azure from "./routes/Azure";
-import CompTIA from "./routes/CompTIA";
-import NoMatch from "./routes/NoMatch";
 import Navigation from "./layouts/Navigation";
+
+// pages
+import Home from "./pages/Home";
+import Organization from "./pages/Organization";
+import CertPath from "./pages/CertPath";
+import NoMatch from "./pages/NoMatch";
+
+// data
+import { org_aws, org_azure, org_comptia } from "./data/Organizations";
+import {
+  cert_aws_cloudpractitioner,
+  cert_aws_solutionsarchitectassociate,
+  cert_aws_developerassociate,
+  cert_aws_sysopsadministratorassociate,
+  cert_aws_solutionsarchitectprofessional,
+  cert_aws_devopsengineerprofessional,
+  cert_aws_advancednetworkingspecialty,
+  cert_aws_dataanalyticsspecialty,
+  cert_aws_databasespecialty,
+  cert_aws_machinelearningspecialty,
+  cert_aws_securityspecialty,
+  cert_aws_saponawsspecialty,
+} from "./data/Certifications";
 
 export default function App() {
   return (
@@ -26,23 +31,22 @@ export default function App() {
         <Route path='/' element={<Navigation />}>
           <Route index element={<Home />} />
 
-          <Route path='aws' element={<AWS />} />
-          <Route path='aws/cloud-practitioner' element={<AWSCloudPractitioner />} />
-          <Route path='aws/solutions-architect-associate' element={<AWSSolutionsArchitectAssociate />} />
-          <Route path='aws/developer-associate' element={<AWSDeveloperAssociate />} />
-          <Route path='aws/sysops-administrator-associate' element={<AWSSysOpsAdministratorAssociate />} />
-          <Route path='aws/solutions-architect-professional' element={<AWSSolutionsArchitectProfessional />} />
-          <Route path='aws/devops-engineer-professional' element={<AWSDevOpsProfessional />} />
-          <Route path='aws/advanced-networking-specialty' element={<AWSAdvancedNetworkingSpecialty />} />
-          <Route path='aws/data-analytics-specialty' element={<AWSSDataAnalyticsSpecialty />} />
-          <Route path='aws/database-specialty' element={<AWSDatabaseSpecialty />} />
-          <Route path='aws/machine-learning-specialty' element={<AWSMachineLearningSpecialty />} />
-          <Route path='aws/security-specialty' element={<AWSSecuritySpecialty />} />
-          <Route path='aws/sap-on-aws-specialty' element={<AWSSAPOnAWSSpecialty />} />
+          <Route path='aws' element={<Organization organization={org_aws} />} />
+          <Route path='azure' element={<Organization organization={org_azure} />} />
+          <Route path='comptia' element={<Organization organization={org_comptia} />} />
 
-          <Route path='azure' element={<Azure />} />
-
-          <Route path='comptia' element={<CompTIA />} />
+          <Route path='aws/cloud-practitioner' element={<CertPath certification={cert_aws_cloudpractitioner} />} />
+          <Route path='aws/solutions-architect-associate' element={<CertPath certification={cert_aws_solutionsarchitectassociate} />} />
+          <Route path='aws/developer-associate' element={<CertPath certification={cert_aws_developerassociate} />} />
+          <Route path='aws/sysops-administrator-associate' element={<CertPath certification={cert_aws_sysopsadministratorassociate} />} />
+          <Route path='aws/solutions-architect-professional' element={<CertPath certification={cert_aws_solutionsarchitectprofessional} />} />
+          <Route path='aws/devops-engineer-professional' element={<CertPath certification={cert_aws_devopsengineerprofessional} />} />
+          <Route path='aws/advanced-networking-specialty' element={<CertPath certification={cert_aws_advancednetworkingspecialty} />} />
+          <Route path='aws/data-analytics-specialty' element={<CertPath certification={cert_aws_dataanalyticsspecialty} />} />
+          <Route path='aws/database-specialty' element={<CertPath certification={cert_aws_databasespecialty} />} />
+          <Route path='aws/machine-learning-specialty' element={<CertPath certification={cert_aws_machinelearningspecialty} />} />
+          <Route path='aws/security-specialty' element={<CertPath certification={cert_aws_securityspecialty} />} />
+          <Route path='aws/sap-on-aws-specialty' element={<CertPath certification={cert_aws_saponawsspecialty} />} />
 
           <Route path='*' element={<NoMatch />} />
         </Route>

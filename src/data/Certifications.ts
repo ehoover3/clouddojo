@@ -1,0 +1,12 @@
+export const cert_aws_cloudpractitioner = [];
+export const cert_aws_solutionsarchitectassociate = [];
+export const cert_aws_developerassociate = [];
+export const cert_aws_sysopsadministratorassociate = [];
+export const cert_aws_solutionsarchitectprofessional = [];
+export const cert_aws_devopsengineerprofessional = [];
+export const cert_aws_advancednetworkingspecialty = [];
+export const cert_aws_dataanalyticsspecialty = [];
+export const cert_aws_databasespecialty = [];
+export const cert_aws_machinelearningspecialty = [];
+export const cert_aws_securityspecialty = [];
+export const cert_aws_saponawsspecialty = [];
