@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navigation from "./layouts/Navigation";
 
 // pages
@@ -36,6 +36,7 @@ export default function App() {
           <Route path='comptia' element={<Organization title='CompTIA Certifications' organization={org_comptia} />} />
 
           <Route path='aws/cloud-practitioner' element={<CertPath pathTitle='Cloud Practitioner' cert={cert_aws_cloudpractitioner} />} />
+          {/* <Route path='aws/cloud-practitioner/quiz/1' element={<Quiz pathTitle='Cloud Practitioner' cert={cert_aws_cloudpractitioner} />} /> */}
           <Route
             path='aws/solutions-architect-associate'
             element={<CertPath pathTitle='Solutions Architect Associate' cert={cert_aws_solutionsarchitectassociate} />}
