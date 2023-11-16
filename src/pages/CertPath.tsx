@@ -1,117 +1,27 @@
 import { useState } from "react";
+import "../components/Menu/Menu.css";
+
+// data
+import { path_aws_cloudpractitioner } from "../data/Paths";
 
 // components
-import PathView from "../components/LearningPath/PathView";
-import Quiz from "./Quiz";
-import Feedback from "../components/Quiz/Feedback";
-import CompleteView from "../components/Quiz/CompleteView";
-
-// types
-type QuestionType = {
-  domain: string;
-  questionText: string;
-  options: { answer: string; reason: string }[];
-  hint: string;
-  correctAnswer: string;
-};
-
-type UserAnswerType = {
-  answer: { answer: string; reason: string };
-  isCorrect: boolean;
-};
+import QuizNode from "../components/LearningPath/QuizNode";
+import TitleNode from "../components/LearningPath/TitleNode";
 
 export default function CertPath({ pathTitle, cert }: any) {
-  const [view, setView] = useState<"PathView" | "QuizView" | "CompleteView">("PathView");
-  const [questions, setQuestions] = useState<QuestionType[]>([]);
-  const [questionIndex, setQuestionIndex] = useState<number>(0);
-  const [userAnswersLog, setUserAnswersLog] = useState<UserAnswerType[]>([]);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [isFeedbackShowing, setIsFeedbackShowing] = useState<boolean>(false);
-
-  const handleSelectedAnswer = (selectedOption: { answer: string; reason: string }) => {
-    const isCorrect = selectedOption.answer === questions[questionIndex].correctAnswer;
-
-    if (!isCorrect) setQuestions((prevIncorrectlyAnswered) => [...prevIncorrectlyAnswered, questions[questionIndex]]);
-    setUserAnswersLog((prevAnswers) => [...prevAnswers, { answer: selectedOption, isCorrect: isCorrect }]);
-    setIsFeedbackShowing(true);
-  };
-
-  const startQuiz = (questions: QuestionType[]) => {
-    setQuestionIndex(0);
-    setQuestions(questions);
-    setUserAnswersLog([]);
-    setView(questions.length > 0 ? "QuizView" : "CompleteView");
-  };
-
-  const QuizData = {
-    isFeedbackShowing,
-    questionIndex,
-    selectedAnswer,
-    questions,
-    handleSelectedAnswer,
-    setSelectedAnswer,
-  };
-
-  const feedbackData = {
-    questionIndex,
-    questions,
-    userAnswersLog,
-    setIsFeedbackShowing,
-    setSelectedAnswer,
-    setQuestionIndex,
-    setView,
-  };
+  const [modules, setModules] = useState<any[]>(path_aws_cloudpractitioner);
 
   return (
-    <div className='App'>
-      {view === "PathView" && <PathView pathTitle={pathTitle} startQuiz={startQuiz} />}
+    <div>
+      <h1 style={{ textAlign: "center" }}>{pathTitle}</h1>
 
-      {view === "QuizView" && (
-        <>
-          <Quiz {...QuizData} />
-          {isFeedbackShowing && <Feedback {...feedbackData} />}
-        </>
-      )}
+      <TitleNode topText='AWS Cloud' bottomText='Concepts' y={710} />
+      <TitleNode topText='Security and' bottomText='Compliance' y={2480} />
+      <TitleNode topText='Cloud Technology' bottomText='and Services' y={4250} />
 
-      {view === "CompleteView" && <CompleteView userAnswers={userAnswersLog} returnToPathView={() => setView("PathView")} />}
+      {modules.map((module, index) => (
+        <QuizNode key={index} module={module} />
+      ))}
     </div>
   );
 }
-//
-// import "../Menu/Menu.css";
-
-// import { QuestionType } from "../../types/Question";
-// import QuizModule, { QuizModuleType } from "./QuizModule";
-
-// import { useState } from "react";
-
-// import { AWS_CloudPractitioner_Path } from "../../data/learningPaths/AWS_CloudPractitioner";
-// import PathTitle from "./PathTitle";
-
-// function PathView({ startQuiz }: { startQuiz: (questions: QuestionType[]) => void }) {
-//   const [modules, setModules] = useState<QuizModuleType[]>(AWS_CloudPractitioner_Path);
-
-//   return (
-//     <div>
-//       <h1 style={{ textAlign: "center" }}>AWS Cloud Practitioner</h1>
-
-//       <PathTitle topText='AWS Cloud' bottomText='Concepts' y={710} />
-//       <PathTitle topText='Security and' bottomText='Compliance' y={2480} />
-//       <PathTitle topText='Cloud Technology' bottomText='and Services' y={4250} />
-
-//       {modules.map((module, index) => (
-//         <QuizModule
-//           key={index}
-//           isCompleted={module.isCompleted}
-//           position={module.position}
-//           quiz={module.quiz}
-//           img={module.img}
-//           text={module.text}
-//           startQuiz={startQuiz}
-//         />
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default PathView;

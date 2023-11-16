@@ -1,12 +1,12 @@
 import { AWS_CLOUD_CONCEPTS_WIDTH, X } from "../../data/constants";
 
-interface PathTitleProps {
+interface TitleNodeProps {
   y: number;
   topText: string;
   bottomText: string;
 }
 
-function PathTitle({ y, topText, bottomText }: PathTitleProps) {
+function TitleNode({ y, topText, bottomText }: TitleNodeProps) {
   return (
     <div
       style={{
@@ -25,4 +25,4 @@ function PathTitle({ y, topText, bottomText }: PathTitleProps) {
   );
 }
 
-export default PathTitle;
+export default TitleNode;

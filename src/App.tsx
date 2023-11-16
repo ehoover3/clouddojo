@@ -5,6 +5,7 @@ import Navigation from "./layouts/Navigation";
 import Home from "./pages/Home";
 import Organization from "./pages/Organization";
 import CertPath from "./pages/CertPath";
+import Quiz from "./pages/Quiz";
 import NoMatch from "./pages/NoMatch";
 
 // data
@@ -23,6 +24,7 @@ import {
   cert_aws_securityspecialty,
   cert_aws_saponawsspecialty,
 } from "./data/Certifications";
+import { quiz_dummy_test } from "./data/Quizzes";
 
 export default function App() {
   return (
@@ -36,7 +38,7 @@ export default function App() {
           <Route path='comptia' element={<Organization title='CompTIA Certifications' organization={org_comptia} />} />
 
           <Route path='aws/cloud-practitioner' element={<CertPath pathTitle='Cloud Practitioner' cert={cert_aws_cloudpractitioner} />} />
-          {/* <Route path='aws/cloud-practitioner/quiz/1' element={<Quiz pathTitle='Cloud Practitioner' cert={cert_aws_cloudpractitioner} />} /> */}
+          <Route path='aws/cloud-practitioner/quiz/1' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
           <Route
             path='aws/solutions-architect-associate'
             element={<CertPath pathTitle='Solutions Architect Associate' cert={cert_aws_solutionsarchitectassociate} />}

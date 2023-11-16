@@ -1,6 +1,5 @@
-import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import QuizModule from "./QuizModule";
+import QuizNode from "./QuizNode";
 
 // Mock the startQuiz function
 const mockStartQuiz = jest.fn();
@@ -16,14 +15,14 @@ const defaultProps = {
 
 describe("QuizModule Component", () => {
   it("renders the component with default props", () => {
-    const { getByText } = render(<QuizModule {...defaultProps} />);
+    const { getByText } = render(<QuizNode {...defaultProps} />);
 
     // Check if the component renders with the correct text
     expect(getByText("Sample Quiz")).toBeInTheDocument();
   });
 
   it("handles mouse enter and leave events", () => {
-    const { getByAltText } = render(<QuizModule {...defaultProps} />);
+    const { getByAltText } = render(<QuizNode {...defaultProps} />);
 
     const quizImage = getByAltText("Question");
 
@@ -37,7 +36,7 @@ describe("QuizModule Component", () => {
   });
 
   it("triggers startQuiz when clicking on the image and text", () => {
-    const { getByAltText, getByText } = render(<QuizModule {...defaultProps} />);
+    const { getByAltText, getByText } = render(<QuizNode {...defaultProps} />);
 
     const quizImage = getByAltText("Question");
     const quizText = getByText("Sample Quiz");
@@ -52,7 +51,7 @@ describe("QuizModule Component", () => {
   });
 
   it('applies the "gold" outline when isCompleted is true', () => {
-    const { getByAltText } = render(<QuizModule {...defaultProps} isCompleted={true} />);
+    const { getByAltText } = render(<QuizNode {...defaultProps} isCompleted={true} />);
 
     const quizImage = getByAltText("Question");
 

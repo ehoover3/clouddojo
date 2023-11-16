@@ -24,7 +24,7 @@ export default function Organization({ title, organization }: any) {
   };
 
   const renderCard = (certification: string, description: string, url: string) => (
-    <div className='card' style={cardStyle}>
+    <div key={certification} className='card' style={cardStyle}>
       <h3>{certification}</h3>
       <p>{description}</p>
       <Link to={url} style={linkStyle}>

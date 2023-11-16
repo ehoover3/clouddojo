@@ -15,7 +15,7 @@ export default function Counter() {
       <p>Count: {count}</p>
       <p>Username: {username}</p>
       <p>
-        Quizzes Completed:{" "}
+        Quizzes Completed:
         {Object.keys(completedQuizzes).map((quizName) => (
           <div key={quizName}>{quizName}</div>
         ))}
@@ -25,7 +25,6 @@ export default function Counter() {
       <button onClick={() => handleCompleteQuiz("Quiz1")}>Complete Quiz 1</button>
       <button onClick={() => handleCompleteQuiz("Quiz2")}>Complete Quiz 2</button>
       <button onClick={() => handleCompleteQuiz("Quiz3")}>Complete Quiz 3</button>
-      {/* Add more buttons for other quizzes */}
     </div>
   );
 }
