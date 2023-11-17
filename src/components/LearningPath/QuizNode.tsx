@@ -1,11 +1,11 @@
 import "../Menu/Menu.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import completed_img from "../../assets/Completed.png";
 
 function QuizNode({ module }: any) {
-  const { url, img, position, isComplete, quiz, text } = module;
+  const { full_url, url, img, position, isComplete, quiz, text } = module;
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -21,37 +21,42 @@ function QuizNode({ module }: any) {
     transition: "transform 0.3s",
   };
 
-  return (
-    <Link to={url}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          position: "relative",
-          left: position,
-          paddingBottom: "32px",
-        }}>
-        <img
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          src={isComplete ? completed_img : img}
-          alt='Question'
-          style={{
-            width: "120px",
-            cursor: "pointer",
-            ...boxShadowStyle,
-          }}
-        />
+  const navigate = useNavigate();
+  const returnToMenu = () => {
+    navigate(full_url);
+  };
 
-        <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          style={{ width: "270px", textAlign: "center", cursor: "pointer", marginBottom: "50px" }}>
-          {text}
-        </div>
+  return (
+    <div
+      onClick={returnToMenu}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        position: "relative",
+        left: position,
+        paddingBottom: "32px",
+      }}>
+      <div>TEST: {full_url}</div>
+      <img
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        src={isComplete ? completed_img : img}
+        alt='Question'
+        style={{
+          width: "120px",
+          cursor: "pointer",
+          ...boxShadowStyle,
+        }}
+      />
+
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{ width: "270px", textAlign: "center", cursor: "pointer", marginBottom: "50px" }}>
+        {text}
       </div>
-    </Link>
+    </div>
   );
 }
 

@@ -19,7 +19,6 @@ import { X } from "./constants";
 export const path_aws_cloudpractitioner: any = [
   {
     full_url: "/aws/cloud-practitioner/quiz/1",
-    url: "./quiz/1",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -28,7 +27,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/2",
-    url: "./quiz/2",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -37,7 +35,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/3",
-    url: "./quiz/3",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -46,7 +43,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/4",
-    url: "./quiz/4",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -55,7 +51,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/5",
-    url: "./quiz/5",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -64,7 +59,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/6",
-    url: "./quiz/6",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -73,7 +67,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/7",
-    url: "./quiz/7",
     isComplete: false,
     position: X[0],
     quiz: quiz_dummy_test,
@@ -82,7 +75,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/8",
-    url: "./quiz/8",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -91,7 +83,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/9",
-    url: "./quiz/9",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -100,7 +91,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/10",
-    url: "./quiz/10",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -109,7 +99,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/11",
-    url: "./quiz/11",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -118,7 +107,7 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/12",
-    url: "./quiz/12",
+
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -127,7 +116,7 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/13",
-    url: "./quiz/13",
+
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -136,7 +125,7 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/14",
-    url: "./quiz/14",
+
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -145,7 +134,7 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/15",
-    url: "./quiz/15",
+
     isComplete: false,
     position: X[0],
     quiz: quiz_dummy_test,
@@ -154,7 +143,7 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/16",
-    url: "./quiz/16",
+
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -163,7 +152,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/17",
-    url: "./quiz/17",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -172,7 +160,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/18",
-    url: "./quiz/18",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -181,7 +168,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/19",
-    url: "./quiz/19",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -190,7 +176,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/20",
-    url: "./quiz/20",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -199,7 +184,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/21",
-    url: "./quiz/21",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -208,7 +192,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/22",
-    url: "./quiz/22",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -217,7 +200,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/23",
-    url: "./quiz/23",
     isComplete: false,
     position: X[0],
     quiz: quiz_dummy_test,
@@ -226,7 +208,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/24",
-    url: "./quiz/24",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -235,7 +216,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/25",
-    url: "./quiz/25",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -244,7 +224,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/26",
-    url: "./quiz/26",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -253,7 +232,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/27",
-    url: "./quiz/27",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -262,7 +240,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/28",
-    url: "./quiz/28",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -271,7 +248,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/29",
-    url: "./quiz/29",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -280,7 +256,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/30",
-    url: "./quiz/30",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -289,7 +264,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/31",
-    url: "./quiz/31",
     isComplete: false,
     position: X[0],
     quiz: quiz_dummy_test,
@@ -298,7 +272,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/32",
-    url: "./quiz/32",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -307,7 +280,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/33",
-    url: "./quiz/33",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -316,7 +288,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/34",
-    url: "./quiz/34",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -325,7 +296,6 @@ export const path_aws_cloudpractitioner: any = [
   },
   {
     full_url: "/aws/cloud-practitioner/quiz/35",
-    url: "./quiz/35",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,

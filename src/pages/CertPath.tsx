@@ -7,12 +7,16 @@ import { completeQuiz } from "../redux/actions";
 
 export default function CertPath({ pathTitle }: any) {
   const { completedQuizzes } = useSelector((state: any) => state.counter);
+
   const [modules, setModules] = useState<any[]>(completedQuizzes);
+
   const dispatch = useDispatch();
+
   const handleCompleteQuiz = (quizName: string) => {
     dispatch(completeQuiz(quizName));
   };
-  <button onClick={() => handleCompleteQuiz("Quiz1")}>Complete Quiz 1</button>;
+
+  // <button onClick={() => handleCompleteQuiz("Quiz1")}>Complete Quiz 1</button>;
 
   return (
     <div>
