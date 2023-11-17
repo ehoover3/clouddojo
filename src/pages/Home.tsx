@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import TestingDeleteLater from "../components/TestingDeleteLater";
+import TestingDeleteLater from "../components/TestingAPIFetchDeleteLater";
 import Counter from "../ReduxExampleDeleteLater";
 const Home = () => {
   const cardStyle: React.CSSProperties = {

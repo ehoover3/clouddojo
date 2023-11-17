@@ -16,8 +16,10 @@ export default function Counter() {
       <p>Username: {username}</p>
       <p>
         Quizzes Completed:
-        {Object.keys(completedQuizzes).map((quizName) => (
-          <div key={quizName}>{quizName}</div>
+        {completedQuizzes.map((quizName: any) => (
+          <div key={quizName}>
+            {quizName.url} {quizName.isComplete ? "true" : "false"}
+          </div>
         ))}
       </p>
       <button onClick={() => dispatch(increment())}>Increment</button>

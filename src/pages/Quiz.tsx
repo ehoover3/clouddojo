@@ -2,10 +2,12 @@ import { useState } from "react";
 import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
 import { useEffect } from "react";
 import "./Quiz.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { completeQuiz } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 export default function Quiz({ quiz, path_url }: any) {
-  const [view, setView] = useState<"PathView" | "QuizView" | "CompleteView">("QuizView");
+  const [view, setView] = useState<"QuizView" | "CompleteView">("QuizView");
   const [isFeedbackShowing, setIsFeedbackShowing] = useState<boolean>(false);
   const [questionIndex, setQuestionIndex] = useState<number>(0);
   const [questions, setQuestions] = useState<any>(quiz);
@@ -154,7 +156,15 @@ function Feedback({ userAnswersLog, questionIndex, questions, setSelectedAnswer,
 
 function CompleteView({ userAnswers, path_url }: any) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleCompleteQuiz = (quizName: string) => {
+    dispatch(completeQuiz(quizName));
+  };
+
+  const url_subdirectory = window.location.pathname;
+
   const returnToMenu = () => {
+    handleCompleteQuiz(url_subdirectory);
     navigate(path_url);
   };
 
@@ -169,11 +179,9 @@ function CompleteView({ userAnswers, path_url }: any) {
         ))}
       </ul>
 
-      {/* <Link to={path_url}> */}
       <button tabIndex={0} role='button' autoFocus onClick={returnToMenu}>
         Return to Menu
       </button>
-      {/* </Link> */}
     </div>
   );
 }

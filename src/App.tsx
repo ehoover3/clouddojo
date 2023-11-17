@@ -39,6 +39,12 @@ export default function App() {
 
           <Route path='aws/cloud-practitioner' element={<CertPath pathTitle='Cloud Practitioner' cert={cert_aws_cloudpractitioner} />} />
           <Route path='aws/cloud-practitioner/quiz/1' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
+          <Route path='aws/cloud-practitioner/quiz/2' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
+          <Route path='aws/cloud-practitioner/quiz/3' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
+          <Route path='aws/cloud-practitioner/quiz/4' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
+          <Route path='aws/cloud-practitioner/quiz/5' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
+          <Route path='aws/cloud-practitioner/quiz/6' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
+          <Route path='aws/cloud-practitioner/quiz/7' element={<Quiz quiz={quiz_dummy_test} path_url='/aws/cloud-practitioner' />} />
           <Route
             path='aws/solutions-architect-associate'
             element={<CertPath pathTitle='Solutions Architect Associate' cert={cert_aws_solutionsarchitectassociate} />}
