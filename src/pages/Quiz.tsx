@@ -171,8 +171,6 @@ function CompleteView({ userAnswers, path_url }: any) {
   return (
     <div>
       <h1>Quiz Completed</h1>
-      <h1>TESTING URL_SUBDIRECTORY: {url_subdirectory}</h1>
-      <h1>TESTING PATH_URL: {path_url}</h1>
       <ul>
         {userAnswers.map((answer: any, index: number) => (
           <li key={index}>

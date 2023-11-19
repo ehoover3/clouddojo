@@ -1,22 +1,12 @@
 import { useState } from "react";
-import "../components/Menu/Menu.css";
+import "../components/Menu.css";
 import QuizNode from "../components/LearningPath/QuizNode";
 import TitleNode from "../components/LearningPath/TitleNode";
-import { useDispatch, useSelector } from "react-redux";
-import { completeQuiz } from "../redux/actions";
+import { useSelector } from "react-redux";
 
 export default function CertPath({ pathTitle }: any) {
   const { completedQuizzes } = useSelector((state: any) => state.counter);
-
   const [modules, setModules] = useState<any[]>(completedQuizzes);
-
-  const dispatch = useDispatch();
-
-  const handleCompleteQuiz = (quizName: string) => {
-    dispatch(completeQuiz(quizName));
-  };
-
-  // <button onClick={() => handleCompleteQuiz("Quiz1")}>Complete Quiz 1</button>;
 
   return (
     <div>

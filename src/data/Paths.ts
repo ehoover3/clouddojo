@@ -1,5 +1,5 @@
 // images
-import API_Gateway_Img from "../../assets/api-gateway.png";
+// import API_Gateway_Img from "../../assets/api-gateway.png";
 // import DynamoDB_Img from "../assets/dynamodb.png";
 // import Lambda_Img from "../assets/lambda.png";
 import Question_Img from "../assets/Question.png";
@@ -14,11 +14,11 @@ import { quiz_dummy_test } from "./Quizzes";
 // import { S3_Quiz } from "../data/quizzes/AWS_CloudPractitioner/S3";
 
 // constants
-import { X } from "./constants";
+import { X } from "./Constants";
 
 export const path_aws_cloudpractitioner: any = [
   {
-    full_url: "/aws/cloud-practitioner/quiz/1",
+    url: "/aws/cloud-practitioner/quiz/1",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -26,7 +26,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Economies of Scale",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/2",
+    url: "/aws/cloud-practitioner/quiz/2",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -34,7 +34,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Cloud Cost Savings",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/3",
+    url: "/aws/cloud-practitioner/quiz/3",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -42,7 +42,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Global Infrastructure",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/4",
+    url: "/aws/cloud-practitioner/quiz/4",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -50,7 +50,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "High Availability, Elasticity, and Agility",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/5",
+    url: "/aws/cloud-practitioner/quiz/5",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -58,7 +58,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Well-Architected Framework",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/6",
+    url: "/aws/cloud-practitioner/quiz/6",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -66,7 +66,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Cloud Migration",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/7",
+    url: "/aws/cloud-practitioner/quiz/7",
     isComplete: false,
     position: X[0],
     quiz: quiz_dummy_test,
@@ -74,7 +74,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS CloudFormation",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/8",
+    url: "/aws/cloud-practitioner/quiz/8",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -82,7 +82,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Managed Services",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/9",
+    url: "/aws/cloud-practitioner/quiz/9",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -90,7 +90,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Shared Responsibility Model",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/10",
+    url: "/aws/cloud-practitioner/quiz/10",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -98,7 +98,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Encryption",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/11",
+    url: "/aws/cloud-practitioner/quiz/11",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -106,7 +106,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Artifact",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/12",
+    url: "/aws/cloud-practitioner/quiz/12",
 
     isComplete: false,
     position: X[3],
@@ -115,7 +115,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Compliance",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/13",
+    url: "/aws/cloud-practitioner/quiz/13",
 
     isComplete: false,
     position: X[2],
@@ -124,7 +124,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Amazon Inspector",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/14",
+    url: "/aws/cloud-practitioner/quiz/14",
 
     isComplete: false,
     position: X[1],
@@ -133,7 +133,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Security Hub",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/15",
+    url: "/aws/cloud-practitioner/quiz/15",
 
     isComplete: false,
     position: X[0],
@@ -142,7 +142,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Amazon GuardDuty",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/16",
+    url: "/aws/cloud-practitioner/quiz/16",
 
     isComplete: false,
     position: X[1],
@@ -151,7 +151,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Shield",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/17",
+    url: "/aws/cloud-practitioner/quiz/17",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -159,7 +159,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS CloudWatch",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/18",
+    url: "/aws/cloud-practitioner/quiz/18",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -167,7 +167,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS CloudTrail",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/19",
+    url: "/aws/cloud-practitioner/quiz/19",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -175,7 +175,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Audit Manager",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/20",
+    url: "/aws/cloud-practitioner/quiz/20",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -183,7 +183,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Config",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/21",
+    url: "/aws/cloud-practitioner/quiz/21",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -191,7 +191,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Identity and Access Management (IAM)",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/22",
+    url: "/aws/cloud-practitioner/quiz/22",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -199,7 +199,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Root User Account",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/23",
+    url: "/aws/cloud-practitioner/quiz/23",
     isComplete: false,
     position: X[0],
     quiz: quiz_dummy_test,
@@ -207,7 +207,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Least Privilege Principle",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/24",
+    url: "/aws/cloud-practitioner/quiz/24",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -215,7 +215,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS IAM Identity Center (Single Sign-On)",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/25",
+    url: "/aws/cloud-practitioner/quiz/25",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -223,7 +223,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Access Keys and Password Policies",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/26",
+    url: "/aws/cloud-practitioner/quiz/26",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -231,7 +231,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Secrets Manager",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/27",
+    url: "/aws/cloud-practitioner/quiz/27",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,
@@ -239,7 +239,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Systems Manager",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/28",
+    url: "/aws/cloud-practitioner/quiz/28",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -247,7 +247,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Authentication Methods",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/29",
+    url: "/aws/cloud-practitioner/quiz/29",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -255,7 +255,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Identity Management",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/30",
+    url: "/aws/cloud-practitioner/quiz/30",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -263,7 +263,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Security Groups",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/31",
+    url: "/aws/cloud-practitioner/quiz/31",
     isComplete: false,
     position: X[0],
     quiz: quiz_dummy_test,
@@ -271,7 +271,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Network ACLs",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/32",
+    url: "/aws/cloud-practitioner/quiz/32",
     isComplete: false,
     position: X[1],
     quiz: quiz_dummy_test,
@@ -279,7 +279,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS WAF",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/33",
+    url: "/aws/cloud-practitioner/quiz/33",
     isComplete: false,
     position: X[2],
     quiz: quiz_dummy_test,
@@ -287,7 +287,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "AWS Marketplace",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/34",
+    url: "/aws/cloud-practitioner/quiz/34",
     isComplete: false,
     position: X[3],
     quiz: quiz_dummy_test,
@@ -295,7 +295,7 @@ export const path_aws_cloudpractitioner: any = [
     text: "Security Information",
   },
   {
-    full_url: "/aws/cloud-practitioner/quiz/35",
+    url: "/aws/cloud-practitioner/quiz/35",
     isComplete: false,
     position: X[4],
     quiz: quiz_dummy_test,

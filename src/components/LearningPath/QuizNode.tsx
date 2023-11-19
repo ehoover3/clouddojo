@@ -1,11 +1,11 @@
-import "../Menu/Menu.css";
+import "../Menu.css";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import completed_img from "../../assets/Completed.png";
 
 function QuizNode({ module }: any) {
-  const { full_url, url, img, position, isComplete, quiz, text } = module;
+  const { url, img, position, isComplete, text } = module;
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -22,13 +22,13 @@ function QuizNode({ module }: any) {
   };
 
   const navigate = useNavigate();
-  const returnToMenu = () => {
-    navigate(full_url);
+
+  const startQuiz = () => {
+    navigate(url);
   };
 
   return (
     <div
-      onClick={returnToMenu}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -37,8 +37,8 @@ function QuizNode({ module }: any) {
         left: position,
         paddingBottom: "32px",
       }}>
-      <div>TEST: {full_url}</div>
       <img
+        onClick={startQuiz}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         src={isComplete ? completed_img : img}
@@ -51,6 +51,7 @@ function QuizNode({ module }: any) {
       />
 
       <div
+        onClick={startQuiz}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{ width: "270px", textAlign: "center", cursor: "pointer", marginBottom: "50px" }}>

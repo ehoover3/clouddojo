@@ -10,7 +10,7 @@ const counterReducer = (state = { count: 0, username: "", completedQuizzes: path
     case "COMPLETE_QUIZ":
       const quizName = action.payload.quizName;
       const updatedQuizzes = state.completedQuizzes.map((quiz: any) => {
-        if (quiz.full_url === quizName) {
+        if (quiz.url === quizName) {
           return { ...quiz, isComplete: true };
         }
         return quiz;

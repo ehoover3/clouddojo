@@ -1,4 +1,4 @@
-import { AWS_CLOUD_CONCEPTS_WIDTH, X } from "../../data/constants";
+import { AWS_CLOUD_CONCEPTS_WIDTH, X } from "../../data/Constants";
 
 interface TitleNodeProps {
   y: number;
