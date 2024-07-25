@@ -1,40 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { generateClient } from "aws-amplify/data";
-import type { Schema } from "../amplify/data/resource";
+import certifications from "./certifications.json";
+import { Link } from "react-router-dom";
 
-const client = generateClient<Schema>();
-
-interface Props {
-  userName: string | undefined;
-}
-
-function Home({ userName }: Props) {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
-
-  useEffect(() => {
-    const subscription = client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
-
-  function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") });
-  }
-
-  function deleteTodo(id: string) {
-    client.models.Todo.delete({ id });
-  }
-
+function Home() {
   return (
     <div>
-      <h1>{userName}'s todos</h1>
-      <button onClick={createTodo}>+ new</button>
+      <h1>Certifications</h1>
       <ul>
-        {todos.map((todo) => (
-          <li onClick={() => deleteTodo(todo.id)} key={todo.id}>
-            {todo.content}
+        {certifications.map((platform, index) => (
+          <li key={index}>
+            <Link to={`/learn?cert=${platform.parameter}`}>{platform.platform}</Link>
           </li>
         ))}
       </ul>

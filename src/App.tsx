@@ -21,9 +21,9 @@ function App() {
         <main>
           <Nav signOut={signOut} userName={user?.signInDetails?.loginId} />
           <Routes>
-            <Route path='/' element={<Home userName={user?.signInDetails?.loginId} />} />
+            <Route path='/' element={<Home />} />
             <Route path='/learn' element={isValidCert ? <Learn cert={cert} /> : <Navigate to='/' />} />
-            <Route path='/lesson' element={<Lesson />} />
+            <Route path='/lesson' element={<Lesson userName={user?.signInDetails?.loginId} />} />
           </Routes>
         </main>
       )}
