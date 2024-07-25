@@ -1,72 +1,30 @@
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import { useEffect, useState } from "react";
-import { Route, Routes, Link } from "react-router-dom";
-import type { Schema } from "../amplify/data/resource";
-import { generateClient } from "aws-amplify/data";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import Learn from "./Learn";
 import Lesson from "./Lesson";
-
-const client = generateClient<Schema>();
+import Nav from "./Nav";
+import "./App.css";
+import Home from "./Home";
 
 function App() {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const cert = queryParams.get("cert");
 
-  useEffect(() => {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
-    });
-  }, []);
-
-  function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") });
-  }
-
-  function deleteTodo(id: string) {
-    client.models.Todo.delete({ id });
-  }
-
-  const courses = [
-    { id: 1, title: "AWS" },
-    { id: 2, title: "Azure" },
-    { id: 3, title: "GCP" },
-    { id: 4, title: "CompTIA" },
-  ];
+  const validCerts = ["AWS", "Azure", "GCP"];
+  const isValidCert = validCerts.includes(cert || "");
 
   return (
     <Authenticator>
       {({ signOut, user }) => (
         <main>
-          <h1>{user?.signInDetails?.loginId}'s todos</h1>
-          <button onClick={createTodo}>+ new</button>
-          <ul>
-            {courses.map((course) => (
-              <li key={course.id}>{course.title}</li>
-            ))}
-          </ul>
-          <ul>
-            {todos.map((todo) => (
-              <li onClick={() => deleteTodo(todo.id)} key={todo.id}>
-                {todo.content}
-              </li>
-            ))}
-          </ul>
-          <div>
-            🥳 App successfully hosted. Try creating a new todo.
-            <br />
-            <a href='https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates'>Review next step of this tutorial.</a>
-          </div>
-          <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/learn'>Learn</Link>
-            <Link to='/lesson'>Lesson</Link>
-          </nav>
+          <Nav signOut={signOut} userName={user?.signInDetails?.loginId} />
           <Routes>
-            <Route path='/' element={<div>Home Page</div>} />
-            <Route path='/learn' element={<Learn />} />
+            <Route path='/' element={<Home userName={user?.signInDetails?.loginId} />} />
+            <Route path='/learn' element={isValidCert ? <Learn cert={cert} /> : <Navigate to='/' />} />
             <Route path='/lesson' element={<Lesson />} />
           </Routes>
-          <button onClick={signOut}>Sign out</button>
         </main>
       )}
     </Authenticator>

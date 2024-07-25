@@ -1,0 +1,67 @@
+[
+  {
+    "parameter": "AWS",
+    "platform": "Amazon Web Services",
+    "certifications": [
+      { "title": "Cloud Practitioner", "level": "Foundational" },
+      { "title": "AI Practitioner", "level": "Foundational" },
+      { "title": "SysOps Administrator", "level": "Associate" },
+      { "title": "Developer", "level": "Associate" },
+      { "title": "Solutions Architect", "level": "Associate" },
+      { "title": "Data Engineer", "level": "Associate" },
+      { "title": "Solutions Architect", "level": "Professional" },
+      { "title": "DevOps Engineer", "level": "Professional" },
+      { "title": "Machine Learning Engineer", "level": "Specialty" },
+      { "title": "Advanced Networking", "level": "Specialty" },
+      { "title": "Security", "level": "Specialty" },
+      { "title": "Machine Learning", "level": "Specialty" }
+    ]
+  },
+  {
+    "parameter": "Azure",
+    "platform": "Microsoft Azure",
+    "certifications": [
+      { "title": "Azure Fundamentals", "level": "Beginner" },
+      { "title": "Azure Data Fundamentals", "level": "Beginner" },
+      { "title": "Azure AI Fundamentals", "level": "Beginner" },
+      { "title": "Security, Compliance, and Identity Fundamentals", "level": "Beginner" },
+      { "title": "Azure AI Engineer Associate", "level": "Intermediate" },
+      { "title": "Azure AI Fundamentals", "level": "Intermediate" },
+      { "title": "Azure Administrator Associate", "level": "Intermediate" },
+      { "title": "Azure Cosmos DB Developer Specialty", "level": "Intermediate" },
+      { "title": "Azure Data Engineer Associate", "level": "Intermediate" },
+      { "title": "Azure Data Fundamentals", "level": "Intermediate" },
+      { "title": "Azure Data Scientist Associate", "level": "Intermediate" },
+      { "title": "Azure Database Administrator Associate", "level": "Intermediate" },
+      { "title": "Azure Developer Associate", "level": "Intermediate" },
+      { "title": "Azure Network Engineer Associate", "level": "Intermediate" },
+      { "title": "Azure Security Engineer Associate", "level": "Intermediate" },
+      { "title": "Azure Virtual Desktop Specialty", "level": "Intermediate" },
+      { "title": "Azure for SAP Workloads Specialty", "level": "Intermediate" },
+      { "title": "Identity and Access Administrator Associate", "level": "Intermediate" },
+      { "title": "Security Operations Analyst Associate", "level": "Intermediate" },
+      { "title": "Windows Server Hybrid Administrator Associate", "level": "Intermediate" },
+      { "title": "Azure Solutions Architect Expert", "level": "Advanced" },
+      { "title": "Cybersecurity Architect Expert", "level": "Advanced" },
+      { "title": "DevOps Engineer Expert", "level": "Advanced" },
+      { "title": "Power Platform Solution Architect Expert", "level": "Advanced" }
+    ]
+  },
+  {
+    "parameter": "GCP",
+    "platform": "Google Cloud Platform",
+    "certifications": [
+      { "title": "Cloud Digital Leader", "level": "Foundational" },
+      { "title": "Cloud Engineer", "level": "Associate" },
+      { "title": "Cloud Architect", "level": "Professional" },
+      { "title": "Cloud Database Engineer", "level": "Professional" },
+      { "title": "Cloud Developer", "level": "Professional" },
+      { "title": "Data Engineer", "level": "Professional" },
+      { "title": "Cloud DevOps Engineer", "level": "Professional" },
+      { "title": "Cloud Security Engineer", "level": "Professional" },
+      { "title": "Cloud Network Engineer", "level": "Professional" },
+      { "title": "Google Workspace Administrator", "level": "Professional" },
+      { "title": "Machine Learning Engineer", "level": "Professional" }
+    ]
+  }
+]

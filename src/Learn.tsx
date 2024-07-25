@@ -1,10 +1,22 @@
-import React from "react";
+import certifications from "./certifications.json";
 
-const Learn = () => {
+interface LearnProps {
+  cert?: string | null;
+}
+
+const Learn = ({ cert }: LearnProps) => {
+  const certificationPlatform = certifications.find((c) => cert === c.parameter);
+
   return (
     <div>
-      <h2>Learn Page</h2>
-      <p>Welcome to the Learn page!</p>
+      <h2>{cert} Certifications</h2>
+      <ul>
+        {certificationPlatform?.certifications.map((cert, index) => (
+          <li key={index} style={{ display: "flex", flexDirection: "column" }}>
+            <span style={{ fontWeight: "bold" }}>{cert.title}</span> <span>{cert.level}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
