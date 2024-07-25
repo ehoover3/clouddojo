@@ -23,12 +23,24 @@ function App() {
     client.models.Todo.delete({ id });
   }
 
+  const courses = [
+    { id: 1, title: "AWS" },
+    { id: 2, title: "Azure" },
+    { id: 2, title: "GCP" },
+    { id: 2, title: "CompTIA" },
+  ];
+
   return (
     <Authenticator>
       {({ signOut, user }) => (
         <main>
           <h1>{user?.signInDetails?.loginId}'s todos</h1>
           <button onClick={createTodo}>+ new</button>
+          <ul>
+            {courses.map((course) => (
+              <li key={course.id}>{course.title}</li>
+            ))}
+          </ul>
           <ul>
             {todos.map((todo) => (
               <li onClick={() => deleteTodo(todo.id)} key={todo.id}>
