@@ -1,8 +1,11 @@
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { useEffect, useState } from "react";
+import { Route, Routes, Link } from "react-router-dom";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
+import Learn from "./Learn";
+import Lesson from "./Lesson";
 
 const client = generateClient<Schema>();
 
@@ -26,8 +29,8 @@ function App() {
   const courses = [
     { id: 1, title: "AWS" },
     { id: 2, title: "Azure" },
-    { id: 2, title: "GCP" },
-    { id: 2, title: "CompTIA" },
+    { id: 3, title: "GCP" },
+    { id: 4, title: "CompTIA" },
   ];
 
   return (
@@ -53,6 +56,16 @@ function App() {
             <br />
             <a href='https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates'>Review next step of this tutorial.</a>
           </div>
+          <nav>
+            <Link to='/'>Home</Link>
+            <Link to='/learn'>Learn</Link>
+            <Link to='/lesson'>Lesson</Link>
+          </nav>
+          <Routes>
+            <Route path='/' element={<div>Home Page</div>} />
+            <Route path='/learn' element={<Learn />} />
+            <Route path='/lesson' element={<Lesson />} />
+          </Routes>
           <button onClick={signOut}>Sign out</button>
         </main>
       )}
