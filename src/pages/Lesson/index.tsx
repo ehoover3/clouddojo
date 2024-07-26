@@ -55,13 +55,19 @@ const Lesson = () => {
     if (certification && selectedAnswer) {
       const currentQuestion = certification[currentQuestionIndex];
       const isCorrect = currentQuestion.answer === selectedAnswer;
-      setResult(isCorrect ? "Correct! " + currentQuestion.options.find((option) => option.option === selectedAnswer)?.explanation : "Incorrect. Try again.");
+
+      // Find the selected option and its explanation
+      const selectedOption = currentQuestion.options.find((option) => option.option === selectedAnswer);
+      const explanation = selectedOption ? selectedOption.explanation : "No explanation available.";
+      setResult(explanation);
+
       if (isCorrect) {
         setCorrectAnswers((prev) => prev + 1);
         setIncorrectQuestions((prev) => new Set([...prev].filter((index) => index !== currentQuestionIndex)));
       } else {
         setIncorrectQuestions((prev) => new Set(prev.add(currentQuestionIndex)));
       }
+
       setShowNext(true);
     }
   };
