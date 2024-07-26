@@ -4,6 +4,9 @@ import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-pra
 import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
 import AnswerOptions from "./AnswerOptions";
 import ProgressBar from "./ProgressBar";
+import SubmitButton from "./SubmitButton";
+import Explanation from "./Explanation";
+import QuestionText from "./QuestionText";
 import "./Quiz.css";
 
 export interface Option {
@@ -20,6 +23,16 @@ export interface Question {
   options: Option[];
 }
 
+const getCertificationData = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
+  if (certParameter === "aws" && certTitle === "Cloud Practitioner" && certLevel === "Foundational") {
+    return AwsCloudPractitionerFoundational;
+  }
+  if (certParameter === "aws" && certTitle === "Developer" && certLevel === "Associate") {
+    return AwsDeveloperAssociate;
+  }
+  return null;
+};
+
 const Lesson = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -29,7 +42,7 @@ const Lesson = () => {
 
   const [certification, setCertification] = useState<Question[] | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [result, setResult] = useState<string | null>(null);
+  const [explanation, setExplanation] = useState<string | null>(null);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showNext, setShowNext] = useState(false);
   const [isAnswerSelected, setIsAnswerSelected] = useState(false);
@@ -37,85 +50,66 @@ const Lesson = () => {
   const [incorrectQuestions, setIncorrectQuestions] = useState<Set<number>>(new Set());
 
   useEffect(() => {
-    if (certParameter === "aws" && certTitle === "Cloud Practitioner" && certLevel === "Foundational") {
-      setCertification(AwsCloudPractitionerFoundational);
-    }
-    if (certParameter === "aws" && certTitle === "Developer" && certLevel === "Associate") {
-      setCertification(AwsDeveloperAssociate);
-    }
+    setCertification(getCertificationData(certParameter, certTitle, certLevel));
   }, [certParameter, certTitle, certLevel]);
 
   const handleAnswer = (answer: string) => {
     setSelectedAnswer(answer);
     setIsAnswerSelected(true);
-    // Don't set result here, only set selected answer and flag for submission
   };
 
   const handleSubmit = () => {
     if (certification && selectedAnswer) {
       const currentQuestion = certification[currentQuestionIndex];
       const isCorrect = currentQuestion.answer === selectedAnswer;
-
-      // Find the selected option and its explanation
       const selectedOption = currentQuestion.options.find((option) => option.option === selectedAnswer);
-      const explanation = selectedOption ? selectedOption.explanation : "No explanation available.";
-      setResult(explanation);
+      const reason = selectedOption ? selectedOption.explanation : "No explanation available.";
 
-      if (isCorrect) {
-        setCorrectAnswers((prev) => prev + 1);
-        setIncorrectQuestions((prev) => new Set([...prev].filter((index) => index !== currentQuestionIndex)));
-      } else {
-        setIncorrectQuestions((prev) => new Set(prev.add(currentQuestionIndex)));
-      }
-
+      setExplanation(reason);
+      setCorrectAnswers((prev) => (isCorrect ? prev + 1 : prev));
+      setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== currentQuestionIndex)) : new Set(prev.add(currentQuestionIndex))));
       setShowNext(true);
     }
   };
 
   const handleNext = () => {
-    if (certification && incorrectQuestions.size > 0) {
-      const nextIncorrectQuestionIndex = Array.from(incorrectQuestions)[0];
-      setCurrentQuestionIndex(nextIncorrectQuestionIndex);
-      setIncorrectQuestions((prev) => {
-        const newSet = new Set(prev);
-        newSet.delete(nextIncorrectQuestionIndex);
-        return newSet;
-      });
-      setResult(null);
-      setShowNext(false);
-      setIsAnswerSelected(false);
-      setSelectedAnswer(null);
-    } else if (certification && currentQuestionIndex < certification.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-      setResult(null);
-      setShowNext(false);
-      setIsAnswerSelected(false);
-      setSelectedAnswer(null);
-    } else {
-      setResult("Lesson complete!");
-      setShowNext(false);
+    if (certification) {
+      if (incorrectQuestions.size > 0) {
+        const nextIncorrectQuestionIndex = Array.from(incorrectQuestions)[0];
+        setCurrentQuestionIndex(nextIncorrectQuestionIndex);
+        setIncorrectQuestions((prev) => {
+          const newSet = new Set(prev);
+          newSet.delete(nextIncorrectQuestionIndex);
+          return newSet;
+        });
+      } else if (currentQuestionIndex < certification.length - 1) {
+        setCurrentQuestionIndex((prev) => prev + 1);
+      } else {
+        setExplanation("Lesson complete!");
+      }
+
+      clearSelectedAnswer();
     }
+  };
+
+  const clearSelectedAnswer = () => {
+    setExplanation(null);
+    setShowNext(false);
+    setIsAnswerSelected(false);
+    setSelectedAnswer(null);
   };
 
   const currentQuestion = certification ? certification[currentQuestionIndex] : null;
 
   return (
     <div className='quiz'>
-      <div className='header'>
-        <ProgressBar current={correctAnswers} total={certification ? certification.length : 0} />
-      </div>
+      <ProgressBar current={correctAnswers} total={certification ? certification.length : 0} />
       {currentQuestion && (
         <div className='question-container'>
-          <p>{currentQuestion.text}</p>
-          <div className='answers'>
-            {currentQuestion.options.map((option, index) => (
-              <AnswerOptions key={index} answer={option.option} onClick={() => handleAnswer(option.option)} isAssigned={currentQuestion.assignedAnswer === option.option} isSelected={selectedAnswer === option.option} disabled={showNext} />
-            ))}
-          </div>
-          {result && <p className='result'>{result}</p>}
-          <button className='submit-button' onClick={showNext ? handleNext : handleSubmit} disabled={!isAnswerSelected}>
-            {showNext ? "Next" : "Submit"}
-          </button>
+          <QuestionText text={currentQuestion.text} />
+          <AnswerOptions options={currentQuestion.options} selectedAnswer={selectedAnswer} assignedAnswer={currentQuestion.assignedAnswer} onClick={handleAnswer} disabled={showNext} />
+          <Explanation explanation={explanation} />
+          <SubmitButton showNext={showNext} onClick={showNext ? handleNext : handleSubmit} disabled={!isAnswerSelected} />
         </div>
       )}
     </div>
