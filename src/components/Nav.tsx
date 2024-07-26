@@ -10,9 +10,9 @@ function Nav({ signOut, userName }: NavProps) {
     <nav>
       <div>
         <Link to='/'>Home</Link>
-        <Link to='/learn?cert=AWS'>AWS</Link>
-        <Link to='/learn?cert=Azure'>Azure</Link>
-        <Link to='/learn?cert=GCP'>GCP</Link>
+        <Link to='/learn?cert=aws'>AWS</Link>
+        <Link to='/learn?cert=azure'>Azure</Link>
+        <Link to='/learn?cert=gcp'>GCP</Link>
       </div>
       <div>
         {userName}

@@ -1,0 +1,46 @@
+{
+  "parameter": "AWS",
+  "title": "Cloud Practitioner",
+  "level": "Foundational",
+  "questions": [
+    {
+      "id": 1,
+      "text": "What is 1 + 1?",
+      "type": "multiple-choice",
+      "answer": "2",
+      "assignedAnswer": null,
+      "options": [
+        { "option": "3", "explanation": "3 is incorrect. The sum of 2 + 2 is 4." },
+        { "option": "2", "explanation": "Correct! 1 + 1 equals 2." },
+        { "option": "5", "explanation": "5 is incorrect. The sum of 2 + 2 is 4." },
+        { "option": "6", "explanation": "6 is incorrect. The sum of 2 + 2 is 4." }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "What is 5 * 3?",
+      "type": "multiple-choice",
+      "answer": "15",
+      "assignedAnswer": null,
+      "options": [
+        { "option": "10", "explanation": "10 is incorrect. 5 * 3 equals 15." },
+        { "option": "15", "explanation": "Correct! 5 * 3 equals 15." },
+        { "option": "20", "explanation": "20 is incorrect. 5 * 3 equals 15." },
+        { "option": "25", "explanation": "25 is incorrect. 5 * 3 equals 15." }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "What is 3 + 1?",
+      "type": "multiple-choice",
+      "answer": "4",
+      "assignedAnswer": null,
+      "options": [
+        { "option": "4", "explanation": "Correct! 3 + 1 equals 4." },
+        { "option": "5", "explanation": "5 is incorrect. 1 + 1 equals 2." },
+        { "option": "10", "explanation": "10 is incorrect. 1 + 1 equals 2." },
+        { "option": "15", "explanation": "15 is incorrect. 1 + 1 equals 2." }
+      ]
+    }
+  ]
+}
