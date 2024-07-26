@@ -1,44 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { generateClient } from "aws-amplify/data";
-import type { Schema } from "../amplify/data/resource";
+import { useLocation } from "react-router-dom";
+import certifications from "./certifications.json";
 
-const client = generateClient<Schema>();
+const Lesson = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const certParameter = queryParams.get("cert");
+  const certTitle = queryParams.get("title");
+  const certLevel = queryParams.get("level");
 
-interface Props {
-  userName: string | undefined;
-}
-
-function Lesson({ userName }: Props) {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
-
-  useEffect(() => {
-    const subscription = client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
-
-  function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") });
-  }
-
-  function deleteTodo(id: string) {
-    client.models.Todo.delete({ id });
-  }
+  const certificationPlatform = certifications.find((c) => certParameter === c.parameter);
+  const certification = certificationPlatform?.certifications.find((c) => c.title === certTitle && c.level === certLevel);
 
   return (
     <div>
-      <h1>{userName}'s todos</h1>
-      <button onClick={createTodo}>+ new</button>
+      <h2>
+        {certTitle} {certLevel}
+      </h2>
       <ul>
-        {todos.map((todo) => (
-          <li onClick={() => deleteTodo(todo.id)} key={todo.id}>
-            {todo.content}
+        {certification?.questions.map((question, index) => (
+          <li key={index}>
+            <p>{question.text}</p>
+            <ul>
+              {question.options.map((option, idx) => (
+                <li key={idx}>
+                  {option.option}: {option.explanation}
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
+
 export default Lesson;

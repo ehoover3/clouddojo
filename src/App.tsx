@@ -23,7 +23,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/learn' element={isValidCert ? <Learn cert={cert} /> : <Navigate to='/' />} />
-            <Route path='/lesson' element={<Lesson userName={user?.signInDetails?.loginId} />} />
+            <Route path='/lesson' element={<Lesson />} />
+            {/* <Route path='/lesson' element={<Lesson userName={user?.signInDetails?.loginId} />} /> */}
           </Routes>
         </main>
       )}

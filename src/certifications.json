@@ -3,65 +3,115 @@
     "parameter": "AWS",
     "platform": "Amazon Web Services",
     "certifications": [
-      { "title": "Cloud Practitioner", "level": "Foundational" },
-      { "title": "AI Practitioner", "level": "Foundational" },
-      { "title": "SysOps Administrator", "level": "Associate" },
-      { "title": "Developer", "level": "Associate" },
-      { "title": "Solutions Architect", "level": "Associate" },
-      { "title": "Data Engineer", "level": "Associate" },
-      { "title": "Solutions Architect", "level": "Professional" },
-      { "title": "DevOps Engineer", "level": "Professional" },
-      { "title": "Machine Learning Engineer", "level": "Specialty" },
-      { "title": "Advanced Networking", "level": "Specialty" },
-      { "title": "Security", "level": "Specialty" },
-      { "title": "Machine Learning", "level": "Specialty" }
+      {
+        "parameter": "AWS",
+        "title": "Cloud Practitioner",
+        "level": "Foundational",
+        "questions": [
+          {
+            "id": 1,
+            "text": "What is 1 + 1?",
+            "type": "multiple-choice",
+            "answer": "2",
+            "assignedAnswer": null,
+            "options": [
+              { "option": "3", "explanation": "3 is incorrect. The sum of 2 + 2 is 4." },
+              { "option": "2", "explanation": "Correct! 1 + 1 equals 2." },
+              { "option": "5", "explanation": "5 is incorrect. The sum of 2 + 2 is 4." },
+              { "option": "6", "explanation": "6 is incorrect. The sum of 2 + 2 is 4." }
+            ]
+          },
+          {
+            "id": 2,
+            "text": "What is 5 * 3?",
+            "type": "multiple-choice",
+            "answer": "15",
+            "assignedAnswer": null,
+            "options": [
+              { "option": "10", "explanation": "10 is incorrect. 5 * 3 equals 15." },
+              { "option": "15", "explanation": "Correct! 5 * 3 equals 15." },
+              { "option": "20", "explanation": "20 is incorrect. 5 * 3 equals 15." },
+              { "option": "25", "explanation": "25 is incorrect. 5 * 3 equals 15." }
+            ]
+          },
+          {
+            "id": 3,
+            "text": "What is 3 + 1?",
+            "type": "multiple-choice",
+            "answer": "4",
+            "assignedAnswer": null,
+            "options": [
+              { "option": "4", "explanation": "Correct! 3 + 1 equals 4." },
+              { "option": "5", "explanation": "5 is incorrect. 1 + 1 equals 2." },
+              { "option": "10", "explanation": "10 is incorrect. 1 + 1 equals 2." },
+              { "option": "15", "explanation": "15 is incorrect. 1 + 1 equals 2." }
+            ]
+          }
+        ]
+      },
+      {
+        "parameter": "AWS",
+        "title": "AI Practitioner",
+        "level": "Foundational",
+        "questions": []
+      },
+      { "parameter": "AWS", "title": "SysOps Administrator", "level": "Associate", "questions": [] },
+      { "parameter": "AWS", "title": "Developer", "level": "Associate", "questions": [] },
+      { "parameter": "AWS", "title": "Solutions Architect", "level": "Associate", "questions": [] },
+      { "parameter": "AWS", "title": "Data Engineer", "level": "Associate", "questions": [] },
+      { "parameter": "AWS", "title": "Solutions Architect", "level": "Professional", "questions": [] },
+      { "parameter": "AWS", "title": "DevOps Engineer", "level": "Professional", "questions": [] },
+      { "parameter": "AWS", "title": "Machine Learning Engineer", "level": "Specialty", "questions": [] },
+      { "parameter": "AWS", "title": "Advanced Networking", "level": "Specialty", "questions": [] },
+      { "parameter": "AWS", "title": "Security", "level": "Specialty", "questions": [] },
+      { "parameter": "AWS", "title": "Machine Learning", "level": "Specialty", "questions": [] }
     ]
   },
   {
     "parameter": "Azure",
     "platform": "Microsoft Azure",
     "certifications": [
-      { "title": "Azure Fundamentals", "level": "Beginner" },
-      { "title": "Azure Data Fundamentals", "level": "Beginner" },
-      { "title": "Azure AI Fundamentals", "level": "Beginner" },
-      { "title": "Security, Compliance, and Identity Fundamentals", "level": "Beginner" },
-      { "title": "Azure AI Engineer Associate", "level": "Intermediate" },
-      { "title": "Azure AI Fundamentals", "level": "Intermediate" },
-      { "title": "Azure Administrator Associate", "level": "Intermediate" },
-      { "title": "Azure Cosmos DB Developer Specialty", "level": "Intermediate" },
-      { "title": "Azure Data Engineer Associate", "level": "Intermediate" },
-      { "title": "Azure Data Fundamentals", "level": "Intermediate" },
-      { "title": "Azure Data Scientist Associate", "level": "Intermediate" },
-      { "title": "Azure Database Administrator Associate", "level": "Intermediate" },
-      { "title": "Azure Developer Associate", "level": "Intermediate" },
-      { "title": "Azure Network Engineer Associate", "level": "Intermediate" },
-      { "title": "Azure Security Engineer Associate", "level": "Intermediate" },
-      { "title": "Azure Virtual Desktop Specialty", "level": "Intermediate" },
-      { "title": "Azure for SAP Workloads Specialty", "level": "Intermediate" },
-      { "title": "Identity and Access Administrator Associate", "level": "Intermediate" },
-      { "title": "Security Operations Analyst Associate", "level": "Intermediate" },
-      { "title": "Windows Server Hybrid Administrator Associate", "level": "Intermediate" },
-      { "title": "Azure Solutions Architect Expert", "level": "Advanced" },
-      { "title": "Cybersecurity Architect Expert", "level": "Advanced" },
-      { "title": "DevOps Engineer Expert", "level": "Advanced" },
-      { "title": "Power Platform Solution Architect Expert", "level": "Advanced" }
+      { "parameter": "Azure", "title": "Azure Fundamentals", "level": "Beginner", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Data Fundamentals", "level": "Beginner", "questions": [] },
+      { "parameter": "Azure", "title": "Azure AI Fundamentals", "level": "Beginner", "questions": [] },
+      { "parameter": "Azure", "title": "Security, Compliance, and Identity Fundamentals", "level": "Beginner", "questions": [] },
+      { "parameter": "Azure", "title": "Azure AI Engineer Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure AI Fundamentals", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Administrator Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Cosmos DB Developer Specialty", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Data Engineer Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Data Fundamentals", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Data Scientist Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Database Administrator Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Developer Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Network Engineer Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Security Engineer Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Virtual Desktop Specialty", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure for SAP Workloads Specialty", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Identity and Access Administrator Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Security Operations Analyst Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Windows Server Hybrid Administrator Associate", "level": "Intermediate", "questions": [] },
+      { "parameter": "Azure", "title": "Azure Solutions Architect Expert", "level": "Advanced", "questions": [] },
+      { "parameter": "Azure", "title": "Cybersecurity Architect Expert", "level": "Advanced", "questions": [] },
+      { "parameter": "Azure", "title": "DevOps Engineer Expert", "level": "Advanced", "questions": [] },
+      { "parameter": "Azure", "title": "Power Platform Solution Architect Expert", "level": "Advanced", "questions": [] }
     ]
   },
   {
     "parameter": "GCP",
     "platform": "Google Cloud Platform",
     "certifications": [
-      { "title": "Cloud Digital Leader", "level": "Foundational" },
-      { "title": "Cloud Engineer", "level": "Associate" },
-      { "title": "Cloud Architect", "level": "Professional" },
-      { "title": "Cloud Database Engineer", "level": "Professional" },
-      { "title": "Cloud Developer", "level": "Professional" },
-      { "title": "Data Engineer", "level": "Professional" },
-      { "title": "Cloud DevOps Engineer", "level": "Professional" },
-      { "title": "Cloud Security Engineer", "level": "Professional" },
-      { "title": "Cloud Network Engineer", "level": "Professional" },
-      { "title": "Google Workspace Administrator", "level": "Professional" },
-      { "title": "Machine Learning Engineer", "level": "Professional" }
+      { "parameter": "GCP", "title": "Cloud Digital Leader", "level": "Foundational", "questions": [] },
+      { "parameter": "GCP", "title": "Cloud Engineer", "level": "Associate", "questions": [] },
+      { "parameter": "GCP", "title": "Cloud Architect", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Cloud Database Engineer", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Cloud Developer", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Data Engineer", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Cloud DevOps Engineer", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Cloud Security Engineer", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Cloud Network Engineer", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Google Workspace Administrator", "level": "Professional", "questions": [] },
+      { "parameter": "GCP", "title": "Machine Learning Engineer", "level": "Professional", "questions": [] }
     ]
   }
 ]
