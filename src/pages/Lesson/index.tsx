@@ -24,11 +24,13 @@
 // }
 
 // const getCertificationData = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
-//   if (certParameter === "aws" && certTitle === "Cloud Practitioner" && certLevel === "Foundational") {
-//     return AwsCloudPractitionerFoundational;
-//   }
-//   if (certParameter === "aws" && certTitle === "Developer" && certLevel === "Associate") {
-//     return AwsDeveloperAssociate;
+//   if (certParameter === "aws") {
+//     if (certTitle === "Cloud Practitioner" && certLevel === "Foundational") {
+//       return AwsCloudPractitionerFoundational;
+//     }
+//     if (certTitle === "Developer" && certLevel === "Associate") {
+//       return AwsDeveloperAssociate;
+//     }
 //   }
 //   return null;
 // };
@@ -82,8 +84,6 @@
 //       if (currentQuestionIndex < questionQueue.length - 1) {
 //         setCurrentQuestionIndex((prev) => prev + 1);
 //         clearSelectedAnswer();
-//       } else {
-//         // Do nothing here as we will conditionally render the Link component
 //       }
 
 //       if (incorrectQuestions.size > 0) {
@@ -167,6 +167,14 @@ const getCertificationData = (certParameter: string | null, certTitle: string | 
   return null;
 };
 
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 const Lesson = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -187,7 +195,12 @@ const Lesson = () => {
   useEffect(() => {
     const data = getCertificationData(certParameter, certTitle, certLevel);
     if (data) {
-      setCertification(data);
+      setCertification(
+        data.map((question) => ({
+          ...question,
+          options: shuffleArray(question.options),
+        }))
+      );
       setQuestionQueue(data.map((_, index) => index));
     }
   }, [certParameter, certTitle, certLevel]);
@@ -231,6 +244,11 @@ const Lesson = () => {
     setShowNext(false);
     setIsAnswerSelected(false);
     setSelectedAnswer(null);
+    if (certification) {
+      const currentQuestion = certification[questionQueue[currentQuestionIndex]];
+      currentQuestion.options = shuffleArray(currentQuestion.options);
+      setCertification([...certification]);
+    }
   };
 
   const currentQuestion = certification ? certification[questionQueue[currentQuestionIndex]] : null;
