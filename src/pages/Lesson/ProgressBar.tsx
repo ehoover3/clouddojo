@@ -1,4 +1,3 @@
-// src/components/ProgressBar.tsx
 import React from "react";
 import "./ProgressBar.css";
 

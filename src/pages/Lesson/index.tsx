@@ -1,5 +1,5 @@
 // import { useState, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
+// import { useLocation, Link } from "react-router-dom";
 // import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-practitioner-foundational.json";
 // import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
 // import AnswerOptions from "./AnswerOptions";
@@ -41,6 +41,7 @@
 //   const certLevel = queryParams.get("level");
 
 //   const [certification, setCertification] = useState<Question[] | null>(null);
+//   const [questionQueue, setQuestionQueue] = useState<number[]>([]);
 //   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 //   const [explanation, setExplanation] = useState<string | null>(null);
 //   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -50,7 +51,11 @@
 //   const [incorrectQuestions, setIncorrectQuestions] = useState<Set<number>>(new Set());
 
 //   useEffect(() => {
-//     setCertification(getCertificationData(certParameter, certTitle, certLevel));
+//     const data = getCertificationData(certParameter, certTitle, certLevel);
+//     if (data) {
+//       setCertification(data);
+//       setQuestionQueue(data.map((_, index) => index));
+//     }
 //   }, [certParameter, certTitle, certLevel]);
 
 //   const handleAnswer = (answer: string) => {
@@ -60,35 +65,32 @@
 
 //   const handleSubmit = () => {
 //     if (certification && selectedAnswer) {
-//       const currentQuestion = certification[currentQuestionIndex];
+//       const currentQuestion = certification[questionQueue[currentQuestionIndex]];
 //       const isCorrect = currentQuestion.answer === selectedAnswer;
 //       const selectedOption = currentQuestion.options.find((option) => option.option === selectedAnswer);
 //       const reason = selectedOption ? selectedOption.explanation : "No explanation available.";
 
 //       setExplanation(reason);
 //       setCorrectAnswers((prev) => (isCorrect ? prev + 1 : prev));
-//       setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== currentQuestionIndex)) : new Set(prev.add(currentQuestionIndex))));
+//       setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestionIndex])) : new Set(prev.add(questionQueue[currentQuestionIndex]))));
 //       setShowNext(true);
 //     }
 //   };
 
 //   const handleNext = () => {
 //     if (certification) {
-//       if (incorrectQuestions.size > 0) {
-//         const nextIncorrectQuestionIndex = Array.from(incorrectQuestions)[0];
-//         setCurrentQuestionIndex(nextIncorrectQuestionIndex);
-//         setIncorrectQuestions((prev) => {
-//           const newSet = new Set(prev);
-//           newSet.delete(nextIncorrectQuestionIndex);
-//           return newSet;
-//         });
-//       } else if (currentQuestionIndex < certification.length - 1) {
+//       if (currentQuestionIndex < questionQueue.length - 1) {
 //         setCurrentQuestionIndex((prev) => prev + 1);
+//         clearSelectedAnswer();
 //       } else {
-//         setExplanation("Lesson complete!");
+//         // Do nothing here as we will conditionally render the Link component
 //       }
 
-//       clearSelectedAnswer();
+//       if (incorrectQuestions.size > 0) {
+//         const newQueue = [...questionQueue, ...Array.from(incorrectQuestions)];
+//         setQuestionQueue(newQueue);
+//         setIncorrectQuestions(new Set());
+//       }
 //     }
 //   };
 
@@ -99,7 +101,7 @@
 //     setSelectedAnswer(null);
 //   };
 
-//   const currentQuestion = certification ? certification[currentQuestionIndex] : null;
+//   const currentQuestion = certification ? certification[questionQueue[currentQuestionIndex]] : null;
 
 //   return (
 //     <div className='quiz'>
@@ -109,7 +111,17 @@
 //           <QuestionText text={currentQuestion.text} />
 //           <AnswerOptions options={currentQuestion.options} selectedAnswer={selectedAnswer} assignedAnswer={currentQuestion.assignedAnswer} onClick={handleAnswer} disabled={showNext} />
 //           <Explanation explanation={explanation} />
-//           <SubmitButton showNext={showNext} onClick={showNext ? handleNext : handleSubmit} disabled={!isAnswerSelected} />
+//           {showNext ? (
+//             currentQuestionIndex < questionQueue.length - 1 ? (
+//               <SubmitButton showNext={showNext} onClick={handleNext} disabled={!isAnswerSelected} />
+//             ) : (
+//               <Link to={`/learn?cert=${certParameter}`} className='submit-button'>
+//                 Back to Learn
+//               </Link>
+//             )
+//           ) : (
+//             <SubmitButton showNext={showNext} onClick={handleSubmit} disabled={!isAnswerSelected} />
+//           )}
 //         </div>
 //       )}
 //     </div>
@@ -119,7 +131,7 @@
 // export default Lesson;
 
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-practitioner-foundational.json";
 import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
 import AnswerOptions from "./AnswerOptions";
@@ -144,11 +156,13 @@ export interface Question {
 }
 
 const getCertificationData = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
-  if (certParameter === "aws" && certTitle === "Cloud Practitioner" && certLevel === "Foundational") {
-    return AwsCloudPractitionerFoundational;
-  }
-  if (certParameter === "aws" && certTitle === "Developer" && certLevel === "Associate") {
-    return AwsDeveloperAssociate;
+  if (certParameter === "aws") {
+    if (certTitle === "Cloud Practitioner" && certLevel === "Foundational") {
+      return AwsCloudPractitionerFoundational;
+    }
+    if (certTitle === "Developer" && certLevel === "Associate") {
+      return AwsDeveloperAssociate;
+    }
   }
   return null;
 };
@@ -174,7 +188,6 @@ const Lesson = () => {
     const data = getCertificationData(certParameter, certTitle, certLevel);
     if (data) {
       setCertification(data);
-      // Initialize the question queue with question indices
       setQuestionQueue(data.map((_, index) => index));
     }
   }, [certParameter, certTitle, certLevel]);
@@ -200,20 +213,16 @@ const Lesson = () => {
 
   const handleNext = () => {
     if (certification) {
+      if (currentQuestionIndex < questionQueue.length - 1) {
+        setCurrentQuestionIndex((prev) => prev + 1);
+        clearSelectedAnswer();
+      }
+
       if (incorrectQuestions.size > 0) {
-        // Re-queue incorrect questions
         const newQueue = [...questionQueue, ...Array.from(incorrectQuestions)];
         setQuestionQueue(newQueue);
         setIncorrectQuestions(new Set());
       }
-
-      if (currentQuestionIndex < questionQueue.length - 1) {
-        setCurrentQuestionIndex((prev) => prev + 1);
-      } else {
-        setExplanation("Lesson complete!");
-      }
-
-      clearSelectedAnswer();
     }
   };
 
@@ -234,7 +243,17 @@ const Lesson = () => {
           <QuestionText text={currentQuestion.text} />
           <AnswerOptions options={currentQuestion.options} selectedAnswer={selectedAnswer} assignedAnswer={currentQuestion.assignedAnswer} onClick={handleAnswer} disabled={showNext} />
           <Explanation explanation={explanation} />
-          <SubmitButton showNext={showNext} onClick={showNext ? handleNext : handleSubmit} disabled={!isAnswerSelected} />
+          {showNext ? (
+            currentQuestionIndex < questionQueue.length - 1 ? (
+              <SubmitButton showNext={showNext} onClick={handleNext} disabled={!isAnswerSelected} />
+            ) : (
+              <Link to={`/learn?cert=${certParameter}`} className='submit-button'>
+                Back to Learn
+              </Link>
+            )
+          ) : (
+            <SubmitButton showNext={showNext} onClick={handleSubmit} disabled={!isAnswerSelected} />
+          )}
         </div>
       )}
     </div>
