@@ -3,7 +3,8 @@ import "./AnswerOptions.css";
 
 interface Option {
   answerOption: string;
-  explanation: string;
+  explanationText: string;
+  explanationImg: string;
 }
 
 interface AnswerOptionsProps {

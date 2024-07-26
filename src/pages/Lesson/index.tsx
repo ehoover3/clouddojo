@@ -11,7 +11,8 @@ import "./Quiz.css";
 
 export interface Option {
   answerOption: string;
-  explanation: string;
+  explanationText: string;
+  explanationImg: string;
 }
 
 export interface Question {
@@ -53,7 +54,8 @@ const Lesson = () => {
   const [certification, setCertification] = useState<Question[] | null>(null);
   const [questionQueue, setQuestionQueue] = useState<number[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [explanation, setExplanation] = useState<string | null>(null);
+  const [explanationText, setExplanationText] = useState<string | null>(null);
+  const [explanationImg, setExplanationImg] = useState<string>("");
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showNext, setShowNext] = useState(false);
   const [isAnswerSelected, setIsAnswerSelected] = useState(false);
@@ -83,9 +85,11 @@ const Lesson = () => {
       const currentQuestion = certification[questionQueue[currentQuestionIndex]];
       const isCorrect = currentQuestion.answer === selectedAnswer;
       const selectedOption = currentQuestion.answerOptions.find((option) => option.answerOption === selectedAnswer);
-      const reason = selectedOption ? selectedOption.explanation : "No explanation available.";
+      const reasonText = selectedOption ? selectedOption.explanationText : "No explanation available.";
+      const reasonImg = selectedOption ? selectedOption.explanationImg : "No img available.";
 
-      setExplanation(reason);
+      setExplanationText(reasonText);
+      setExplanationImg(reasonImg);
       setCorrectAnswers((prev) => (isCorrect ? prev + 1 : prev));
       setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestionIndex])) : new Set(prev.add(questionQueue[currentQuestionIndex]))));
       setShowNext(true);
@@ -108,7 +112,7 @@ const Lesson = () => {
   };
 
   const clearSelectedAnswer = () => {
-    setExplanation(null);
+    setExplanationText(null);
     setShowNext(false);
     setIsAnswerSelected(false);
     setSelectedAnswer(null);
@@ -128,7 +132,7 @@ const Lesson = () => {
         <div className='question-container'>
           <QuestionText text={currentQuestion.text} />
           <AnswerOptions answerOptions={currentQuestion.answerOptions} selectedAnswer={selectedAnswer} assignedAnswer={currentQuestion.assignedAnswer} onClick={handleAnswer} disabled={showNext} />
-          <Explanation explanation={explanation} />
+          <Explanation explanationText={explanationText} explanationImg={explanationImg} />
           {showNext ? (
             currentQuestionIndex < questionQueue.length - 1 ? (
               <SubmitButton showNext={showNext} onClick={handleNext} disabled={!isAnswerSelected} />

@@ -6,10 +6,10 @@
     "answer": "2",
     "assignedAnswer": null,
     "answerOptions": [
-      { "answerOption": "3", "explanation": "3 is incorrect. The sum of 2 + 2 is 4." },
-      { "answerOption": "20", "explanation": "Correct! 0 is 0." },
-      { "answerOption": "5", "explanation": "5 is incorrect. The sum of 2 + 2 is 4." },
-      { "answerOption": "6", "explanation": "6 is incorrect. The sum of 2 + 2 is 4." }
+      { "answerOption": "3", "explanationText": "3 is incorrect. The sum of 2 + 2 is 4.", "explanationImg": "1.png" },
+      { "answerOption": "20", "explanationText": "Correct! 0 is 0.", "explanationImg": "1.png" },
+      { "answerOption": "5", "explanationText": "5 is incorrect. The sum of 2 + 2 is 4.", "explanationImg": "1.png" },
+      { "answerOption": "6", "explanationText": "6 is incorrect. The sum of 2 + 2 is 4.", "explanationImg": "1.png" }
     ]
   },
   {
@@ -19,10 +19,10 @@
     "answer": "15",
     "assignedAnswer": null,
     "answerOptions": [
-      { "answerOption": "10", "explanation": "10 is incorrect. 5 * 3 equals 15." },
-      { "answerOption": "15", "explanation": "Correct! 5 * 4 equals 20." },
-      { "answerOption": "21", "explanation": "21 is incorrect. 5 * 4 equals 20." },
-      { "answerOption": "25", "explanation": "25 is incorrect. 5 * 3 equals 15." }
+      { "answerOption": "10", "explanationText": "10 is incorrect. 5 * 3 equals 15.", "explanationImg": "1.png" },
+      { "answerOption": "15", "explanationText": "Correct! 5 * 4 equals 20.", "explanationImg": "1.png" },
+      { "answerOption": "21", "explanationText": "21 is incorrect. 5 * 4 equals 20.", "explanationImg": "1.png" },
+      { "answerOption": "25", "explanationText": "25 is incorrect. 5 * 3 equals 15.", "explanationImg": "1.png" }
     ]
   },
   {
@@ -32,10 +32,10 @@
     "answer": "4",
     "assignedAnswer": null,
     "answerOptions": [
-      { "answerOption": "4", "explanation": "Correct! 3 + 1 equals 4." },
-      { "answerOption": "5", "explanation": "5 is incorrect. 1 + 1 equals 2." },
-      { "answerOption": "10", "explanation": "10 is incorrect. 1 + 1 equals 2." },
-      { "answerOption": "15", "explanation": "15 is incorrect. 1 + 1 equals 2." }
+      { "answerOption": "4", "explanationText": "Correct! 3 + 1 equals 4.", "explanationImg": "1.png" },
+      { "answerOption": "5", "explanationText": "5 is incorrect. 1 + 1 equals 2.", "explanationImg": "1.png" },
+      { "answerOption": "10", "explanationText": "10 is incorrect. 1 + 1 equals 2.", "explanationImg": "1.png" },
+      { "answerOption": "15", "explanationText": "15 is incorrect. 1 + 1 equals 2.", "explanationImg": "1.png" }
     ]
   }
 ]
