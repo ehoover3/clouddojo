@@ -11,7 +11,8 @@ import "./Quiz.css";
 import QuizCompletion from "./QuizCompletion";
 
 export interface Option {
-  answerOption: string;
+  answerImg: string;
+  answerText: string;
   explanationText: string;
   explanationImg: string;
 }
@@ -85,7 +86,7 @@ const Lesson = () => {
         if (key >= "1" && key <= "4") {
           const index = parseInt(key, 10) - 1;
           if (index < currentQuestion.answerOptions.length) {
-            handleAnswer(currentQuestion.answerOptions[index].answerOption);
+            handleAnswer(currentQuestion.answerOptions[index].answerText);
           }
         }
       }
@@ -106,7 +107,7 @@ const Lesson = () => {
     if (certification && selectedAnswer) {
       const currentQuestion = certification[questionQueue[currentQuestionIndex]];
       const isCorrect = currentQuestion.answer === selectedAnswer;
-      const selectedOption = currentQuestion.answerOptions.find((option) => option.answerOption === selectedAnswer);
+      const selectedOption = currentQuestion.answerOptions.find((option) => option.answerText === selectedAnswer);
       const reasonText = selectedOption ? selectedOption.explanationText : "No explanation available.";
       const reasonImg = selectedOption ? selectedOption.explanationImg : "No img available.";
 

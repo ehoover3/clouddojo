@@ -2,7 +2,8 @@ import React from "react";
 import "./AnswerOptions.css";
 
 interface Option {
-  answerOption: string;
+  answerImg: string;
+  answerText: string;
   explanationText: string;
   explanationImg: string;
 }
@@ -16,6 +17,8 @@ interface AnswerOptionsProps {
 }
 
 const AnswerOptions: React.FC<AnswerOptionsProps> = ({ answerOptions, selectedAnswer, assignedAnswer, onClick, disabled }) => {
+  const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
+
   return (
     <div className='answers'>
       {answerOptions.map((answerOption, index) => (
@@ -23,11 +26,12 @@ const AnswerOptions: React.FC<AnswerOptionsProps> = ({ answerOptions, selectedAn
           key={index}
           className='answer'
           style={{
-            backgroundColor: selectedAnswer === answerOption.answerOption ? "lightblue" : assignedAnswer === answerOption.answerOption ? "grey" : "white",
+            backgroundColor: selectedAnswer === answerOption.answerText ? "lightblue" : assignedAnswer === answerOption.answerText ? "grey" : "white",
             cursor: disabled ? "not-allowed" : "pointer",
           }}
-          onClick={() => !disabled && onClick(answerOption.answerOption)}>
-          {answerOption.answerOption}
+          onClick={() => !disabled && onClick(answerOption.answerText)}>
+          {answerOption.answerImg ? <img src={`${publicUrl}/images/${answerOption.answerImg}`} alt='Explanation Image' style={{ width: "100%" }} /> : ""}
+          {answerOption.answerText}
         </div>
       ))}
     </div>
