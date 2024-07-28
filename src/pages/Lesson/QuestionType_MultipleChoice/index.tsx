@@ -8,8 +8,8 @@ interface AnswerOptionsProps {
   setQuestionQueue: React.Dispatch<React.SetStateAction<number[]>>;
   currentQuestionIndex: number;
   setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
-  correctAnswers: number;
-  setCorrectAnswers: React.Dispatch<React.SetStateAction<number>>;
+  answeredCorrectlyCount: number;
+  setAnsweredCorrectlyCount: React.Dispatch<React.SetStateAction<number>>;
   incorrectQuestions: Set<number>;
   setIncorrectQuestions: React.Dispatch<React.SetStateAction<Set<number>>>;
   onQuizComplete: () => void;
@@ -23,7 +23,7 @@ const shuffleArray = (array: any[]) => {
   return array;
 };
 
-const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, correctAnswers, setCorrectAnswers, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
+const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, answeredCorrectlyCount, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanationText, setExplanationText] = useState<string | null>(null);
@@ -70,7 +70,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
 
       setExplanationText(reasonText);
       setExplanationImg(reasonImg);
-      setCorrectAnswers((prev) => (isCorrect ? prev + 1 : prev));
+      setAnsweredCorrectlyCount((prev: any) => (isCorrect ? prev + 1 : prev));
       setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestionIndex])) : new Set(prev.add(questionQueue[currentQuestionIndex]))));
       setShowNext(true);
     }

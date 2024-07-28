@@ -60,7 +60,7 @@ const Lesson = () => {
   const [certification, setCertification] = useState<Question[] | null>(null);
   const [questionQueue, setQuestionQueue] = useState<number[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [answeredCorrectlyCount, setAnsweredCorrectlyCount] = useState(0);
   const [incorrectQuestions, setIncorrectQuestions] = useState<Set<number>>(new Set());
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
@@ -83,7 +83,7 @@ const Lesson = () => {
 
   const handleRestartQuiz = () => {
     setCurrentQuestionIndex(0);
-    setCorrectAnswers(0);
+    setAnsweredCorrectlyCount(0);
     setIncorrectQuestions(new Set());
     setIsQuizComplete(false);
     if (certification) {
@@ -91,17 +91,20 @@ const Lesson = () => {
     }
   };
 
-  // ERIC, YOU ARE READY TO TRY CREATING A MATCHING COMPONENT
-  // AND USE CONDITIONAL RENDERING (SEE A FEW LINES BELOW)
-  // if (certification[questionQueue[currentQuestionIndex]].type === "multiple-choice"){}
-  // else if (certification[questionQueue[currentQuestionIndex]].type === "matching"){}
-
   return (
     <div className='quiz'>
       {/* TESTING: Start Delete Later */}
-      <div>{certification ? certification[questionQueue[currentQuestionIndex]].type : ""}</div>
+      <div>
+        {certification ? (
+          <div>
+            answeredCorrectlyCount: {answeredCorrectlyCount}, total: {certification?.length}
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
       {/* TESTING: End Delete Later */}
-      <ProgressBar current={correctAnswers} total={certification ? certification.length : 0} />
+      <ProgressBar current={answeredCorrectlyCount} total={certification ? certification.length : 0} />
       {isQuizComplete ? (
         <QuizCompletion certParameter={certParameter} onRestart={handleRestartQuiz} />
       ) : (
@@ -114,8 +117,8 @@ const Lesson = () => {
             setQuestionQueue={setQuestionQueue}
             currentQuestionIndex={currentQuestionIndex}
             setCurrentQuestionIndex={setCurrentQuestionIndex}
-            correctAnswers={correctAnswers}
-            setCorrectAnswers={setCorrectAnswers}
+            answeredCorrectlyCount={answeredCorrectlyCount}
+            setAnsweredCorrectlyCount={setAnsweredCorrectlyCount}
             incorrectQuestions={incorrectQuestions}
             setIncorrectQuestions={setIncorrectQuestions}
             onQuizComplete={handleQuizComplete}
@@ -128,8 +131,8 @@ const Lesson = () => {
             setQuestionQueue={setQuestionQueue}
             currentQuestionIndex={currentQuestionIndex}
             setCurrentQuestionIndex={setCurrentQuestionIndex}
-            correctAnswers={correctAnswers}
-            setCorrectAnswers={setCorrectAnswers}
+            answeredCorrectlyCount={answeredCorrectlyCount}
+            setAnsweredCorrectlyCount={setAnsweredCorrectlyCount}
             incorrectQuestions={incorrectQuestions}
             setIncorrectQuestions={setIncorrectQuestions}
             onQuizComplete={handleQuizComplete}
