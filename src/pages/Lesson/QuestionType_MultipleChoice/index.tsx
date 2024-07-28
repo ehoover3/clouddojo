@@ -8,7 +8,6 @@ interface AnswerOptionsProps {
   setQuestionQueue: React.Dispatch<React.SetStateAction<number[]>>;
   currentQuestionIndex: number;
   setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
-  answeredCorrectlyCount: number;
   setAnsweredCorrectlyCount: React.Dispatch<React.SetStateAction<number>>;
   incorrectQuestions: Set<number>;
   setIncorrectQuestions: React.Dispatch<React.SetStateAction<Set<number>>>;
@@ -23,7 +22,7 @@ const shuffleArray = (array: any[]) => {
   return array;
 };
 
-const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, answeredCorrectlyCount, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
+const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanationText, setExplanationText] = useState<string | null>(null);

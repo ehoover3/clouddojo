@@ -107,19 +107,14 @@ import { Question } from "../../Lesson";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
-  certification: Question[];
   questionQueue: number[];
-  setQuestionQueue: React.Dispatch<React.SetStateAction<number[]>>;
   currentQuestionIndex: number;
   setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
-  answeredCorrectlyCount: number;
   setAnsweredCorrectlyCount: React.Dispatch<React.SetStateAction<number>>;
-  incorrectQuestions: Set<number>;
-  setIncorrectQuestions: React.Dispatch<React.SetStateAction<Set<number>>>;
   onQuizComplete: () => void;
 }
 
-const QuestionType_Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, answeredCorrectlyCount, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
+const QuestionType_Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, onQuizComplete }) => {
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [selectedRight, setSelectedRight] = useState<string | null>(null);
