@@ -2,12 +2,9 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-practitioner-foundational.json";
 import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
-import AnswerOptions from "./AnswerOptions";
+import QuestionType_MultipleChoice from "./QuestionType_MultipleChoice";
 import ProgressBar from "./ProgressBar";
-import SubmitButton from "./SubmitButton";
-import Explanation from "./Explanation";
-import QuestionText from "./QuestionText";
-import "./Quiz.css";
+import "./index.css";
 import QuizCompletion from "./QuizCompletion";
 
 export interface Option {
@@ -56,21 +53,15 @@ const Lesson = () => {
   const [certification, setCertification] = useState<Question[] | null>(null);
   const [questionQueue, setQuestionQueue] = useState<number[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [explanationText, setExplanationText] = useState<string | null>(null);
-  const [explanationImg, setExplanationImg] = useState<string>("");
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [showNext, setShowNext] = useState(false);
-  const [isAnswerSelected, setIsAnswerSelected] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [incorrectQuestions, setIncorrectQuestions] = useState<Set<number>>(new Set());
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
-  const currentQuestion = certification ? certification[questionQueue[currentQuestionIndex]] : null;
-
+  // get initial questions
   useEffect(() => {
-    const data = getCertificationData(certParameter, certTitle, certLevel);
-    if (data) {
-      const shuffledData = data.map((question) => ({
+    const questionSet = getCertificationData(certParameter, certTitle, certLevel);
+    if (questionSet) {
+      const shuffledData = questionSet.map((question) => ({
         ...question,
         answerOptions: shuffleArray(question.answerOptions),
       }));
@@ -79,74 +70,17 @@ const Lesson = () => {
     }
   }, [certParameter, certTitle, certLevel]);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const key = event.key;
-      if (currentQuestion && !showNext && !isQuizComplete) {
-        if (key >= "1" && key <= "4") {
-          const index = parseInt(key, 10) - 1;
-          if (index < currentQuestion.answerOptions.length) {
-            handleAnswer(currentQuestion.answerOptions[index].answerText);
-          }
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [currentQuestion, showNext, isQuizComplete]);
-
-  const handleAnswer = (answer: string) => {
-    setSelectedAnswer(answer);
-    setIsAnswerSelected(true);
+  const handleQuizComplete = () => {
+    setIsQuizComplete(true);
   };
 
-  const handleSubmit = () => {
-    if (certification && selectedAnswer) {
-      const currentQuestion = certification[questionQueue[currentQuestionIndex]];
-      const isCorrect = currentQuestion.answer === selectedAnswer;
-      const selectedOption = currentQuestion.answerOptions.find((option) => option.answerText === selectedAnswer);
-      const reasonText = selectedOption ? selectedOption.explanationText : "No explanation available.";
-      const reasonImg = selectedOption ? selectedOption.explanationImg : "No img available.";
-
-      setExplanationText(reasonText);
-      setExplanationImg(reasonImg);
-      setCorrectAnswers((prev) => (isCorrect ? prev + 1 : prev));
-      setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestionIndex])) : new Set(prev.add(questionQueue[currentQuestionIndex]))));
-      setShowNext(true);
-    }
-  };
-
-  const handleNext = () => {
+  const handleRestartQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setCorrectAnswers(0);
+    setIncorrectQuestions(new Set());
+    setIsQuizComplete(false);
     if (certification) {
-      if (currentQuestionIndex < questionQueue.length - 1) {
-        setCurrentQuestionIndex((prev) => prev + 1);
-        clearSelectedAnswer();
-      } else {
-        if (incorrectQuestions.size > 0) {
-          const newQueue = [...questionQueue, ...Array.from(incorrectQuestions)];
-          setQuestionQueue(newQueue);
-          setIncorrectQuestions(new Set());
-          setCurrentQuestionIndex(questionQueue.length);
-          clearSelectedAnswer(); // Ensure answer is cleared when re-queuing
-        } else {
-          setIsQuizComplete(true);
-        }
-      }
-    }
-  };
-
-  const clearSelectedAnswer = () => {
-    setExplanationText(null);
-    setShowNext(false);
-    setIsAnswerSelected(false);
-    setSelectedAnswer(null); // Ensure the selected answer is cleared
-    if (certification) {
-      const currentQuestion = certification[questionQueue[currentQuestionIndex]];
-      currentQuestion.answerOptions = shuffleArray(currentQuestion.answerOptions);
-      setCertification([...certification]);
+      setQuestionQueue(certification.map((_, index) => index));
     }
   };
 
@@ -154,15 +88,22 @@ const Lesson = () => {
     <div className='quiz'>
       <ProgressBar current={correctAnswers} total={certification ? certification.length : 0} />
       {isQuizComplete ? (
-        <QuizCompletion certParameter={certParameter} />
+        <QuizCompletion certParameter={certParameter} onRestart={handleRestartQuiz} />
       ) : (
-        currentQuestion && (
-          <div className='question-container'>
-            <QuestionText text={currentQuestion.text} />
-            <AnswerOptions answerOptions={currentQuestion.answerOptions} selectedAnswer={selectedAnswer} assignedAnswer={currentQuestion.assignedAnswer} onClick={handleAnswer} disabled={showNext} />
-            <Explanation explanationText={explanationText} explanationImg={explanationImg} />
-            <SubmitButton showNext={showNext} onClick={showNext ? handleNext : handleSubmit} disabled={!isAnswerSelected} />
-          </div>
+        certification && (
+          <QuestionType_MultipleChoice
+            currentQuestion={certification[questionQueue[currentQuestionIndex]]}
+            certification={certification}
+            questionQueue={questionQueue}
+            setQuestionQueue={setQuestionQueue}
+            currentQuestionIndex={currentQuestionIndex}
+            setCurrentQuestionIndex={setCurrentQuestionIndex}
+            correctAnswers={correctAnswers}
+            setCorrectAnswers={setCorrectAnswers}
+            incorrectQuestions={incorrectQuestions}
+            setIncorrectQuestions={setIncorrectQuestions}
+            onQuizComplete={handleQuizComplete}
+          />
         )
       )}
     </div>
