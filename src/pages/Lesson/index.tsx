@@ -6,21 +6,28 @@ import QuestionType_MultipleChoice from "./QuestionType_MultipleChoice";
 import ProgressBar from "./ProgressBar";
 import "./index.css";
 import QuizCompletion from "./QuizCompletion";
+import QuestionType_Matching from "./QuestionType_Matching";
 
-export interface Option {
+export interface MultipleChoiceOption {
   answerImg: string;
   answerText: string;
   explanationText: string;
   explanationImg: string;
 }
 
+export interface MatchingOption {
+  left: any;
+  right: any;
+}
+
 export interface Question {
   id: number;
   text: string;
   type: string;
-  answer: string;
-  assignedAnswer: string | null;
-  answerOptions: Option[];
+  answer?: string;
+  answerPairs?: string[];
+  assignedAnswer: any | null;
+  answerOptions: MultipleChoiceOption[] | MatchingOption | any;
 }
 
 const getCertificationData = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
@@ -61,12 +68,12 @@ const Lesson = () => {
   useEffect(() => {
     const questionSet = getCertificationData(certParameter, certTitle, certLevel);
     if (questionSet) {
-      const shuffledData = questionSet.map((question) => ({
+      const shuffledData: any = questionSet.map((question) => ({
         ...question,
         answerOptions: shuffleArray(question.answerOptions),
       }));
       setCertification(shuffledData);
-      setQuestionQueue(shuffledData.map((_, index) => index));
+      setQuestionQueue(shuffledData.map((_: any, index: any) => index));
     }
   }, [certParameter, certTitle, certLevel]);
 
@@ -84,16 +91,25 @@ const Lesson = () => {
     }
   };
 
+  // ERIC, YOU ARE READY TO TRY CREATING A MATCHING COMPONENT
+  // AND USE CONDITIONAL RENDERING (SEE A FEW LINES BELOW)
+  // if (certification[questionQueue[currentQuestionIndex]].type === "multiple-choice"){}
+  // else if (certification[questionQueue[currentQuestionIndex]].type === "matching"){}
+
   return (
     <div className='quiz'>
+      {/* TESTING: Start Delete Later */}
+      <div>{certification ? certification[questionQueue[currentQuestionIndex]].type : ""}</div>
+      {/* TESTING: End Delete Later */}
       <ProgressBar current={correctAnswers} total={certification ? certification.length : 0} />
       {isQuizComplete ? (
         <QuizCompletion certParameter={certParameter} onRestart={handleRestartQuiz} />
       ) : (
-        certification && (
+        certification &&
+        (certification[questionQueue[currentQuestionIndex]].type === "multiple-choice" ? (
           <QuestionType_MultipleChoice
-            currentQuestion={certification[questionQueue[currentQuestionIndex]]}
             certification={certification}
+            currentQuestion={certification[questionQueue[currentQuestionIndex]]}
             questionQueue={questionQueue}
             setQuestionQueue={setQuestionQueue}
             currentQuestionIndex={currentQuestionIndex}
@@ -104,7 +120,21 @@ const Lesson = () => {
             setIncorrectQuestions={setIncorrectQuestions}
             onQuizComplete={handleQuizComplete}
           />
-        )
+        ) : (
+          <QuestionType_Matching
+            certification={certification}
+            currentQuestion={certification[questionQueue[currentQuestionIndex]]}
+            questionQueue={questionQueue}
+            setQuestionQueue={setQuestionQueue}
+            currentQuestionIndex={currentQuestionIndex}
+            setCurrentQuestionIndex={setCurrentQuestionIndex}
+            correctAnswers={correctAnswers}
+            setCorrectAnswers={setCorrectAnswers}
+            incorrectQuestions={incorrectQuestions}
+            setIncorrectQuestions={setIncorrectQuestions}
+            onQuizComplete={handleQuizComplete}
+          />
+        ))
       )}
     </div>
   );

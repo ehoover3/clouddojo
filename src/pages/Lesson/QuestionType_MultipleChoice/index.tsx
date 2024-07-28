@@ -64,7 +64,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
   const handleSubmit = () => {
     if (selectedAnswer) {
       const isCorrect = currentQuestion.answer === selectedAnswer;
-      const selectedOption = currentQuestion.answerOptions.find((option) => option.answerText === selectedAnswer);
+      const selectedOption = currentQuestion.answerOptions.find((option: any) => option.answerText === selectedAnswer);
       const reasonText = selectedOption ? selectedOption.explanationText : "No explanation available.";
       const reasonImg = selectedOption ? selectedOption.explanationImg : "No img available.";
 
@@ -104,14 +104,16 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
 
   const shuffleAnswerOptions = () => {
     const currentQuestion = certification[questionQueue[currentQuestionIndex]];
-    currentQuestion.answerOptions = shuffleArray(currentQuestion.answerOptions);
+    if (certification[questionQueue[currentQuestionIndex]].type === "multiple-choice") {
+      currentQuestion.answerOptions = shuffleArray(currentQuestion.answerOptions);
+    }
   };
 
   return (
     <div>
       <p className='question-text'>{currentQuestion.text}</p>
       <div className='answers'>
-        {currentQuestion.answerOptions.map((answerOption, index) => (
+        {currentQuestion.answerOptions.map((answerOption: any, index: any) => (
           <div
             key={index}
             className='answer'
