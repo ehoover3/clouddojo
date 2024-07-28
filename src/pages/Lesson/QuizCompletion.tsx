@@ -1,18 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
 interface QuizCompletionProps {
   certParameter: string | null;
+  onRestart: () => void;
 }
 
-const QuizCompletion: React.FC<QuizCompletionProps> = ({ certParameter }) => (
-  <div className='quiz-completion'>
-    <h2>Quiz Complete!</h2>
-    <button onClick={() => window.location.reload()}>Restart Quiz</button>
-    <Link to={`/learn?cert=${certParameter}`} className='submit-button'>
-      Back to Learn
-    </Link>
-  </div>
-);
+const QuizCompletion: React.FC<QuizCompletionProps> = ({ onRestart }) => {
+  return (
+    <div>
+      <h1>Quiz Completed!</h1>
+
+      <button onClick={onRestart}>Restart Quiz</button>
+    </div>
+  );
+};
 
 export default QuizCompletion;
