@@ -117,26 +117,13 @@ const Lesson = () => {
             setQuestionQueue={setQuestionQueue}
             currentQuestionIndex={currentQuestionIndex}
             setCurrentQuestionIndex={setCurrentQuestionIndex}
-            answeredCorrectlyCount={answeredCorrectlyCount}
             setAnsweredCorrectlyCount={setAnsweredCorrectlyCount}
             incorrectQuestions={incorrectQuestions}
             setIncorrectQuestions={setIncorrectQuestions}
             onQuizComplete={handleQuizComplete}
           />
         ) : (
-          <QuestionType_Matching
-            certification={certification}
-            currentQuestion={certification[questionQueue[currentQuestionIndex]]}
-            questionQueue={questionQueue}
-            setQuestionQueue={setQuestionQueue}
-            currentQuestionIndex={currentQuestionIndex}
-            setCurrentQuestionIndex={setCurrentQuestionIndex}
-            answeredCorrectlyCount={answeredCorrectlyCount}
-            setAnsweredCorrectlyCount={setAnsweredCorrectlyCount}
-            incorrectQuestions={incorrectQuestions}
-            setIncorrectQuestions={setIncorrectQuestions}
-            onQuizComplete={handleQuizComplete}
-          />
+          <QuestionType_Matching currentQuestion={certification[questionQueue[currentQuestionIndex]]} questionQueue={questionQueue} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} setAnsweredCorrectlyCount={setAnsweredCorrectlyCount} onQuizComplete={handleQuizComplete} />
         ))
       )}
     </div>
