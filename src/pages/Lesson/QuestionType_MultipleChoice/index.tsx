@@ -34,7 +34,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
     const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key;
       if (currentQuestion && !showNext) {
-        if (key >= "1" && key <= "4") {
+        if (key >= "1" && key <= currentQuestion.answerOptions.length) {
           const index = parseInt(key, 10) - 1;
           if (index < currentQuestion.answerOptions.length) {
             handleAnswer(currentQuestion.answerOptions[index].answerText);
