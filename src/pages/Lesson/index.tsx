@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-practitioner-foundational.json";
 import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
+import AzureAIFundamentalsBeginner from "../../data/questions/azure-ai-fundamentals-beginner.json";
 import QuestionType_MultipleChoice from "./QuestionType_MultipleChoice";
 import ProgressBar from "./ProgressBar";
 import "./index.css";
@@ -37,6 +38,11 @@ const getCertificationData = (certParameter: string | null, certTitle: string | 
     }
     if (certTitle === "Developer" && certLevel === "Associate") {
       return AwsDeveloperAssociate;
+    }
+  }
+  if (certParameter === "azure") {
+    if (certTitle === "Azure AI Fundamentals" && certLevel === "Beginner") {
+      return AzureAIFundamentalsBeginner;
     }
   }
   return null;
@@ -94,7 +100,7 @@ const Lesson = () => {
   return (
     <div className='quiz'>
       {/* TESTING: Start Delete Later */}
-      <div>
+      {/* <div>
         {certification ? (
           <div>
             answeredCorrectlyCount: {answeredCorrectlyCount}, total: {certification?.length}
@@ -102,7 +108,7 @@ const Lesson = () => {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
       {/* TESTING: End Delete Later */}
       <ProgressBar current={answeredCorrectlyCount} total={certification ? certification.length : 0} />
       {isQuizComplete ? (
