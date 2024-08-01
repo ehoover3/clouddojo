@@ -51,7 +51,7 @@
     "answer": "Identify potential harms.",
     "assignedAnswer": null,
     "answerOptions": [
-      { "answerImg": "1.png", "answerText": "Correct! Identify potential harms.", "explanationText": "Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Identify potential harms.", "explanationText": "Correct! Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" },
       { "answerImg": "1.png", "answerText": "Measure the presence of potential harms.", "explanationText": "Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" },
       { "answerImg": "1.png", "answerText": "Mitigate potential harms.", "explanationText": "Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" },
       { "answerImg": "1.png", "answerText": "Operate the solution.", "explanationText": "Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" }

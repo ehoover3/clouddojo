@@ -76,7 +76,8 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
   };
 
   const handleNext = () => {
-    if (currentQuestionIndex < questionQueue.length - 1) {
+    const isLastQuestion = currentQuestionIndex >= questionQueue.length - 1;
+    if (!isLastQuestion) {
       setCurrentQuestionIndex((prev) => prev + 1);
       clearSelectedAnswer();
       shuffleAnswerOptions();
@@ -85,7 +86,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
         const newQueue = [...questionQueue, ...Array.from(incorrectQuestions)];
         setQuestionQueue(newQueue);
         setIncorrectQuestions(new Set());
-        setCurrentQuestionIndex(questionQueue.length);
+        setCurrentQuestionIndex((prev) => prev + 1);
         clearSelectedAnswer();
         shuffleAnswerOptions();
       } else {
@@ -111,6 +112,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
   return (
     <div>
       <p className='question-text'>{currentQuestion.text}</p>
+
       <div className='answers'>
         {currentQuestion.answerOptions.map((answerOption: any, index: any) => (
           <div
@@ -123,6 +125,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
             onClick={() => !showNext && handleAnswer(answerOption.answerText)}>
             {answerOption.answerImg ? <img src={`${publicUrl}/images/${answerOption.answerImg}`} alt='Explanation Image' style={{ width: "100%" }} /> : ""}
             {answerOption.answerText}
+            <p>{answerOption.explanationText}</p>
           </div>
         ))}
       </div>
