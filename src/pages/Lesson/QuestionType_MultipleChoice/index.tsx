@@ -125,7 +125,6 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
             onClick={() => !showNext && handleAnswer(answerOption.answerText)}>
             {answerOption.answerImg ? <img src={`${publicUrl}/images/${answerOption.answerImg}`} alt='Explanation Image' style={{ width: "100%" }} /> : ""}
             {answerOption.answerText}
-            <p>{answerOption.explanationText}</p>
           </div>
         ))}
       </div>
