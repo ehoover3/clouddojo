@@ -58,7 +58,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
 
   const handleCheck = () => {
     if (selectedAnswer) {
-      const isCorrect = currentQuestion.answer === selectedAnswer;
+      const isCorrect = currentQuestion.answer?.[0] === selectedAnswer;
       const selectedOption = currentQuestion.answerOptions.find((option: any) => option.answerText === selectedAnswer);
 
       setExplanation({

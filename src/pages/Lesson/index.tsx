@@ -26,7 +26,7 @@ export interface Question {
   id: number;
   text: string;
   type: string;
-  answer?: string;
+  answer?: string[] | undefined;
   answerPairs?: string[];
   assignedAnswer: any | null;
   answerOptions: MultipleChoiceOption[] | MatchingOption | any;

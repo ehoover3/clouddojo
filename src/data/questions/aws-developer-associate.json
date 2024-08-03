@@ -3,7 +3,7 @@
     "id": 1,
     "text": "What is 0?",
     "type": "multiple-choice",
-    "answer": "0",
+    "answer": ["0"],
     "assignedAnswer": null,
     "answerOptions": [
       { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "3 is incorrect. The sum of 2 + 2 is 4.", "explanationImg": "1.png" },
@@ -16,7 +16,7 @@
     "id": 2,
     "text": "What is 5 * 4?",
     "type": "multiple-choice",
-    "answer": "20",
+    "answer": ["20"],
     "assignedAnswer": null,
     "answerOptions": [
       { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "10 is incorrect. 5 * 3 equals 15.", "explanationImg": "1.png" },
@@ -29,7 +29,7 @@
     "id": 3,
     "text": "What is 3 + 1?",
     "type": "multiple-choice",
-    "answer": "4",
+    "answer": ["4"],
     "assignedAnswer": null,
     "answerOptions": [
       { "answerImg": "1.png", "answerText": "4", "explanationText": "Correct! 3 + 1 equals 4.", "explanationImg": "1.png" },
