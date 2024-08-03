@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Question } from "../../Lesson";
+import { Question } from "../..";
 import CheckContinueButton from "./CheckContinueButton";
 import AnswerOption from "./AnswerOption";
 import Explanation from "./Explanation";
-import { shuffleArray } from "../../../utils/shuffleArray";
+import { shuffleArray } from "../../../../utils/shuffleArray";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
@@ -18,7 +18,7 @@ interface AnswerOptionsProps {
   onQuizComplete: () => void;
 }
 
-const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
+const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<{ text: string; img: string }>({ text: "", img: "" });
   const [isAnswerSelected, setIsAnswerSelected] = useState(false);
@@ -114,4 +114,4 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
   );
 };
 
-export default QuestionType_MultipleChoice;
+export default MultipleChoice;

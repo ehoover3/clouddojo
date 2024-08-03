@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-practitioner-foundational.json";
-import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
-import AzureAIFundamentalsBeginner from "../../data/questions/azure-ai-fundamentals-beginner.json";
-import QuestionType_MultipleChoice from "./QuestionType_MultipleChoice";
 import ProgressBar from "./ProgressBar";
 import "./index.css";
-import QuizCompletion from "./QuizCompletion";
-import QuestionType_Matching from "./QuestionType_Matching";
 import { shuffleArray } from "../../utils/shuffleArray";
+import QuestionType from "./QuestionTypes/index";
+import QuizCompletion from "./QuizCompletion";
+import getCertification from "./GetCertification";
 
 export interface MultipleChoiceOption {
   answerImg: string;
@@ -32,23 +29,6 @@ export interface Question {
   answerOptions: MultipleChoiceOption[] | MatchingOption | any;
 }
 
-const getCertificationData = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
-  if (certParameter === "aws") {
-    if (certTitle === "Cloud Practitioner" && certLevel === "Foundational") {
-      return AwsCloudPractitionerFoundational;
-    }
-    if (certTitle === "Developer" && certLevel === "Associate") {
-      return AwsDeveloperAssociate;
-    }
-  }
-  if (certParameter === "azure") {
-    if (certTitle === "Azure AI Fundamentals" && certLevel === "Beginner") {
-      return AzureAIFundamentalsBeginner;
-    }
-  }
-  return null;
-};
-
 const Lesson = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -63,9 +43,8 @@ const Lesson = () => {
   const [incorrectQuestions, setIncorrectQuestions] = useState<Set<number>>(new Set());
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
-  // get initial questions
   useEffect(() => {
-    const questionSet = getCertificationData(certParameter, certTitle, certLevel);
+    const questionSet = getCertification(certParameter, certTitle, certLevel);
     if (questionSet) {
       const shuffledData: any = questionSet.map((question) => ({
         ...question,
@@ -96,9 +75,8 @@ const Lesson = () => {
       {isQuizComplete ? (
         <QuizCompletion certParameter={certParameter} onRestart={handleRestartQuiz} />
       ) : (
-        certification &&
-        (certification[questionQueue[currentQuestionIndex]].type === "multiple-choice" ? (
-          <QuestionType_MultipleChoice
+        certification && (
+          <QuestionType
             certification={certification}
             currentQuestion={certification[questionQueue[currentQuestionIndex]]}
             questionQueue={questionQueue}
@@ -110,9 +88,7 @@ const Lesson = () => {
             setIncorrectQuestions={setIncorrectQuestions}
             onQuizComplete={handleQuizComplete}
           />
-        ) : (
-          <QuestionType_Matching currentQuestion={certification[questionQueue[currentQuestionIndex]]} questionQueue={questionQueue} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} setAnsweredCorrectlyCount={setAnsweredCorrectlyCount} onQuizComplete={handleQuizComplete} />
-        ))
+        )
       )}
     </div>
   );

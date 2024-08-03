@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Question } from "../../Lesson";
+import { Question } from "../..";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
@@ -10,7 +10,7 @@ interface AnswerOptionsProps {
   onQuizComplete: () => void;
 }
 
-const QuestionType_Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, onQuizComplete }) => {
+const Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, onQuizComplete }) => {
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [selectedRight, setSelectedRight] = useState<string | null>(null);
@@ -99,4 +99,4 @@ const QuestionType_Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, 
   );
 };
 
-export default QuestionType_Matching;
+export default Matching;
