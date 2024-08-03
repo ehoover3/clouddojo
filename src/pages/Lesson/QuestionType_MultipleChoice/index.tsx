@@ -3,6 +3,7 @@ import { Question } from "../../Lesson";
 import CheckContinueButton from "./CheckContinueButton";
 import AnswerOption from "./AnswerOption";
 import Explanation from "./Explanation";
+import { shuffleArray } from "../../../utils/shuffleArray";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
@@ -17,16 +18,7 @@ interface AnswerOptionsProps {
   onQuizComplete: () => void;
 }
 
-const shuffleArray = (array: any[]) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
-
 const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
-  const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<{ text: string; img: string }>({ text: "", img: "" });
   const [isAnswerSelected, setIsAnswerSelected] = useState(false);
@@ -42,7 +34,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
           if (index < currentQuestion.answerOptions.length) handleAnswer(currentQuestion.answerOptions[index].answerText);
         }
       }
-      if (key === "Enter" && isAnswerSelected && !isCheckButtonClicked) handleSubmit();
+      if (key === "Enter" && isAnswerSelected && !isCheckButtonClicked) handleCheck();
       if (key === "Enter" && isCheckButtonClicked) handleContinue();
     };
 
@@ -57,7 +49,14 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
     setIsAnswerSelected(true);
   };
 
-  const handleSubmit = () => {
+  const shuffleAnswerOptions = (index: number) => {
+    const currentQuestion = certification[questionQueue[index]];
+    if (certification[questionQueue[index]].type === "multiple-choice") {
+      currentQuestion.answerOptions = shuffleArray(currentQuestion.answerOptions);
+    }
+  };
+
+  const handleCheck = () => {
     if (selectedAnswer) {
       const isCorrect = currentQuestion.answer === selectedAnswer;
       const selectedOption = currentQuestion.answerOptions.find((option: any) => option.answerText === selectedAnswer);
@@ -101,23 +100,16 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
     setIsCorrectAnswer(null);
   };
 
-  const shuffleAnswerOptions = (index: number) => {
-    const currentQuestion = certification[questionQueue[index]];
-    if (certification[questionQueue[index]].type === "multiple-choice") {
-      currentQuestion.answerOptions = shuffleArray(currentQuestion.answerOptions);
-    }
-  };
-
   return (
     <div>
       <p className='question-text'>{currentQuestion.text}</p>
       <div className='answers'>
         {currentQuestion.answerOptions.map((answerOption: any, index: any) => (
-          <AnswerOption key={index} answerOption={answerOption} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isCheckButtonClicked={isCheckButtonClicked} publicUrl={publicUrl} currentQuestion={currentQuestion} />
+          <AnswerOption key={index} answerOption={answerOption} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isCheckButtonClicked={isCheckButtonClicked} currentQuestion={currentQuestion} />
         ))}
       </div>
       <Explanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
-      <CheckContinueButton isAnswerSelected={isAnswerSelected} isCheckButtonClicked={isCheckButtonClicked} handleContinue={handleContinue} handleSubmit={handleSubmit} />
+      <CheckContinueButton isAnswerSelected={isAnswerSelected} isCheckButtonClicked={isCheckButtonClicked} handleCheck={handleCheck} handleContinue={handleContinue} />
     </div>
   );
 };

@@ -8,6 +8,7 @@ import ProgressBar from "./ProgressBar";
 import "./index.css";
 import QuizCompletion from "./QuizCompletion";
 import QuestionType_Matching from "./QuestionType_Matching";
+import { shuffleArray } from "../../utils/shuffleArray";
 
 export interface MultipleChoiceOption {
   answerImg: string;
@@ -46,14 +47,6 @@ const getCertificationData = (certParameter: string | null, certTitle: string | 
     }
   }
   return null;
-};
-
-const shuffleArray = (array: any[]) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
 };
 
 const Lesson = () => {

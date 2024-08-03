@@ -2,14 +2,14 @@ import React from "react";
 
 interface CheckContinueButtonProps {
   isCheckButtonClicked: boolean;
+  handleCheck: () => void;
   handleContinue: () => void;
-  handleSubmit: () => void;
   isAnswerSelected: boolean;
 }
 
-const CheckContinueButton: React.FC<CheckContinueButtonProps> = ({ isCheckButtonClicked, handleContinue, handleSubmit, isAnswerSelected }) => {
+const CheckContinueButton: React.FC<CheckContinueButtonProps> = ({ isCheckButtonClicked, handleCheck, handleContinue, isAnswerSelected }) => {
   return (
-    <button onClick={isCheckButtonClicked ? handleContinue : handleSubmit} disabled={!isAnswerSelected}>
+    <button onClick={isCheckButtonClicked ? handleContinue : handleCheck} disabled={!isAnswerSelected}>
       {isCheckButtonClicked ? "Continue" : "Check"}
     </button>
   );

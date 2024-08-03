@@ -5,11 +5,12 @@ interface AnswerOptionProps {
   selectedAnswer: string | null;
   handleAnswer: (answer: string) => void;
   isCheckButtonClicked: boolean;
-  publicUrl: string;
   currentQuestion: any;
 }
 
-const AnswerOption: React.FC<AnswerOptionProps> = ({ answerOption, selectedAnswer, handleAnswer, isCheckButtonClicked, publicUrl, currentQuestion }) => {
+const AnswerOption: React.FC<AnswerOptionProps> = ({ answerOption, selectedAnswer, handleAnswer, isCheckButtonClicked, currentQuestion }) => {
+  const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
+
   return (
     <div
       className='answer'
