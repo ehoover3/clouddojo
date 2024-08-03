@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Question } from "../../Lesson";
-import NextSubmitButton from "./NextSubmitButton";
+import CheckContinueButton from "./CheckContinueButton";
 import AnswerOption from "./AnswerOption";
 import Explanation from "./Explanation";
 
@@ -29,28 +29,28 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<{ text: string; img: string }>({ text: "", img: "" });
-  const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
   const [isAnswerSelected, setIsAnswerSelected] = useState(false);
+  const [isCheckButtonClicked, setIsCheckButtonClicked] = useState(false);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key;
-      if (currentQuestion && !isAnswerSubmitted) {
+      if (currentQuestion && !isCheckButtonClicked) {
         if (key >= "1" && key <= currentQuestion.answerOptions.length.toString()) {
           const index = parseInt(key, 10) - 1;
           if (index < currentQuestion.answerOptions.length) handleAnswer(currentQuestion.answerOptions[index].answerText);
         }
       }
-      if (key === "Enter" && isAnswerSelected && !isAnswerSubmitted) handleSubmit();
-      if (key === "Enter" && isAnswerSubmitted) handleNext();
+      if (key === "Enter" && isAnswerSelected && !isCheckButtonClicked) handleSubmit();
+      if (key === "Enter" && isCheckButtonClicked) handleContinue();
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [currentQuestion, isAnswerSubmitted, isAnswerSelected]);
+  }, [currentQuestion, isAnswerSelected, isCheckButtonClicked]);
 
   const handleAnswer = (answer: string) => {
     setSelectedAnswer(answer);
@@ -70,11 +70,11 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
       setIsCorrectAnswer(isCorrect);
       setAnsweredCorrectlyCount((prev: any) => (isCorrect ? prev + 1 : prev));
       setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestionIndex])) : new Set(prev.add(questionQueue[currentQuestionIndex]))));
-      setIsAnswerSubmitted(true);
+      setIsCheckButtonClicked(true);
     }
   };
 
-  const handleNext = () => {
+  const handleContinue = () => {
     const isLastQuestion = currentQuestionIndex >= questionQueue.length - 1;
     if (!isLastQuestion) {
       setCurrentQuestionIndex((prev) => prev + 1);
@@ -95,7 +95,7 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
 
   const clearSelectedAnswer = () => {
     setExplanation({ text: "", img: "" });
-    setIsAnswerSubmitted(false);
+    setIsCheckButtonClicked(false);
     setIsAnswerSelected(false);
     setSelectedAnswer(null);
     setIsCorrectAnswer(null);
@@ -113,11 +113,11 @@ const QuestionType_MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQues
       <p className='question-text'>{currentQuestion.text}</p>
       <div className='answers'>
         {currentQuestion.answerOptions.map((answerOption: any, index: any) => (
-          <AnswerOption key={index} answerOption={answerOption} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isAnswerSubmitted={isAnswerSubmitted} publicUrl={publicUrl} currentQuestion={currentQuestion} />
+          <AnswerOption key={index} answerOption={answerOption} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isCheckButtonClicked={isCheckButtonClicked} publicUrl={publicUrl} currentQuestion={currentQuestion} />
         ))}
       </div>
       <Explanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
-      <NextSubmitButton isAnswerSubmitted={isAnswerSubmitted} handleNext={handleNext} handleSubmit={handleSubmit} isAnswerSelected={isAnswerSelected} />
+      <CheckContinueButton isAnswerSelected={isAnswerSelected} isCheckButtonClicked={isCheckButtonClicked} handleContinue={handleContinue} handleSubmit={handleSubmit} />
     </div>
   );
 };

@@ -47,7 +47,7 @@ const QuestionType_Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, 
     }
   }, [matches, currentQuestion.answerPairs, setAnsweredCorrectlyCount]);
 
-  const handleNext = () => {
+  const handleContinue = () => {
     if (currentQuestionIndex < questionQueue.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
@@ -92,8 +92,8 @@ const QuestionType_Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, 
             })}
         </div>
       </div>
-      <button onClick={handleNext} disabled={matches.length !== currentQuestion.answerPairs?.length}>
-        Next
+      <button onClick={handleContinue} disabled={matches.length !== currentQuestion.answerPairs?.length}>
+        Continue
       </button>
     </div>
   );
