@@ -7,9 +7,9 @@
     "assignedAnswer": null,
     "answerOptions": [
       { "answerImg": "1.png", "answerText": "1", "explanationText": "Correct! 1 equals 1.", "explanationImg": "1.png" },
-      { "answerImg": "2.png", "answerText": "FALSE1", "explanationText": "3 is incorrect. 1 equals 1.", "explanationImg": "1.png" },
-      { "answerImg": "3.png", "answerText": "FALSE2", "explanationText": "5 is incorrect. 1 equals 1.", "explanationImg": "1.png" },
-      { "answerImg": "4.png", "answerText": "FALSE3", "explanationText": "6 is incorrect. 1 equals 1.", "explanationImg": "1.png" }
+      { "answerImg": "2.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect. 1 equals 1.", "explanationImg": "2.png" },
+      { "answerImg": "3.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect. 1 equals 1.", "explanationImg": "3.png" },
+      { "answerImg": "4.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect. 1 equals 1.", "explanationImg": "4.png" }
     ]
   },
   {
@@ -19,10 +19,10 @@
     "answer": "2",
     "assignedAnswer": null,
     "answerOptions": [
-      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "10 is incorrect. 2 equals 2.", "explanationImg": "2.png" },
+      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect. 2 equals 2.", "explanationImg": "1.png" },
       { "answerImg": "2.png", "answerText": "2", "explanationText": "Correct! 2 equals 2.", "explanationImg": "2.png" },
-      { "answerImg": "3.png", "answerText": "FALSE2", "explanationText": "20 is incorrect. 2 equals 2.", "explanationImg": "2.png" },
-      { "answerImg": "4.png", "answerText": "FALSE3", "explanationText": "25 is incorrect. 2 equals 2.", "explanationImg": "2.png" }
+      { "answerImg": "3.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect. 2 equals 2.", "explanationImg": "3.png" },
+      { "answerImg": "4.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect. 2 equals 2.", "explanationImg": "4.png" }
     ]
   },
   {
@@ -54,10 +54,10 @@
     "answer": "4",
     "assignedAnswer": null,
     "answerOptions": [
-      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "10 is incorrect. 4 equals 4.", "explanationImg": "4.png" },
-      { "answerImg": "2.png", "answerText": "4", "explanationText": "Correct! 4 equals 4.", "explanationImg": "4.png" },
-      { "answerImg": "3.png", "answerText": "FALSE2", "explanationText": "20 is incorrect. 4 equals 4.", "explanationImg": "4.png" },
-      { "answerImg": "4.png", "answerText": "FALSE3", "explanationText": "25 is incorrect. 4 equals 4.", "explanationImg": "4.png" }
+      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect. 4 equals 4.", "explanationImg": "1.png" },
+      { "answerImg": "2.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect. 4 equals 4", "explanationImg": "2.png" },
+      { "answerImg": "3.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect. 4 equals 4.", "explanationImg": "3.png" },
+      { "answerImg": "4.png", "answerText": "4", "explanationText": "Correct! 4 equals 4.", "explanationImg": "4.png" }
     ]
   }
 ]

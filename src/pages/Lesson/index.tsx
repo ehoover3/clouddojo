@@ -76,7 +76,7 @@ const Lesson = () => {
     if (questionSet) {
       const shuffledData: any = questionSet.map((question) => ({
         ...question,
-        answerOptions: shuffleArray(question.answerOptions),
+        answerOptions: shuffleArray([...question.answerOptions]),
       }));
       setCertification(shuffledData);
       setQuestionQueue(shuffledData.map((_: any, index: any) => index));
@@ -99,17 +99,6 @@ const Lesson = () => {
 
   return (
     <div className='quiz'>
-      {/* TESTING: Start Delete Later */}
-      {/* <div>
-        {certification ? (
-          <div>
-            answeredCorrectlyCount: {answeredCorrectlyCount}, total: {certification?.length}
-          </div>
-        ) : (
-          ""
-        )}
-      </div> */}
-      {/* TESTING: End Delete Later */}
       <ProgressBar current={answeredCorrectlyCount} total={certification ? certification.length : 0} />
       {isQuizComplete ? (
         <QuizCompletion certParameter={certParameter} onRestart={handleRestartQuiz} />
