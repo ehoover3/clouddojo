@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import "./index.css";
-import { shuffleArray } from "../../utils/shuffleArray";
 import QuestionType from "./QuestionTypes/index";
-import QuizCompletion from "./QuizCompletion";
+import QuizComplete from "./QuizComplete";
 import getCertification from "./GetCertification";
+import { shuffleAnswerOptions } from "./shuffleAnswerOptions";
 
 export interface MultipleChoiceOption {
   answerImg: string;
@@ -24,7 +24,7 @@ export interface Question {
   text: string;
   type: string;
   answer?: string[] | undefined;
-  answerPairs?: string[];
+  answerPairs?: any;
   assignedAnswer: any | null;
   answerOptions: MultipleChoiceOption[] | MatchingOption | any;
 }
@@ -36,7 +36,7 @@ const Lesson = () => {
   const certTitle = queryParams.get("title");
   const certLevel = queryParams.get("level");
 
-  const [certification, setCertification] = useState<Question[] | null>(null);
+  const [quizModule, setQuizModule] = useState<Question[] | null>(null);
   const [questionQueue, setQuestionQueue] = useState<number[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answeredCorrectlyCount, setAnsweredCorrectlyCount] = useState(0);
@@ -44,14 +44,11 @@ const Lesson = () => {
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
   useEffect(() => {
-    const questionSet = getCertification(certParameter, certTitle, certLevel);
-    if (questionSet) {
-      const shuffledData: any = questionSet.map((question) => ({
-        ...question,
-        answerOptions: shuffleArray([...question.answerOptions]),
-      }));
-      setCertification(shuffledData);
-      setQuestionQueue(shuffledData.map((_: any, index: any) => index));
+    const initialQuizModule = getCertification(certParameter, certTitle, certLevel);
+    if (initialQuizModule) {
+      const shuffledQuizModule = shuffleAnswerOptions(initialQuizModule);
+      setQuizModule(shuffledQuizModule);
+      setQuestionQueue(shuffledQuizModule.map((_: any, index: any) => index));
     }
   }, [certParameter, certTitle, certLevel]);
 
@@ -64,21 +61,17 @@ const Lesson = () => {
     setAnsweredCorrectlyCount(0);
     setIncorrectQuestions(new Set());
     setIsQuizComplete(false);
-    if (certification) {
-      setQuestionQueue(certification.map((_, index) => index));
-    }
+    if (quizModule) setQuestionQueue(quizModule.map((_, index) => index));
   };
 
   return (
     <div className='quiz'>
-      <ProgressBar current={answeredCorrectlyCount} total={certification ? certification.length : 0} />
-      {isQuizComplete ? (
-        <QuizCompletion certParameter={certParameter} onRestart={handleRestartQuiz} />
-      ) : (
-        certification && (
+      <ProgressBar current={answeredCorrectlyCount} total={quizModule ? quizModule.length : 0} />
+      {!isQuizComplete ? (
+        quizModule && (
           <QuestionType
-            certification={certification}
-            currentQuestion={certification[questionQueue[currentQuestionIndex]]}
+            certification={quizModule}
+            currentQuestion={quizModule[questionQueue[currentQuestionIndex]]}
             questionQueue={questionQueue}
             setQuestionQueue={setQuestionQueue}
             currentQuestionIndex={currentQuestionIndex}
@@ -89,6 +82,8 @@ const Lesson = () => {
             onQuizComplete={handleQuizComplete}
           />
         )
+      ) : (
+        <QuizComplete onRestart={handleRestartQuiz} />
       )}
     </div>
   );

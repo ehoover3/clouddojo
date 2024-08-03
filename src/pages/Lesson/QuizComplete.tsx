@@ -1,9 +1,8 @@
 interface QuizCompletionProps {
-  certParameter: string | null;
   onRestart: () => void;
 }
 
-const QuizCompletion: React.FC<QuizCompletionProps> = ({ onRestart }) => {
+const QuizComplete: React.FC<QuizCompletionProps> = ({ onRestart }) => {
   return (
     <div>
       <h1>Quiz Completed!</h1>
@@ -13,4 +12,4 @@ const QuizCompletion: React.FC<QuizCompletionProps> = ({ onRestart }) => {
   );
 };
 
-export default QuizCompletion;
+export default QuizComplete;

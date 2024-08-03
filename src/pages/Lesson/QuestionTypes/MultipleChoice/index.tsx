@@ -3,7 +3,6 @@ import { Question } from "../..";
 import CheckContinueButton from "./CheckContinueButton";
 import AnswerOption from "./AnswerOption";
 import Explanation from "./Explanation";
-import { shuffleArray } from "../../../../utils/shuffleArray";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
@@ -49,13 +48,6 @@ const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certifi
     setIsAnswerSelected(true);
   };
 
-  const shuffleAnswerOptions = (index: number) => {
-    const currentQuestion = certification[questionQueue[index]];
-    if (certification[questionQueue[index]].type === "multiple-choice") {
-      currentQuestion.answerOptions = shuffleArray(currentQuestion.answerOptions);
-    }
-  };
-
   const handleCheck = () => {
     if (selectedAnswer) {
       const isCorrect = currentQuestion.answer?.[0] === selectedAnswer;
@@ -85,7 +77,6 @@ const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certifi
         setIncorrectQuestions(new Set());
         setCurrentQuestionIndex((prev) => prev + 1);
         clearSelectedAnswer();
-        shuffleAnswerOptions(newQueue.length - incorrectQuestions.size);
       } else {
         onQuizComplete();
       }

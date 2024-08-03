@@ -30,7 +30,7 @@ const Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue
 
   useEffect(() => {
     if (selectedLeft && selectedRight) {
-      const correctPair = currentQuestion.answerPairs?.some((pair) => pair[0] === selectedLeft && pair[1] === selectedRight);
+      const correctPair = currentQuestion.answerPairs?.some((pair: any) => pair[0] === selectedLeft && pair[1] === selectedRight);
 
       if (correctPair) {
         setMatches((prevMatches) => [...prevMatches, { left: selectedLeft, right: selectedRight }]);
