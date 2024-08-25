@@ -1,5 +1,14 @@
 [
   {
+    "id": 5,
+    "text": "Fill in the blank: The capital of France is ________.",
+    "type": "fill-in-the-blank",
+    "answer": ["Paris"],
+    "assignedAnswer": null,
+    "answerOptions": null,
+    "explanationText": "Correct! The capital of France is Paris."
+  },
+  {
     "id": 1,
     "text": "What is 1?",
     "type": "multiple-choice",

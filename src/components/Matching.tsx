@@ -2,20 +2,18 @@ import React, { useState, useEffect } from "react";
 import TextDisplay from "./TextDisplay";
 import Button from "./Button";
 import MatchingItems from "./MatchingItems";
-import { Question } from "../pages/Lesson";
 
 interface AnswerOptionsProps {
   quiz: any;
-  questions: number[];
-  currentQuestion: number;
+  questionsToAsk: number[];
+  currentQuestionIndex: number;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
   setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
   completeQuiz: () => void;
 }
 
-const Matching: React.FC<AnswerOptionsProps> = ({ quiz, questions, currentQuestion, setCurrentQuestion, setCorrectCount, completeQuiz }) => {
-  const question = quiz[questions[currentQuestion]];
-
+const Matching: React.FC<AnswerOptionsProps> = ({ quiz, questionsToAsk, currentQuestionIndex, setCurrentQuestion, setCorrectCount, completeQuiz }) => {
+  const question = quiz[questionsToAsk[currentQuestionIndex]];
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [selectedRight, setSelectedRight] = useState<string | null>(null);
@@ -43,8 +41,10 @@ const Matching: React.FC<AnswerOptionsProps> = ({ quiz, questions, currentQuesti
   }, [matches, question.answerPairs, setCorrectCount]);
 
   const handleContinue = () => {
-    if (currentQuestion < questions.length - 1) setCurrentQuestion((prev) => prev + 1);
-    else completeQuiz();
+    const isLastQuestion = currentQuestionIndex >= questionsToAsk.length - 1;
+    if (!isLastQuestion) {
+      setCurrentQuestion((prev) => prev + 1);
+    } else completeQuiz();
   };
 
   return (

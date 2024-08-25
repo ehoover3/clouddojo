@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import TextDisplay from "./TextDisplay";
 import MultipleChoiceOptions from "./MultipleChoiceOptions";
-import CorrectAnswerExplanation from "./CorrectAnswerExplanation";
+import Explanation from "./Explanation";
 import Button from "./Button";
 
 interface MultipleChoiceProps {
   quiz: any;
-  questions: number[];
-  currentQuestion: number;
-  setQuestions: React.Dispatch<React.SetStateAction<number[]>>;
+  questionsToAsk: number[];
+  currentQuestionIndex: number;
+  setQuestionsToAsk: React.Dispatch<React.SetStateAction<number[]>>;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
   setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
   completeQuiz: () => void;
 }
 
-const MultipleChoice: React.FC<MultipleChoiceProps> = ({ quiz, questions, currentQuestion, setQuestions, setCurrentQuestion, setCorrectCount, completeQuiz }) => {
-  const question = quiz[questions[currentQuestion]];
+const MultipleChoice: React.FC<MultipleChoiceProps> = ({ quiz, questionsToAsk, currentQuestionIndex, setQuestionsToAsk, setCurrentQuestion, setCorrectCount, completeQuiz }) => {
+  const question = quiz[questionsToAsk[currentQuestionIndex]];
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<{ text: string; img: string }>({ text: "", img: "" });
   const [isCheckBtnClicked, setIsCheckButtonClicked] = useState(false);
@@ -36,14 +36,14 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({ quiz, questions, curren
       setIsCorrectAnswer(isCorrect);
       setCorrectCount((prev: any) => (isCorrect ? prev + 1 : prev));
       if (!isCorrect) {
-        setQuestions((prev) => [...prev, questions[currentQuestion]]);
+        setQuestionsToAsk((prev) => [...prev, questionsToAsk[currentQuestionIndex]]);
       }
       setIsCheckButtonClicked(true);
     }
   };
 
   const handleContinue = () => {
-    const isLastQuestion = currentQuestion >= questions.length - 1;
+    const isLastQuestion = currentQuestionIndex >= questionsToAsk.length - 1;
     if (!isLastQuestion) {
       setCurrentQuestion((prev) => prev + 1);
       clearSelectedAnswer();
@@ -79,7 +79,7 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({ quiz, questions, curren
     <div>
       <TextDisplay text={question.text} />
       <MultipleChoiceOptions answerOptions={question.answerOptions} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isCheckButtonClicked={isCheckBtnClicked} currentQuestion={question} />
-      <CorrectAnswerExplanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
+      <Explanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
       <Button text={isCheckBtnClicked ? "Continue" : "Check"} onClick={isCheckBtnClicked ? handleContinue : handleCheck} disabled={!selectedAnswer && !isCheckBtnClicked} className={isCheckBtnClicked ? "btn-green" : selectedAnswer ? "btn-blue" : "btn-gray"} />
     </div>
   );

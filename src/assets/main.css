@@ -161,3 +161,7 @@ nav {
   background-color: var(--blue); /* Background color on hover */
   border-color: var(--blue); /* Border color on hover */
 }
+
+.explanationImg {
+  width: 15vw;
+}

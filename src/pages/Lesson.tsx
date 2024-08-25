@@ -38,8 +38,8 @@ const Lesson = () => {
   const certLevel = queryParams.get("level");
 
   const [quiz, setQuiz] = useState<Question[] | null>(null);
-  const [questions, setQuestions] = useState<number[]>([]);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [questionsToAsk, setQuestionsToAsk] = useState<number[]>([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
@@ -48,7 +48,7 @@ const Lesson = () => {
     if (initialQuizModule) {
       const shuffledQuizModule = shuffleAnswerOptions(initialQuizModule);
       setQuiz(shuffledQuizModule);
-      setQuestions(shuffledQuizModule.map((_: any, index: any) => index));
+      setQuestionsToAsk(shuffledQuizModule.map((_: any, index: any) => index));
     }
   }, [certParameter, certTitle, certLevel]);
 
@@ -57,20 +57,21 @@ const Lesson = () => {
   };
 
   const restartQuiz = () => {
-    setCurrentQuestion(0);
+    setCurrentQuestionIndex(0);
     setCorrectCount(0);
     setIsQuizComplete(false);
-    if (quiz) setQuestions(quiz.map((_, index) => index));
+    if (quiz) setQuestionsToAsk(quiz.map((_, index) => index));
   };
 
   const showQuestion = (question: Question) => {
     switch (question.type) {
       case "multiple-choice":
-        return <MultipleChoice quiz={quiz} questions={questions} currentQuestion={currentQuestion} setQuestions={setQuestions} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
+        return <MultipleChoice quiz={quiz} questionsToAsk={questionsToAsk} currentQuestionIndex={currentQuestionIndex} setQuestionsToAsk={setQuestionsToAsk} setCurrentQuestion={setCurrentQuestionIndex} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
       case "matching":
-        return <Matching quiz={quiz} questions={questions} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
+        return <Matching quiz={quiz} questionsToAsk={questionsToAsk} currentQuestionIndex={currentQuestionIndex} setCurrentQuestion={setCurrentQuestionIndex} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
       case "fill-in-the-blank":
-        return <FillInTheBlank />;
+        return <FillInTheBlank quiz={quiz} questionsToAsk={questionsToAsk} currentQuestionIndex={currentQuestionIndex} setQuestionsToAsk={setQuestionsToAsk} setCurrentQuestion={setCurrentQuestionIndex} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
+
       default:
         return <div>Unsupported question type: {question.type}</div>;
     }
@@ -78,10 +79,8 @@ const Lesson = () => {
 
   return (
     <div className='quiz'>
-      {questions}
-      <p> {currentQuestion}</p>
       <ProgressBar correctCount={correctCount} total={quiz ? quiz.length : 0} />
-      {!isQuizComplete ? quiz && showQuestion(quiz[questions[currentQuestion]]) : <QuizComplete restartQuiz={restartQuiz} />}
+      {!isQuizComplete ? quiz && showQuestion(quiz[questionsToAsk[currentQuestionIndex]]) : <QuizComplete restartQuiz={restartQuiz} />}
     </div>
   );
 };
