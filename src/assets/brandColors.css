@@ -1,0 +1,109 @@
+:root {
+  --green-dark: rgb(67, 192, 0);
+  --green: rgb(88, 204, 2);
+  --green-light: rgb(137, 226, 25);
+  --brown: rgb(182, 110, 40);
+  --orange: rgb(244, 144, 0);
+  --gold: rgb(255, 194, 0);
+  --yellow: rgb(255, 222, 0);
+  --red: rgb(255, 75, 75);
+  --pink: rgb(255, 202, 255);
+  --purple: rgb(206, 130, 255);
+  --blue-dark: rgb(43, 112, 201);
+  --blue: rgb(28, 176, 246);
+  --gray-dark: rgb(75, 75, 75);
+  --gray: rgb(175, 175, 175);
+  --gray-light: rgb(247, 247, 247);
+  --white: rgb(255, 255, 255);
+}
+
+/* Background Color Utility Classes */
+.bg-green-dark {
+  background-color: var(--green-dark);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-green-light {
+  background-color: var(--green-light);
+}
+
+.bg-brown {
+  background-color: var(--brown);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-pink {
+  background-color: var(--pink);
+}
+
+.bg-purple {
+  background-color: var(--purple);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-gray-dark {
+  background-color: var(--gray-dark);
+}
+
+.bg-gray-light {
+  background-color: var(--gray-light);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+/* Text Color Utility Classes */
+.text-gray-dark {
+  color: var(--gray-dark);
+}
+
+/* Button Background Color Utility Classes */
+.btn-green {
+  background-color: var(--green);
+}
+
+.btn-green:hover {
+  background-color: var(--green-dark);
+}
+
+.btn-blue {
+  background-color: var(--blue);
+}
+
+.btn-blue:hover {
+  background-color: var(--blue-dark);
+}
+
+.btn-gray {
+  background-color: var(--gray);
+}
+
+/* .btn-gray:hover {
+  background-color: var(--gray);
+} */

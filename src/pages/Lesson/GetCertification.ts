@@ -1,6 +1,6 @@
-import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-practitioner-foundational.json";
-import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
-import AzureAIFundamentalsBeginner from "../../data/questions/azure-ai-fundamentals-beginner.json";
+import AwsCloudPractitionerFoundational from "../../../data/questions/aws-cloud-practitioner-foundational.json";
+import AwsDeveloperAssociate from "../../../data/questions/aws-developer-associate.json";
+import AzureAIFundamentalsBeginner from "../../../data/questions/azure-ai-fundamentals-beginner.json";
 
 const getCertification = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
   if (certParameter === "aws") {

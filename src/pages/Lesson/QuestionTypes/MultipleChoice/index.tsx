@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Question } from "../..";
-import CheckContinueButton from "./CheckContinueButton";
 import AnswerOption from "./AnswerOption";
 import Explanation from "./Explanation";
+import Button from "../../../../components/Button";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
-  certification: Question[];
   questionQueue: number[];
   setQuestionQueue: React.Dispatch<React.SetStateAction<number[]>>;
   currentQuestionIndex: number;
@@ -17,7 +16,7 @@ interface AnswerOptionsProps {
   onQuizComplete: () => void;
 }
 
-const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certification, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
+const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<{ text: string; img: string }>({ text: "", img: "" });
   const [isAnswerSelected, setIsAnswerSelected] = useState(false);
@@ -100,7 +99,7 @@ const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, certifi
         ))}
       </div>
       <Explanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
-      <CheckContinueButton isAnswerSelected={isAnswerSelected} isCheckButtonClicked={isCheckButtonClicked} handleCheck={handleCheck} handleContinue={handleContinue} />
+      <Button text={isCheckButtonClicked ? "Continue" : "Check"} onClick={isCheckButtonClicked ? handleContinue : handleCheck} disabled={!isAnswerSelected && !isCheckButtonClicked} className={isCheckButtonClicked ? "btn-green" : isAnswerSelected ? "btn-blue" : "btn-gray"} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import AwsCertifications from "../data/certifications/aws-certifications.json";
-import AzureCertifications from "../data/certifications/azure-certifications.json";
-import GCPCertifications from "../data/certifications/gcp-certifications.json";
+import AwsCertifications from "../../data/certifications/aws-certifications.json";
+import AzureCertifications from "../../data/certifications/azure-certifications.json";
+import GCPCertifications from "../../data/certifications/gcp-certifications.json";
 
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";

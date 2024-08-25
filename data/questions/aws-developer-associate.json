@@ -22,7 +22,7 @@
       { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect.", "explanationImg": "1.png" },
       { "answerImg": "2.png", "answerText": "2", "explanationText": "Correct! 2 is 2.", "explanationImg": "1.png" },
       { "answerImg": "3.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect.", "explanationImg": "1.png" },
-      { "answerImg": "4.png", "answerText": "FALSE4", "explanationText": "FALSE4 is incorrect..", "explanationImg": "1.png" }
+      { "answerImg": "4.png", "answerText": "FALSE4", "explanationText": "FALSE4 is incorrect.", "explanationImg": "1.png" }
     ]
   },
   {
@@ -34,7 +34,7 @@
     "answerOptions": [
       { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect.", "explanationImg": "1.png" },
       { "answerImg": "2.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect.", "explanationImg": "1.png" },
-      { "answerImg": "3.png", "answerText": "3", "explanationText": "Correct! 3 is 3", "explanationImg": "1.png" },
+      { "answerImg": "3.png", "answerText": "3", "explanationText": "Correct! 3 is 3.", "explanationImg": "1.png" },
       { "answerImg": "4.png", "answerText": "FALSE4", "explanationText": "FALSE4 is incorrect.", "explanationImg": "1.png" }
     ]
   }
