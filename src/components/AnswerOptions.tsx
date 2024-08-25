@@ -1,5 +1,13 @@
 import React from "react";
 
+interface AnswerOptionsProps {
+  answerOptions: any[];
+  selectedAnswer: string | null;
+  handleAnswer: (answer: string) => void;
+  isCheckButtonClicked: boolean;
+  currentQuestion: any;
+}
+
 interface AnswerOptionProps {
   answerOption: any;
   selectedAnswer: string | null;
@@ -8,9 +16,18 @@ interface AnswerOptionProps {
   currentQuestion: any;
 }
 
+const AnswerOptions: React.FC<AnswerOptionsProps> = ({ answerOptions, selectedAnswer, handleAnswer, isCheckButtonClicked, currentQuestion }) => {
+  return (
+    <div className='answers'>
+      {answerOptions.map((answerOption, index) => (
+        <AnswerOption key={index} answerOption={answerOption} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isCheckButtonClicked={isCheckButtonClicked} currentQuestion={currentQuestion} />
+      ))}
+    </div>
+  );
+};
+
 const AnswerOption: React.FC<AnswerOptionProps> = ({ answerOption, selectedAnswer, handleAnswer, isCheckButtonClicked, currentQuestion }) => {
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
-
   return (
     <div
       className='answer'
@@ -25,4 +42,4 @@ const AnswerOption: React.FC<AnswerOptionProps> = ({ answerOption, selectedAnswe
   );
 };
 
-export default AnswerOption;
+export default AnswerOptions;

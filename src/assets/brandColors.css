@@ -17,6 +17,14 @@
   --white: rgb(255, 255, 255);
 }
 
+/* Success and Fail Utility Classes */
+.bg-success {
+  background-color: var(--green-light);
+}
+.bg-fail {
+  background-color: var(--red);
+}
+
 /* Background Color Utility Classes */
 .bg-green-dark {
   background-color: var(--green-dark);

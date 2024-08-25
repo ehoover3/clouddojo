@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Question } from "../..";
+import { Question } from "..";
+import Button from "../../../components/Button";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
@@ -92,9 +93,7 @@ const Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue
             })}
         </div>
       </div>
-      <button onClick={handleContinue} disabled={matches.length !== currentQuestion.answerPairs?.length}>
-        Continue
-      </button>
+      <Button text='Continue' onClick={handleContinue} disabled={matches.length !== currentQuestion.answerPairs?.length} className={matches.length === currentQuestion.answerPairs?.length ? "btn-green" : "btn-gray"} />
     </div>
   );
 };
