@@ -5,55 +5,44 @@ import MatchingItems from "./MatchingItems";
 import { Question } from "../pages/Lesson";
 
 interface AnswerOptionsProps {
-  currentQuestion: Question;
-  questionQueue: number[];
-  currentQuestionIndex: number;
-  setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
-  setAnsweredCorrectlyCount: React.Dispatch<React.SetStateAction<number>>;
+  question: Question;
+  questions: number[];
+  currentQuestion: number;
+  setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
+  setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
   onQuizComplete: () => void;
 }
 
-const Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, onQuizComplete }) => {
+const Matching: React.FC<AnswerOptionsProps> = ({ question: currentQuestion, questions: questionQueue, currentQuestion: currentQuestionIndex, setCurrentQuestion: setCurrentQuestionIndex, setCorrectCount: setAnsweredCorrectlyCount, onQuizComplete }) => {
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [selectedRight, setSelectedRight] = useState<string | null>(null);
   const [matches, setMatches] = useState<{ left: string; right: string }[]>([]);
 
   const handleSelectLeft = (item: string) => {
-    if (!matches.some((match) => match.left === item)) {
-      setSelectedLeft(item);
-    }
+    if (!matches.some((match) => match.left === item)) setSelectedLeft(item);
   };
 
   const handleSelectRight = (item: string) => {
-    if (!matches.some((match) => match.right === item)) {
-      setSelectedRight(item);
-    }
+    if (!matches.some((match) => match.right === item)) setSelectedRight(item);
   };
 
   useEffect(() => {
     if (selectedLeft && selectedRight) {
       const correctPair = currentQuestion.answerPairs?.some((pair: any) => pair[0] === selectedLeft && pair[1] === selectedRight);
-      if (correctPair) {
-        setMatches((prevMatches) => [...prevMatches, { left: selectedLeft, right: selectedRight }]);
-      }
+      if (correctPair) setMatches((prevMatches) => [...prevMatches, { left: selectedLeft, right: selectedRight }]);
       setSelectedLeft(null);
       setSelectedRight(null);
     }
   }, [selectedLeft, selectedRight, currentQuestion.answerPairs]);
 
   useEffect(() => {
-    if (matches.length === currentQuestion.answerPairs?.length) {
-      setAnsweredCorrectlyCount((prev: number) => prev + 1);
-    }
+    if (matches.length === currentQuestion.answerPairs?.length) setAnsweredCorrectlyCount((prev: number) => prev + 1);
   }, [matches, currentQuestion.answerPairs, setAnsweredCorrectlyCount]);
 
   const handleContinue = () => {
-    if (currentQuestionIndex < questionQueue.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-    } else {
-      onQuizComplete();
-    }
+    if (currentQuestionIndex < questionQueue.length - 1) setCurrentQuestionIndex((prev) => prev + 1);
+    else onQuizComplete();
   };
 
   return (

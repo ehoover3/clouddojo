@@ -2,7 +2,7 @@ import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-pra
 import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
 import AzureAIFundamentalsBeginner from "../../data/questions/azure-ai-fundamentals-beginner.json";
 
-const getCertification = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
+const getQuiz = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
   if (certParameter === "aws") {
     if (certTitle === "Cloud Practitioner" && certLevel === "Foundational") return AwsCloudPractitionerFoundational;
     if (certTitle === "Developer" && certLevel === "Associate") return AwsDeveloperAssociate;
@@ -13,4 +13,4 @@ const getCertification = (certParameter: string | null, certTitle: string | null
   return null;
 };
 
-export default getCertification;
+export default getQuiz;

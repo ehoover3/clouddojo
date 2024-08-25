@@ -1,11 +1,11 @@
 import React from "react";
 
 interface ProgressBarProps {
-  current: number;
+  correctCount: number;
   total: number;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ current, total }) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ correctCount: current, total }) => {
   const progress = (current / total) * 100;
 
   return (

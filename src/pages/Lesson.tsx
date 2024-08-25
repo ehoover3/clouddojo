@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
 import QuizComplete from "../components/QuizComplete";
-import getCertification from "../utils/GetCertification";
+import getQuiz from "../utils/getQuiz";
 import { shuffleAnswerOptions } from "../utils/shuffleAnswerOptions";
 import FillInTheBlank from "../components/FillInTheBlank";
 import MultipleChoice from "../components/MultipleChoice";
@@ -37,40 +37,40 @@ const Lesson = () => {
   const certTitle = queryParams.get("title");
   const certLevel = queryParams.get("level");
 
-  const [quizModule, setQuizModule] = useState<Question[] | null>(null);
-  const [questionQueue, setQuestionQueue] = useState<number[]>([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answeredCorrectlyCount, setAnsweredCorrectlyCount] = useState(0);
-  const [incorrectQuestions, setIncorrectQuestions] = useState<Set<number>>(new Set());
+  const [quiz, setQuiz] = useState<Question[] | null>(null);
+  const [questions, setQuestions] = useState<number[]>([]);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [reaskQueue, setReaskQueue] = useState<Set<number>>(new Set());
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
   useEffect(() => {
-    const initialQuizModule = getCertification(certParameter, certTitle, certLevel);
+    const initialQuizModule = getQuiz(certParameter, certTitle, certLevel);
     if (initialQuizModule) {
       const shuffledQuizModule = shuffleAnswerOptions(initialQuizModule);
-      setQuizModule(shuffledQuizModule);
-      setQuestionQueue(shuffledQuizModule.map((_: any, index: any) => index));
+      setQuiz(shuffledQuizModule);
+      setQuestions(shuffledQuizModule.map((_: any, index: any) => index));
     }
   }, [certParameter, certTitle, certLevel]);
 
-  const handleQuizComplete = () => {
+  const onQuizComplete = () => {
     setIsQuizComplete(true);
   };
 
-  const handleRestartQuiz = () => {
-    setCurrentQuestionIndex(0);
-    setAnsweredCorrectlyCount(0);
-    setIncorrectQuestions(new Set());
+  const restartQuiz = () => {
+    setCurrentQuestion(0);
+    setCorrectCount(0);
+    setReaskQueue(new Set());
     setIsQuizComplete(false);
-    if (quizModule) setQuestionQueue(quizModule.map((_, index) => index));
+    if (quiz) setQuestions(quiz.map((_, index) => index));
   };
 
-  const renderQuestionType = (question: Question) => {
+  const showQuestion = (question: Question) => {
     switch (question.type) {
       case "multiple-choice":
-        return <MultipleChoice currentQuestion={question} questionQueue={questionQueue} setQuestionQueue={setQuestionQueue} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} setAnsweredCorrectlyCount={setAnsweredCorrectlyCount} incorrectQuestions={incorrectQuestions} setIncorrectQuestions={setIncorrectQuestions} onQuizComplete={handleQuizComplete} />;
+        return <MultipleChoice question={question} questions={questions} setQuestions={setQuestions} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} reaskQueue={reaskQueue} setReaskQueue={setReaskQueue} onQuizComplete={onQuizComplete} />;
       case "matching":
-        return <Matching currentQuestion={question} questionQueue={questionQueue} currentQuestionIndex={currentQuestionIndex} setCurrentQuestionIndex={setCurrentQuestionIndex} setAnsweredCorrectlyCount={setAnsweredCorrectlyCount} onQuizComplete={handleQuizComplete} />;
+        return <Matching question={question} questions={questions} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} onQuizComplete={onQuizComplete} />;
       case "fill-in-the-blank":
         return <FillInTheBlank />;
       default:
@@ -80,8 +80,8 @@ const Lesson = () => {
 
   return (
     <div className='quiz'>
-      <ProgressBar current={answeredCorrectlyCount} total={quizModule ? quizModule.length : 0} />
-      {!isQuizComplete ? quizModule && renderQuestionType(quizModule[questionQueue[currentQuestionIndex]]) : <QuizComplete onRestart={handleRestartQuiz} />}
+      <ProgressBar correctCount={correctCount} total={quiz ? quiz.length : 0} />
+      {!isQuizComplete ? quiz && showQuestion(quiz[questions[currentQuestion]]) : <QuizComplete restartQuiz={restartQuiz} />}
     </div>
   );
 };

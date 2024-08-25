@@ -6,76 +6,53 @@ import CorrectAnswerExplanation from "./CorrectAnswerExplanation";
 import Button from "./Button";
 
 interface AnswerOptionsProps {
-  currentQuestion: Question;
-  questionQueue: number[];
-  setQuestionQueue: React.Dispatch<React.SetStateAction<number[]>>;
-  currentQuestionIndex: number;
-  setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
-  setAnsweredCorrectlyCount: React.Dispatch<React.SetStateAction<number>>;
-  incorrectQuestions: Set<number>;
-  setIncorrectQuestions: React.Dispatch<React.SetStateAction<Set<number>>>;
+  question: Question;
+  questions: number[];
+  setQuestions: React.Dispatch<React.SetStateAction<number[]>>;
+  currentQuestion: number;
+  setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
+  setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
+  reaskQueue: Set<number>;
+  setReaskQueue: React.Dispatch<React.SetStateAction<Set<number>>>;
   onQuizComplete: () => void;
 }
 
-const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue, setQuestionQueue, currentQuestionIndex, setCurrentQuestionIndex, setAnsweredCorrectlyCount, incorrectQuestions, setIncorrectQuestions, onQuizComplete }) => {
+const MultipleChoice: React.FC<AnswerOptionsProps> = ({ question, questions: questionQueue, setQuestions, currentQuestion, setCurrentQuestion, setCorrectCount, reaskQueue, setReaskQueue, onQuizComplete }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<{ text: string; img: string }>({ text: "", img: "" });
-  const [isAnswerSelected, setIsAnswerSelected] = useState(false);
-  const [isCheckButtonClicked, setIsCheckButtonClicked] = useState(false);
+  const [isCheckBtnClicked, setIsCheckButtonClicked] = useState(false);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const key = event.key;
-      if (currentQuestion && !isCheckButtonClicked) {
-        if (key >= "1" && key <= currentQuestion.answerOptions.length.toString()) {
-          const index = parseInt(key, 10) - 1;
-          if (index < currentQuestion.answerOptions.length) handleAnswer(currentQuestion.answerOptions[index].answerText);
-        }
-      }
-      if (key === "Enter" && isAnswerSelected && !isCheckButtonClicked) handleCheck();
-      if (key === "Enter" && isCheckButtonClicked) handleContinue();
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [currentQuestion, isAnswerSelected, isCheckButtonClicked]);
 
   const handleAnswer = (answer: string) => {
     setSelectedAnswer(answer);
-    setIsAnswerSelected(true);
   };
 
   const handleCheck = () => {
     if (selectedAnswer) {
-      const isCorrect = currentQuestion.answer?.[0] === selectedAnswer;
-      const selectedOption = currentQuestion.answerOptions.find((option: any) => option.answerText === selectedAnswer);
-
+      const isCorrect = question.answer?.[0] === selectedAnswer;
+      const selectedOption = question.answerOptions.find((option: any) => option.answerText === selectedAnswer);
       setExplanation({
         text: selectedOption ? selectedOption.explanationText : "No explanation available.",
         img: selectedOption ? selectedOption.explanationImg : "No img available.",
       });
-
       setIsCorrectAnswer(isCorrect);
-      setAnsweredCorrectlyCount((prev: any) => (isCorrect ? prev + 1 : prev));
-      setIncorrectQuestions((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestionIndex])) : new Set(prev.add(questionQueue[currentQuestionIndex]))));
+      setCorrectCount((prev: any) => (isCorrect ? prev + 1 : prev));
+      setReaskQueue((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestion])) : new Set(prev.add(questionQueue[currentQuestion]))));
       setIsCheckButtonClicked(true);
     }
   };
 
   const handleContinue = () => {
-    const isLastQuestion = currentQuestionIndex >= questionQueue.length - 1;
+    const isLastQuestion = currentQuestion >= questionQueue.length - 1;
     if (!isLastQuestion) {
-      setCurrentQuestionIndex((prev) => prev + 1);
+      setCurrentQuestion((prev) => prev + 1);
       clearSelectedAnswer();
     } else {
-      if (incorrectQuestions.size > 0) {
-        const newQueue = [...questionQueue, ...Array.from(incorrectQuestions)];
-        setQuestionQueue(newQueue);
-        setIncorrectQuestions(new Set());
-        setCurrentQuestionIndex((prev) => prev + 1);
+      if (reaskQueue.size > 0) {
+        const newQueue = [...questionQueue, ...Array.from(reaskQueue)];
+        setQuestions(newQueue);
+        setReaskQueue(new Set());
+        setCurrentQuestion((prev) => prev + 1);
         clearSelectedAnswer();
       } else {
         onQuizComplete();
@@ -86,17 +63,34 @@ const MultipleChoice: React.FC<AnswerOptionsProps> = ({ currentQuestion, questio
   const clearSelectedAnswer = () => {
     setExplanation({ text: "", img: "" });
     setIsCheckButtonClicked(false);
-    setIsAnswerSelected(false);
     setSelectedAnswer(null);
     setIsCorrectAnswer(null);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key;
+      if (question && !isCheckBtnClicked) {
+        if (key >= "1" && key <= question.answerOptions.length.toString()) {
+          const index = parseInt(key, 10) - 1;
+          if (index < question.answerOptions.length) handleAnswer(question.answerOptions[index].answerText);
+        }
+      }
+      if (key === "Enter" && selectedAnswer && !isCheckBtnClicked) handleCheck();
+      if (key === "Enter" && isCheckBtnClicked) handleContinue();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [question, selectedAnswer, isCheckBtnClicked]);
+
   return (
     <div>
-      <TextDisplay text={currentQuestion.text} />
-      <MultipleChoiceOptions answerOptions={currentQuestion.answerOptions} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isCheckButtonClicked={isCheckButtonClicked} currentQuestion={currentQuestion} />
+      <TextDisplay text={question.text} />
+      <MultipleChoiceOptions answerOptions={question.answerOptions} selectedAnswer={selectedAnswer} handleAnswer={handleAnswer} isCheckButtonClicked={isCheckBtnClicked} currentQuestion={question} />
       <CorrectAnswerExplanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
-      <Button text={isCheckButtonClicked ? "Continue" : "Check"} onClick={isCheckButtonClicked ? handleContinue : handleCheck} disabled={!isAnswerSelected && !isCheckButtonClicked} className={isCheckButtonClicked ? "btn-green" : isAnswerSelected ? "btn-blue" : "btn-gray"} />
+      <Button text={isCheckBtnClicked ? "Continue" : "Check"} onClick={isCheckBtnClicked ? handleContinue : handleCheck} disabled={!selectedAnswer && !isCheckBtnClicked} className={isCheckBtnClicked ? "btn-green" : selectedAnswer ? "btn-blue" : "btn-gray"} />
     </div>
   );
 };

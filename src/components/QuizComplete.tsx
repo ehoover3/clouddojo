@@ -3,10 +3,10 @@ import TextDisplay from "./TextDisplay";
 import Button from "./Button";
 
 interface QuizCompletionProps {
-  onRestart: () => void;
+  restartQuiz: () => void;
 }
 
-const QuizComplete: React.FC<QuizCompletionProps> = ({ onRestart }) => {
+const QuizComplete: React.FC<QuizCompletionProps> = ({ restartQuiz: onRestart }) => {
   return (
     <div>
       <TextDisplay text='Quiz Completed!' />
