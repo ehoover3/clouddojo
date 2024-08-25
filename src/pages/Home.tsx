@@ -1,19 +1,13 @@
-import { Link } from "react-router-dom";
+import NavLink from "../components/NavLink";
 
 function Home() {
   return (
     <div>
       <h1>Certifications</h1>
       <ul>
-        <li>
-          <Link to={`/learn?cert=aws`}>AWS</Link>
-        </li>
-        <li>
-          <Link to={`/learn?cert=azure`}>Azure</Link>
-        </li>
-        <li>
-          <Link to={`/learn?cert=gcp`}>Google Cloud Platform</Link>
-        </li>
+        <NavLink to={`/learn?cert=aws`} text='AWS' />
+        <NavLink to={`/learn?cert=azure`} text='Azure' />
+        <NavLink to={`/learn?cert=gcp`} text='Google Cloud Platform' />
       </ul>
     </div>
   );

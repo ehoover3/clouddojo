@@ -1,10 +1,9 @@
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import AwsCertifications from "../../data/certifications/aws-certifications.json";
 import AzureCertifications from "../../data/certifications/azure-certifications.json";
 import GCPCertifications from "../../data/certifications/gcp-certifications.json";
-
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import NavLink from "../components/NavLink";
 
 interface Certification {
   parameter: string;
@@ -16,7 +15,6 @@ const Learn = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const certParameter = queryParams.get("cert");
-
   const [certification, setCertification] = useState<Certification[] | null>(null);
 
   useEffect(() => {
@@ -31,13 +29,8 @@ const Learn = () => {
     <div>
       <h2>{certParameter?.toUpperCase()} Certifications</h2>
       <ul>
-        {certification.map((cert: Certification, index: number) => (
-          <li key={index}>
-            <Link to={`/lesson?cert=${cert.parameter}&title=${cert.title}&level=${cert.level}`} style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ fontWeight: "bold" }}>{cert.title}</span>
-              <span style={{ color: "black", fontWeight: "normal", textDecoration: "none" }}>{cert.level}</span>
-            </Link>
-          </li>
+        {certification.map((cert: Certification) => (
+          <NavLink to={`/lesson?cert=${cert.parameter}&title=${cert.title}&level=${cert.level}`} text={cert.title} subtext={cert.level} />
         ))}
       </ul>
     </div>
