@@ -7,8 +7,8 @@ import Button from "./Button";
 interface MultipleChoiceProps {
   quiz: any;
   questions: number[];
-  setQuestions: React.Dispatch<React.SetStateAction<number[]>>;
   currentQuestion: number;
+  setQuestions: React.Dispatch<React.SetStateAction<number[]>>;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
   setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
   completeQuiz: () => void;
@@ -58,12 +58,12 @@ const MultipleChoice: React.FC<MultipleChoiceProps> = ({ quiz, questions, curren
   };
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = async (event: KeyboardEvent) => {
       const key = event.key;
       if (question && !isCheckBtnClicked) {
         if (key >= "1" && key <= question.answerOptions.length.toString()) {
           const index = parseInt(key, 10) - 1;
-          if (index < question.answerOptions.length) handleAnswer(question.answerOptions[index].answerText);
+          if (index < question.answerOptions.length) await handleAnswer(question.answerOptions[index].answerText);
         }
       }
       if (key === "Enter" && selectedAnswer && !isCheckBtnClicked) handleCheck();
