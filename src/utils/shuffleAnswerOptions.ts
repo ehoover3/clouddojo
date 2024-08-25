@@ -1,5 +1,5 @@
-import { shuffleArray } from "../../utils/shuffleArray";
-import { Question } from "./index";
+import { shuffleArray } from "./shuffleArray";
+import { Question } from "../pages/Lesson";
 
 export const shuffleAnswerOptions = (questions: Question[]): Question[] => {
   return questions.map((question) => ({

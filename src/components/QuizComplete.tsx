@@ -1,3 +1,7 @@
+import React from "react";
+import TextDisplay from "./TextDisplay";
+import Button from "./Button";
+
 interface QuizCompletionProps {
   onRestart: () => void;
 }
@@ -5,8 +9,8 @@ interface QuizCompletionProps {
 const QuizComplete: React.FC<QuizCompletionProps> = ({ onRestart }) => {
   return (
     <div>
-      <h1>Quiz Completed!</h1>
-      <button onClick={onRestart}>Restart Quiz</button>
+      <TextDisplay text='Quiz Completed!' />
+      <Button text='Restart Quiz' onClick={onRestart} />
     </div>
   );
 };

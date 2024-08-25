@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Question } from "..";
-import Button from "../../../components/Button";
+import TextDisplay from "./TextDisplay";
+import Button from "./Button";
+import MatchingItems from "./MatchingItems";
+import { Question } from "../pages/Lesson";
 
 interface AnswerOptionsProps {
   currentQuestion: Question;
@@ -32,11 +34,9 @@ const Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue
   useEffect(() => {
     if (selectedLeft && selectedRight) {
       const correctPair = currentQuestion.answerPairs?.some((pair: any) => pair[0] === selectedLeft && pair[1] === selectedRight);
-
       if (correctPair) {
         setMatches((prevMatches) => [...prevMatches, { left: selectedLeft, right: selectedRight }]);
       }
-
       setSelectedLeft(null);
       setSelectedRight(null);
     }
@@ -58,41 +58,8 @@ const Matching: React.FC<AnswerOptionsProps> = ({ currentQuestion, questionQueue
 
   return (
     <div>
-      <p className='question-text'>{currentQuestion.text}</p>
-      <div className='matching-container' style={{ display: "flex" }}>
-        <div className='left-items'>
-          {currentQuestion.answerOptions
-            .filter((option: any) => option.direction === "left")
-            .map((option: any, index: any) => {
-              const isSelected = selectedLeft === option.answerText;
-              const isMatched = matches.some((match) => match.left === option.answerText);
-              const backgroundColor = isMatched ? "grey" : isSelected ? "lightblue" : "transparent";
-
-              return (
-                <div key={index} className={`matching-item ${isSelected ? "selected" : ""} ${isMatched ? "matched" : ""}`} onClick={() => handleSelectLeft(option.answerText)} style={{ backgroundColor }}>
-                  {option.answerImg && <img src={`${publicUrl}/images/${option.answerImg}`} style={{ width: "10vw" }} alt='Left option' />}
-                  {option.answerText}
-                </div>
-              );
-            })}
-        </div>
-        <div className='right-items'>
-          {currentQuestion.answerOptions
-            .filter((option: any) => option.direction === "right")
-            .map((option: any, index: any) => {
-              const isSelected = selectedRight === option.answerText;
-              const isMatched = matches.some((match) => match.right === option.answerText);
-              const backgroundColor = isMatched ? "grey" : isSelected ? "lightblue" : "transparent";
-
-              return (
-                <div key={index} className={`matching-item ${isSelected ? "selected" : ""} ${isMatched ? "matched" : ""}`} onClick={() => handleSelectRight(option.answerText)} style={{ backgroundColor }}>
-                  {option.answerImg && <img src={`${publicUrl}/images/${option.answerImg}`} style={{ width: "10vw" }} alt='Right option' />}
-                  {option.answerText}
-                </div>
-              );
-            })}
-        </div>
-      </div>
+      <TextDisplay text={currentQuestion.text} />
+      <MatchingItems answerOptions={currentQuestion.answerOptions} selectedLeft={selectedLeft} selectedRight={selectedRight} matches={matches} onSelectLeft={handleSelectLeft} onSelectRight={handleSelectRight} publicUrl={publicUrl} />
       <Button text='Continue' onClick={handleContinue} disabled={matches.length !== currentQuestion.answerPairs?.length} className={matches.length === currentQuestion.answerPairs?.length ? "btn-green" : "btn-gray"} />
     </div>
   );

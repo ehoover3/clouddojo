@@ -16,7 +16,7 @@ interface AnswerOptionProps {
   currentQuestion: any;
 }
 
-const AnswerOptions: React.FC<AnswerOptionsProps> = ({ answerOptions, selectedAnswer, handleAnswer, isCheckButtonClicked, currentQuestion }) => {
+const MultipleChoiceOptions: React.FC<AnswerOptionsProps> = ({ answerOptions, selectedAnswer, handleAnswer, isCheckButtonClicked, currentQuestion }) => {
   return (
     <div className='answers'>
       {answerOptions.map((answerOption, index) => (
@@ -42,4 +42,4 @@ const AnswerOption: React.FC<AnswerOptionProps> = ({ answerOption, selectedAnswe
   );
 };
 
-export default AnswerOptions;
+export default MultipleChoiceOptions;

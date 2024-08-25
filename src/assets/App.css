@@ -49,3 +49,86 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
+/* Quiz.css */
+.quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.X-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.answer {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.explaination {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.return-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.answer {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* ProgressBar.css */
+.progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}

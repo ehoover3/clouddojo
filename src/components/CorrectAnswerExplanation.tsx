@@ -5,7 +5,7 @@ interface AnswerExplanationProps {
   isCorrectAnswer: boolean | null;
 }
 
-const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ explanation, isCorrectAnswer }) => {
+const CorrectAnswerExplanation: React.FC<AnswerExplanationProps> = ({ explanation, isCorrectAnswer }) => {
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
 
   return (
@@ -16,4 +16,4 @@ const AnswerExplanation: React.FC<AnswerExplanationProps> = ({ explanation, isCo
   );
 };
 
-export default AnswerExplanation;
+export default CorrectAnswerExplanation;
