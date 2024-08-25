@@ -41,7 +41,6 @@ const Lesson = () => {
   const [questions, setQuestions] = useState<number[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
-  const [reaskQueue, setReaskQueue] = useState<Set<number>>(new Set());
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
   useEffect(() => {
@@ -53,14 +52,13 @@ const Lesson = () => {
     }
   }, [certParameter, certTitle, certLevel]);
 
-  const onQuizComplete = () => {
+  const completeQuiz = () => {
     setIsQuizComplete(true);
   };
 
   const restartQuiz = () => {
     setCurrentQuestion(0);
     setCorrectCount(0);
-    setReaskQueue(new Set());
     setIsQuizComplete(false);
     if (quiz) setQuestions(quiz.map((_, index) => index));
   };
@@ -68,9 +66,9 @@ const Lesson = () => {
   const showQuestion = (question: Question) => {
     switch (question.type) {
       case "multiple-choice":
-        return <MultipleChoice question={question} questions={questions} setQuestions={setQuestions} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} reaskQueue={reaskQueue} setReaskQueue={setReaskQueue} onQuizComplete={onQuizComplete} />;
+        return <MultipleChoice quiz={quiz} questions={questions} currentQuestion={currentQuestion} setQuestions={setQuestions} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
       case "matching":
-        return <Matching question={question} questions={questions} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} onQuizComplete={onQuizComplete} />;
+        return <Matching quiz={quiz} questions={questions} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
       case "fill-in-the-blank":
         return <FillInTheBlank />;
       default:
@@ -80,6 +78,8 @@ const Lesson = () => {
 
   return (
     <div className='quiz'>
+      {questions}
+      <p> {currentQuestion}</p>
       <ProgressBar correctCount={correctCount} total={quiz ? quiz.length : 0} />
       {!isQuizComplete ? quiz && showQuestion(quiz[questions[currentQuestion]]) : <QuizComplete restartQuiz={restartQuiz} />}
     </div>

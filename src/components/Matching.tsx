@@ -5,15 +5,17 @@ import MatchingItems from "./MatchingItems";
 import { Question } from "../pages/Lesson";
 
 interface AnswerOptionsProps {
-  question: Question;
+  quiz: any;
   questions: number[];
   currentQuestion: number;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
   setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
-  onQuizComplete: () => void;
+  completeQuiz: () => void;
 }
 
-const Matching: React.FC<AnswerOptionsProps> = ({ question: currentQuestion, questions: questionQueue, currentQuestion: currentQuestionIndex, setCurrentQuestion: setCurrentQuestionIndex, setCorrectCount: setAnsweredCorrectlyCount, onQuizComplete }) => {
+const Matching: React.FC<AnswerOptionsProps> = ({ quiz, questions, currentQuestion, setCurrentQuestion, setCorrectCount, completeQuiz }) => {
+  const question = quiz[questions[currentQuestion]];
+
   const publicUrl = import.meta.env.VITE_PUBLIC_URL || "";
   const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
   const [selectedRight, setSelectedRight] = useState<string | null>(null);
@@ -29,27 +31,27 @@ const Matching: React.FC<AnswerOptionsProps> = ({ question: currentQuestion, que
 
   useEffect(() => {
     if (selectedLeft && selectedRight) {
-      const correctPair = currentQuestion.answerPairs?.some((pair: any) => pair[0] === selectedLeft && pair[1] === selectedRight);
+      const correctPair = question.answerPairs?.some((pair: any) => pair[0] === selectedLeft && pair[1] === selectedRight);
       if (correctPair) setMatches((prevMatches) => [...prevMatches, { left: selectedLeft, right: selectedRight }]);
       setSelectedLeft(null);
       setSelectedRight(null);
     }
-  }, [selectedLeft, selectedRight, currentQuestion.answerPairs]);
+  }, [selectedLeft, selectedRight, question.answerPairs]);
 
   useEffect(() => {
-    if (matches.length === currentQuestion.answerPairs?.length) setAnsweredCorrectlyCount((prev: number) => prev + 1);
-  }, [matches, currentQuestion.answerPairs, setAnsweredCorrectlyCount]);
+    if (matches.length === question.answerPairs?.length) setCorrectCount((prev: number) => prev + 1);
+  }, [matches, question.answerPairs, setCorrectCount]);
 
   const handleContinue = () => {
-    if (currentQuestionIndex < questionQueue.length - 1) setCurrentQuestionIndex((prev) => prev + 1);
-    else onQuizComplete();
+    if (currentQuestion < questions.length - 1) setCurrentQuestion((prev) => prev + 1);
+    else completeQuiz();
   };
 
   return (
     <div>
-      <TextDisplay text={currentQuestion.text} />
-      <MatchingItems answerOptions={currentQuestion.answerOptions} selectedLeft={selectedLeft} selectedRight={selectedRight} matches={matches} onSelectLeft={handleSelectLeft} onSelectRight={handleSelectRight} publicUrl={publicUrl} />
-      <Button text='Continue' onClick={handleContinue} disabled={matches.length !== currentQuestion.answerPairs?.length} className={matches.length === currentQuestion.answerPairs?.length ? "btn-green" : "btn-gray"} />
+      <TextDisplay text={question.text} />
+      <MatchingItems answerOptions={question.answerOptions} selectedLeft={selectedLeft} selectedRight={selectedRight} matches={matches} onSelectLeft={handleSelectLeft} onSelectRight={handleSelectRight} publicUrl={publicUrl} />
+      <Button text='Continue' onClick={handleContinue} disabled={matches.length !== question.answerPairs?.length} className={matches.length === question.answerPairs?.length ? "btn-green" : "btn-gray"} />
     </div>
   );
 };

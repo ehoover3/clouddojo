@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Question } from "../pages/Lesson";
 import TextDisplay from "./TextDisplay";
 import MultipleChoiceOptions from "./MultipleChoiceOptions";
 import CorrectAnswerExplanation from "./CorrectAnswerExplanation";
 import Button from "./Button";
 
-interface AnswerOptionsProps {
-  question: Question;
+interface MultipleChoiceProps {
+  quiz: any;
   questions: number[];
   setQuestions: React.Dispatch<React.SetStateAction<number[]>>;
   currentQuestion: number;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
   setCorrectCount: React.Dispatch<React.SetStateAction<number>>;
-  reaskQueue: Set<number>;
-  setReaskQueue: React.Dispatch<React.SetStateAction<Set<number>>>;
-  onQuizComplete: () => void;
+  completeQuiz: () => void;
 }
 
-const MultipleChoice: React.FC<AnswerOptionsProps> = ({ question, questions: questionQueue, setQuestions, currentQuestion, setCurrentQuestion, setCorrectCount, reaskQueue, setReaskQueue, onQuizComplete }) => {
+const MultipleChoice: React.FC<MultipleChoiceProps> = ({ quiz, questions, currentQuestion, setQuestions, setCurrentQuestion, setCorrectCount, completeQuiz }) => {
+  const question = quiz[questions[currentQuestion]];
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [explanation, setExplanation] = useState<{ text: string; img: string }>({ text: "", img: "" });
   const [isCheckBtnClicked, setIsCheckButtonClicked] = useState(false);
@@ -37,27 +35,19 @@ const MultipleChoice: React.FC<AnswerOptionsProps> = ({ question, questions: que
       });
       setIsCorrectAnswer(isCorrect);
       setCorrectCount((prev: any) => (isCorrect ? prev + 1 : prev));
-      setReaskQueue((prev) => (isCorrect ? new Set([...prev].filter((index) => index !== questionQueue[currentQuestion])) : new Set(prev.add(questionQueue[currentQuestion]))));
+      if (!isCorrect) {
+        setQuestions((prev) => [...prev, questions[currentQuestion]]);
+      }
       setIsCheckButtonClicked(true);
     }
   };
 
   const handleContinue = () => {
-    const isLastQuestion = currentQuestion >= questionQueue.length - 1;
+    const isLastQuestion = currentQuestion >= questions.length - 1;
     if (!isLastQuestion) {
       setCurrentQuestion((prev) => prev + 1);
       clearSelectedAnswer();
-    } else {
-      if (reaskQueue.size > 0) {
-        const newQueue = [...questionQueue, ...Array.from(reaskQueue)];
-        setQuestions(newQueue);
-        setReaskQueue(new Set());
-        setCurrentQuestion((prev) => prev + 1);
-        clearSelectedAnswer();
-      } else {
-        onQuizComplete();
-      }
-    }
+    } else completeQuiz();
   };
 
   const clearSelectedAnswer = () => {
