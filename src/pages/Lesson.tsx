@@ -7,6 +7,7 @@ import { shuffleAnswerOptions } from "../utils/shuffleAnswerOptions";
 import FillInTheBlank from "../components/FillInTheBlank";
 import MultipleChoice from "../components/MultipleChoice";
 import Matching from "../components/Matching";
+import OrderPhrase from "../components/OrderPhrase";
 
 export interface MultipleChoice {
   answerImg: string;
@@ -26,8 +27,9 @@ export interface Question {
   type: string;
   answer?: string[] | undefined;
   answerPairs?: any;
-  assignedAnswer: any | null;
-  answerOptions: MultipleChoice[] | Matching | any;
+  assignedAnswer?: any | null;
+  answerOptions?: MultipleChoice[] | Matching | any;
+  explanationText?: string;
 }
 
 const Lesson = () => {
@@ -44,9 +46,9 @@ const Lesson = () => {
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
   useEffect(() => {
-    const initialQuizModule = getQuiz(certParameter, certTitle, certLevel);
-    if (initialQuizModule) {
-      const shuffledQuizModule = shuffleAnswerOptions(initialQuizModule);
+    const initialQuiz = getQuiz(certParameter, certTitle, certLevel);
+    if (initialQuiz) {
+      const shuffledQuizModule = shuffleAnswerOptions(initialQuiz);
       setQuiz(shuffledQuizModule);
       setQuestionsToAsk(shuffledQuizModule.map((_: any, index: any) => index));
     }
@@ -71,7 +73,8 @@ const Lesson = () => {
         return <Matching quiz={quiz} questionsToAsk={questionsToAsk} currentQuestionIndex={currentQuestionIndex} setCurrentQuestion={setCurrentQuestionIndex} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
       case "fill-in-the-blank":
         return <FillInTheBlank quiz={quiz} questionsToAsk={questionsToAsk} currentQuestionIndex={currentQuestionIndex} setQuestionsToAsk={setQuestionsToAsk} setCurrentQuestion={setCurrentQuestionIndex} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
-
+      case "order-phrase":
+        return <OrderPhrase quiz={quiz} questionsToAsk={questionsToAsk} currentQuestionIndex={currentQuestionIndex} setQuestionsToAsk={setQuestionsToAsk} setCurrentQuestion={setCurrentQuestionIndex} setCorrectCount={setCorrectCount} completeQuiz={completeQuiz} />;
       default:
         return <div>Unsupported question type: {question.type}</div>;
     }

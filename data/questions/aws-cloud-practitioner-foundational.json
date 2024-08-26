@@ -1,15 +1,30 @@
 [
   {
-    "id": 5,
-    "text": "Fill in the blank: The capital of France is ________.",
-    "type": "fill-in-the-blank",
-    "answer": ["Paris"],
-    "assignedAnswer": null,
-    "answerOptions": null,
-    "explanationText": "Correct! The capital of France is Paris."
+    "id": 1,
+    "text": "Arrange the phrases in the correct order.",
+    "type": "order-phrase",
+    "answerOptions": [
+      { "answerImg": "", "answerText": "Step 1", "explanationText": "", "explanationImg": "" },
+      { "answerImg": "", "answerText": "Step 2", "explanationText": "", "explanationImg": "" },
+      { "answerImg": "", "answerText": "Step 3", "explanationText": "", "explanationImg": "" },
+      { "answerImg": "", "answerText": "Step 4", "explanationText": "", "explanationImg": "" },
+      { "answerImg": "", "answerText": "Step 5", "explanationText": "", "explanationImg": "" }
+    ],
+    "answer": ["Step 1", "Step 2", "Step 3"],
+    "assignedOrder": [],
+    "explanationText": "Correct! For these reasons... TBD"
   },
   {
-    "id": 1,
+    "id": 2,
+    "text": "Fill in the blank: The capital of Italy is ________.",
+    "type": "fill-in-the-blank",
+    "answer": ["Rome"],
+    "assignedAnswer": null,
+    "answerOptions": null,
+    "explanationText": "Correct! The capital of Italy is Rome."
+  },
+  {
+    "id": 3,
     "text": "What is 1?",
     "type": "multiple-choice",
     "answer": ["1"],
@@ -22,21 +37,8 @@
     ]
   },
   {
-    "id": 2,
-    "text": "What is 2?",
-    "type": "multiple-choice",
-    "answer": ["2"],
-    "assignedAnswer": null,
-    "answerOptions": [
-      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect. 2 equals 2.", "explanationImg": "1.png" },
-      { "answerImg": "2.png", "answerText": "2", "explanationText": "Correct! 2 equals 2.", "explanationImg": "2.png" },
-      { "answerImg": "3.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect. 2 equals 2.", "explanationImg": "3.png" },
-      { "answerImg": "4.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect. 2 equals 2.", "explanationImg": "4.png" }
-    ]
-  },
-  {
-    "id": 3,
-    "text": "Match each item to its category?  QUESTION 3",
+    "id": 4,
+    "text": "Match each item to its category?",
     "type": "matching",
     "answerPairs": [
       ["Bird", "Animal"],
@@ -57,7 +59,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "text": "What is 4?",
     "type": "multiple-choice",
     "answer": ["4"],
