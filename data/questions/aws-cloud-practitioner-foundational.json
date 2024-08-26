@@ -4,15 +4,15 @@
     "text": "Arrange the phrases in the correct order.",
     "type": "order-phrase",
     "answerOptions": [
-      { "answerImg": "", "answerText": "Step 1", "explanationText": "", "explanationImg": "" },
-      { "answerImg": "", "answerText": "Step 2", "explanationText": "", "explanationImg": "" },
-      { "answerImg": "", "answerText": "Step 3", "explanationText": "", "explanationImg": "" },
-      { "answerImg": "", "answerText": "Step 4", "explanationText": "", "explanationImg": "" },
-      { "answerImg": "", "answerText": "Step 5", "explanationText": "", "explanationImg": "" }
+      { "answerImg": "", "answerText": "Step 1" },
+      { "answerImg": "", "answerText": "Step 2" },
+      { "answerImg": "", "answerText": "Step 3" },
+      { "answerImg": "", "answerText": "Step 4" },
+      { "answerImg": "", "answerText": "Step 5" }
     ],
     "answer": ["Step 1", "Step 2", "Step 3"],
     "assignedOrder": [],
-    "explanationText": "Correct! For these reasons... TBD"
+    "explanationText": "Correct! Here is where I would describe why."
   },
   {
     "id": 2,
