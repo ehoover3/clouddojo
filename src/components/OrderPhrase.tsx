@@ -20,15 +20,19 @@
 //   const [isCheckBtnClicked, setIsCheckButtonClicked] = useState(false);
 //   const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean | null>(null);
 
-//   const handleSelectPhrase = (answerText: string) => {
-//     if (selectedAnswerOptions.includes(answerText)) setSelectedAnswerOptions(selectedAnswerOptions.filter((item) => item !== answerText));
-//     else setSelectedAnswerOptions([...selectedAnswerOptions, answerText]);
+//   const handleSelectPhrase = (answerText: string, source: "selected" | "options") => {
+//     if (source === "selected") {
+//       // Allow unselecting from the selected list
+//       setSelectedAnswerOptions(selectedAnswerOptions.filter((item) => item !== answerText));
+//     } else if (source === "options" && !selectedAnswerOptions.includes(answerText)) {
+//       // Only allow selecting if it hasn't been selected yet
+//       setSelectedAnswerOptions([...selectedAnswerOptions, answerText]);
+//     }
 //   };
 
 //   const handleCheck = () => {
 //     if (selectedAnswerOptions.length !== 0) {
 //       const isCorrect = JSON.stringify(selectedAnswerOptions) === JSON.stringify(question.answer);
-//       const selectedOption = question.answerOptions.find((option: any) => option.answerText === selectedAnswerOptions.join(", "));
 //       setIsCorrectAnswer(isCorrect);
 //       setCorrectCount((prev: any) => (isCorrect ? prev + 1 : prev));
 //       if (!isCorrect) setQuestionsToAsk((prev) => [...prev, questionsToAsk[currentQuestionIndex]]);
@@ -56,7 +60,7 @@
 //       if (!isCheckBtnClicked) {
 //         if (key >= "1" && key <= question.answerOptions.length.toString()) {
 //           const index = parseInt(key, 10) - 1;
-//           if (index < question.answerOptions.length) await handleSelectPhrase(question.answerOptions[index].answerText);
+//           if (index < question.answerOptions.length) await handleSelectPhrase(question.answerOptions[index].answerText, "options");
 //         }
 //       }
 //       if (key === "Enter" && selectedAnswerOptions.length === question.answer.length && !isCheckBtnClicked) handleCheck();
@@ -74,21 +78,21 @@
 //       <div className='order-phrase-container'>
 //         <div className='placeholder-box'>
 //           {selectedAnswerOptions.map((item, index) => (
-//             <div key={index} className='selected-item'>
+//             <button key={index} className='selected-item' onClick={() => handleSelectPhrase(item, "selected")}>
 //               {item}
-//             </div>
+//             </button>
 //           ))}
 //         </div>
 //         <div className='answer-options'>
 //           {question.answerOptions.map((option: any, index: any) => (
-//             <button key={index} onClick={() => handleSelectPhrase(option.answerText)} className={`answer-option ${selectedAnswerOptions.includes(option.answerText) ? "selected" : ""}`}>
+//             <button key={index} onClick={() => handleSelectPhrase(option.answerText, "options")} className={`answer-option ${selectedAnswerOptions.includes(option.answerText) ? "selected" : ""}`}>
 //               {option.answerText}
 //             </button>
 //           ))}
 //         </div>
 //       </div>
-//       <Explanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
-//       <Button text={isCheckBtnClicked ? "Continue" : "Check"} onClick={isCheckBtnClicked ? handleContinue : handleCheck} disabled={selectedAnswerOptions.length == 0 && !isCheckBtnClicked} className={isCheckBtnClicked ? "btn-green" : selectedAnswerOptions.length != 0 ? "btn-blue" : "btn-gray"} />
+//       {isCheckBtnClicked && <Explanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />}
+//       <Button text={isCheckBtnClicked ? "Continue" : "Check"} onClick={isCheckBtnClicked ? handleContinue : handleCheck} disabled={selectedAnswerOptions.length === 0 && !isCheckBtnClicked} className={isCheckBtnClicked ? "btn-green" : selectedAnswerOptions.length !== 0 ? "btn-blue" : "btn-gray"} />
 //     </div>
 //   );
 // };
@@ -117,15 +121,19 @@ const OrderPhrase: React.FC<OrderPhraseProps> = ({ quiz, questionsToAsk, current
   const [isCheckBtnClicked, setIsCheckButtonClicked] = useState(false);
   const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean | null>(null);
 
-  const handleSelectPhrase = (answerText: string) => {
-    if (selectedAnswerOptions.includes(answerText)) setSelectedAnswerOptions(selectedAnswerOptions.filter((item) => item !== answerText));
-    else setSelectedAnswerOptions([...selectedAnswerOptions, answerText]);
+  const handleSelectPhrase = (answerText: string, source: "selected" | "options") => {
+    if (source === "selected") {
+      // Allow unselecting from the selected list
+      setSelectedAnswerOptions(selectedAnswerOptions.filter((item) => item !== answerText));
+    } else if (source === "options" && !selectedAnswerOptions.includes(answerText)) {
+      // Only allow selecting if it hasn't been selected yet
+      setSelectedAnswerOptions([...selectedAnswerOptions, answerText]);
+    }
   };
 
   const handleCheck = () => {
     if (selectedAnswerOptions.length !== 0) {
       const isCorrect = JSON.stringify(selectedAnswerOptions) === JSON.stringify(question.answer);
-      const selectedOption = question.answerOptions.find((option: any) => option.answerText === selectedAnswerOptions.join(", "));
       setIsCorrectAnswer(isCorrect);
       setCorrectCount((prev: any) => (isCorrect ? prev + 1 : prev));
       if (!isCorrect) setQuestionsToAsk((prev) => [...prev, questionsToAsk[currentQuestionIndex]]);
@@ -153,7 +161,7 @@ const OrderPhrase: React.FC<OrderPhraseProps> = ({ quiz, questionsToAsk, current
       if (!isCheckBtnClicked) {
         if (key >= "1" && key <= question.answerOptions.length.toString()) {
           const index = parseInt(key, 10) - 1;
-          if (index < question.answerOptions.length) await handleSelectPhrase(question.answerOptions[index].answerText);
+          if (index < question.answerOptions.length) await handleSelectPhrase(question.answerOptions[index].answerText, "options");
         }
       }
       if (key === "Enter" && selectedAnswerOptions.length === question.answer.length && !isCheckBtnClicked) handleCheck();
@@ -171,14 +179,14 @@ const OrderPhrase: React.FC<OrderPhraseProps> = ({ quiz, questionsToAsk, current
       <div className='order-phrase-container'>
         <div className='placeholder-box'>
           {selectedAnswerOptions.map((item, index) => (
-            <div key={index} className='selected-item'>
+            <button key={index} className='selected-item' onClick={() => handleSelectPhrase(item, "selected")}>
               {item}
-            </div>
+            </button>
           ))}
         </div>
         <div className='answer-options'>
           {question.answerOptions.map((option: any, index: any) => (
-            <button key={index} onClick={() => handleSelectPhrase(option.answerText)} className={`answer-option ${selectedAnswerOptions.includes(option.answerText) ? "selected" : ""}`}>
+            <button key={index} onClick={() => handleSelectPhrase(option.answerText, "options")} className={`answer-option ${selectedAnswerOptions.includes(option.answerText) ? "disabled" : ""}`} disabled={selectedAnswerOptions.includes(option.answerText)}>
               {option.answerText}
             </button>
           ))}
