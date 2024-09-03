@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextDisplay from "./TextDisplay";
 import Button from "./Button";
 import MatchingItems from "./MatchingItems";
+import LineGap from "./LineGap";
 
 interface AnswerOptionsProps {
   quiz: any;
@@ -49,9 +50,10 @@ const Matching: React.FC<AnswerOptionsProps> = ({ quiz, questionsToAsk, currentQ
 
   return (
     <div>
-      <TextDisplay text={question.text} />
+      <TextDisplay text={question.text} fontSize='25px' fontWeight='700' />
+      <LineGap margin={"16px"} />
       <MatchingItems answerOptions={question.answerOptions} selectedLeft={selectedLeft} selectedRight={selectedRight} matches={matches} onSelectLeft={handleSelectLeft} onSelectRight={handleSelectRight} publicUrl={publicUrl} />
-      <Button text='Continue' onClick={handleContinue} disabled={matches.length !== question.answerPairs?.length} className={matches.length === question.answerPairs?.length ? "btn-green" : "btn-gray"} />
+      <Button text='Continue' onClick={handleContinue} disabled={matches.length !== question.answerPairs?.length} className={matches.length === question.answerPairs?.length ? "btn-green" : "btn-gray"} width='90vw' position='fixed' bottom='16px' />
     </div>
   );
 };

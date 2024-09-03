@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextDisplay from "./TextDisplay";
 import Explanation from "./Explanation";
 import Button from "./Button";
+import LineGap from "./LineGap";
 
 interface FillInTheBlankProps {
   quiz: any;
@@ -73,10 +74,11 @@ const FillInTheBlank: React.FC<FillInTheBlankProps> = ({ quiz, questionsToAsk, c
 
   return (
     <div>
-      <TextDisplay text={question.text} />
+      <TextDisplay text={question.text} fontSize='25px' fontWeight='700' />
+      <LineGap margin={"16px"} />
       <input type='text' value={userAnswer} onChange={handleInputChange} placeholder='Type your answer here...' />
       <Explanation explanation={explanation} isCorrectAnswer={isCorrectAnswer} />
-      <Button text={isCheckBtnClicked ? "Continue" : "Check"} onClick={isCheckBtnClicked ? handleContinue : handleCheck} disabled={!userAnswer.trim() && !isCheckBtnClicked} className={isCheckBtnClicked ? "btn-green" : userAnswer.trim() ? "btn-blue" : "btn-gray"} />
+      <Button text={isCheckBtnClicked ? "Continue" : "Check"} onClick={isCheckBtnClicked ? handleContinue : handleCheck} disabled={!userAnswer.trim() && !isCheckBtnClicked} className={isCheckBtnClicked ? "btn-green" : userAnswer.trim() ? "btn-blue" : "btn-gray"} width='90vw' position='fixed' bottom='16px' />
     </div>
   );
 };
