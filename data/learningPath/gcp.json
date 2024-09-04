@@ -1,0 +1,13 @@
+[
+  { "parameter": "gcp", "title": "Cloud Digital Leader", "level": "Foundational" },
+  { "parameter": "gcp", "title": "Cloud Engineer", "level": "Associate" },
+  { "parameter": "gcp", "title": "Cloud Architect", "level": "Professional" },
+  { "parameter": "gcp", "title": "Cloud Database Engineer", "level": "Professional" },
+  { "parameter": "gcp", "title": "Cloud Developer", "level": "Professional" },
+  { "parameter": "gcp", "title": "Data Engineer", "level": "Professional" },
+  { "parameter": "gcp", "title": "Cloud DevOps Engineer", "level": "Professional" },
+  { "parameter": "gcp", "title": "Cloud Security Engineer", "level": "Professional" },
+  { "parameter": "gcp", "title": "Cloud Network Engineer", "level": "Professional" },
+  { "parameter": "gcp", "title": "Google Workspace Administrator", "level": "Professional" },
+  { "parameter": "gcp", "title": "Machine Learning Engineer", "level": "Professional" }
+]

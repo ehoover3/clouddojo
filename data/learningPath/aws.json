@@ -1,0 +1,22 @@
+[
+  {
+    "parameter": "aws",
+    "title": "Cloud Practitioner",
+    "level": "Foundational"
+  },
+  {
+    "parameter": "aws",
+    "title": "AI Practitioner",
+    "level": "Foundational"
+  },
+  { "parameter": "aws", "title": "SysOps Administrator", "level": "Associate" },
+  { "parameter": "aws", "title": "Developer", "level": "Associate" },
+  { "parameter": "aws", "title": "Solutions Architect", "level": "Associate" },
+  { "parameter": "aws", "title": "Data Engineer", "level": "Associate" },
+  { "parameter": "aws", "title": "Solutions Architect", "level": "Professional" },
+  { "parameter": "aws", "title": "DevOps Engineer", "level": "Professional" },
+  { "parameter": "aws", "title": "Machine Learning Engineer", "level": "Specialty" },
+  { "parameter": "aws", "title": "Advanced Networking", "level": "Specialty" },
+  { "parameter": "aws", "title": "Security", "level": "Specialty" },
+  { "parameter": "aws", "title": "Machine Learning", "level": "Specialty" }
+]

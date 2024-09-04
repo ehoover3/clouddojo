@@ -1,0 +1,979 @@
+[
+  {
+    "id": 1,
+    "text": "[Answer choice] use plugins to provide end users with the ability to get help with common tasks from a generative AI model.",
+    "type": "multiple-choice",
+    "answer": ["Copilots"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "Copilots", "explanationText": "Correct! Copilots are often integrated into applications to provide a way for users to get help with common tasks from a generative AI model. Copilots are based on a common architecture, so developers can build custom copilots for various business-specific applications and services.", "explanationImg": "1.png" },
+      {
+        "answerImg": "1.png",
+        "answerText": "Language Understanding solutions",
+        "explanationText": "Copilots are often integrated into applications to provide a way for users to get help with common tasks from a generative AI model. Copilots are based on a common architecture, so developers can build custom copilots for various business-specific applications and services.",
+        "explanationImg": "1.png"
+      },
+      { "answerImg": "1.png", "answerText": "Question answering models", "explanationText": "Copilots are often integrated into applications to provide a way for users to get help with common tasks from a generative AI model. Copilots are based on a common architecture, so developers can build custom copilots for various business-specific applications and services.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "RESTful API services", "explanationText": "Copilots are often integrated into applications to provide a way for users to get help with common tasks from a generative AI model. Copilots are based on a common architecture, so developers can build custom copilots for various business-specific applications and services.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "[Answer choice] can return responses, such as natural language, images, or code, based on natural language input.",
+    "type": "multiple-choice",
+    "answer": ["Generative AI"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "Computer vision", "explanationText": "Generative AI models offer the capability of generating images based on a prompt by using DALL-E models, such as generating images from natural language. The other AI capabilities are used in different contexts to achieve other goals.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Deep learning", "explanationText": "Generative AI models offer the capability of generating images based on a prompt by using DALL-E models, such as generating images from natural language. The other AI capabilities are used in different contexts to achieve other goals.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Generative AI", "explanationText": "Correct! Generative AI models offer the capability of generating images based on a prompt by using DALL-E models, such as generating images from natural language. The other AI capabilities are used in different contexts to achieve other goals.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Machine learning", "explanationText": "Generative AI models offer the capability of generating images based on a prompt by using DALL-E models, such as generating images from natural language. The other AI capabilities are used in different contexts to achieve other goals.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Reinforcement learning", "explanationText": "Generative AI models offer the capability of generating images based on a prompt by using DALL-E models, such as generating images from natural language. The other AI capabilities are used in different contexts to achieve other goals.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "[Answer choice] can used to identify constraints and styles for the responses of a generative AI model.",
+    "type": "multiple-choice",
+    "answer": ["System messages"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "Data grounding", "explanationText": "System messages should be used to set the context for the model by describing expectations. Based on system messages, the model knows how to respond to prompts. The other techniques are also used in generative AI models, but for other use cases.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Embeddings", "explanationText": "System messages should be used to set the context for the model by describing expectations. Based on system messages, the model knows how to respond to prompts. The other techniques are also used in generative AI models, but for other use cases.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "System messages", "explanationText": "Correct! System messages should be used to set the context for the model by describing expectations. Based on system messages, the model knows how to respond to prompts. The other techniques are also used in generative AI models, but for other use cases.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Tokenization", "explanationText": "System messages should be used to set the context for the model by describing expectations. Based on system messages, the model knows how to respond to prompts. The other techniques are also used in generative AI models, but for other use cases.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "As per the NIST AI Risk Management Framework, what is the first stage to consider when developing a responsible generative AI solution?",
+    "type": "multiple-choice",
+    "answer": ["Identify potential harms."],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "Identify potential harms.", "explanationText": "Correct! Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Measure the presence of potential harms.", "explanationText": "Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Mitigate potential harms.", "explanationText": "Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Operate the solution.", "explanationText": "Identifying potential harms is the first stage when planning a responsible generative AI solution.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "You plan to develop an image processing solution that will use DALL-E as a generative AI model.  Which capability is NOT supported by the DALL-E model?",
+    "type": "multiple-choice",
+    "answer": ["image description"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "image description", "explanationText": "Correct! Image description is not a capability included in the DALL-E model, therefore, it is not a use case that can be implemented by using DALL-E, while the other three capabilities are offered by DALL-E in Azure OpenAI.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "image editing", "explanationText": "Image description is not a capability included in the DALL-E model, therefore, it is not a use case that can be implemented by using DALL-E, while the other three capabilities are offered by DALL-E in Azure OpenAI.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "image generation", "explanationText": "Image description is not a capability included in the DALL-E model, therefore, it is not a use case that can be implemented by using DALL-E, while the other three capabilities are offered by DALL-E in Azure OpenAI.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "image variations", "explanationText": "Image description is not a capability included in the DALL-E model, therefore, it is not a use case that can be implemented by using DALL-E, while the other three capabilities are offered by DALL-E in Azure OpenAI.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 6,
+    "text": "Which generative AI model is used to generate images based on natural language prompts?",
+    "type": "multiple-choice",
+    "answer": ["DALL-E"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "DALL-E",
+        "explanationText": "Correct! DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "Embeddings",
+        "explanationText": "DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.",
+        "explanationImg": "1.png"
+      },
+      { "answerImg": "1.png", "answerText": "GPT-3.5", "explanationText": "DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "GPT-4", "explanationText": "DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Whisper", "explanationText": "DALL-E is a model that can generate images from natural language. GPT-4 and GPT-3.5 can understand and generate natural language and code but not images. Embeddings can convert text into numerical vector form to facilitate text similarity. Whisper can transcribe and translate speech to text.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 7,
+    "text": "[Answer choice] can search, classify, and compare sources of text for similarity.",
+    "type": "multiple-choice",
+    "answer": ["Embeddings"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "Data grounding", "explanationText": "Embeddings is an Azure OpenAI model that converts text into numerical vectors for analysis. Embeddings can be used to search, classify, and compare sources of text for similarity.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Embeddings", "explanationText": "Correct! Embeddings is an Azure OpenAI model that converts text into numerical vectors for analysis. Embeddings can be used to search, classify, and compare sources of text for similarity.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Machine learning", "explanationText": "Embeddings is an Azure OpenAI model that converts text into numerical vectors for analysis. Embeddings can be used to search, classify, and compare sources of text for similarity.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "System messages", "explanationText": "Embeddings is an Azure OpenAI model that converts text into numerical vectors for analysis. Embeddings can be used to search, classify, and compare sources of text for similarity.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 8,
+    "text": "Which type machine learning algorithm predicts a numeric label associated with an item based on that item’s features?",
+    "type": "multiple-choice",
+    "answer": ["regression"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "classification",
+        "explanationText": "The regression algorithms are used to predict numeric values. Clustering algorithms groups data points that have similar characteristics. Classification algorithms are used to predict the category to which an input value belongs. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "clustering",
+        "explanationText": "The regression algorithms are used to predict numeric values. Clustering algorithms groups data points that have similar characteristics. Classification algorithms are used to predict the category to which an input value belongs. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "regression",
+        "explanationText": "Correct! The regression algorithms are used to predict numeric values. Clustering algorithms groups data points that have similar characteristics. Classification algorithms are used to predict the category to which an input value belongs. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "unsupervised",
+        "explanationText": "The regression algorithms are used to predict numeric values. Clustering algorithms groups data points that have similar characteristics. Classification algorithms are used to predict the category to which an input value belongs. Unsupervised learning is a category of learning algorithms that includes clustering, but not regression or classification.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "text": "Predicting rainfall for a specific geographical location is an example of which type of machine learning?",
+    "type": "multiple-choice",
+    "answer": ["regression"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "classification",
+        "explanationText": "Predicting rainfall is an example of regression machine learning, as it will predict a numeric value for future rainfall by using historical time-series rainfall data based on factors, such as seasons. Clustering is a machine learning type that analyzes unlabeled data to find similarities in the data. Featurization is not a machine learning type, but a collection of techniques, such as feature engineering, data-scaling, and normalization. Classification is used to predict categories of data.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "clustering",
+        "explanationText": "Predicting rainfall is an example of regression machine learning, as it will predict a numeric value for future rainfall by using historical time-series rainfall data based on factors, such as seasons. Clustering is a machine learning type that analyzes unlabeled data to find similarities in the data. Featurization is not a machine learning type, but a collection of techniques, such as feature engineering, data-scaling, and normalization. Classification is used to predict categories of data.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "featurization",
+        "explanationText": "Predicting rainfall is an example of regression machine learning, as it will predict a numeric value for future rainfall by using historical time-series rainfall data based on factors, such as seasons. Clustering is a machine learning type that analyzes unlabeled data to find similarities in the data. Featurization is not a machine learning type, but a collection of techniques, such as feature engineering, data-scaling, and normalization. Classification is used to predict categories of data.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "regression",
+        "explanationText": "Correct! Predicting rainfall is an example of regression machine learning, as it will predict a numeric value for future rainfall by using historical time-series rainfall data based on factors, such as seasons. Clustering is a machine learning type that analyzes unlabeled data to find similarities in the data. Featurization is not a machine learning type, but a collection of techniques, such as feature engineering, data-scaling, and normalization. Classification is used to predict categories of data.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "text": "A healthcare organization has a dataset consisting of bone fracture scans that are categorized by using predefined fracture types. The organization wants to use machine learning to detect the different types of bone fractures for new scans before the scans are sent to a medical practitioner. Which type of machine learning is this?",
+    "type": "multiple-choice",
+    "answer": ["classification"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "classification",
+        "explanationText": "Correct! Classification is used to predict categories of data. It can predict which category or class an item of data belongs to. In this example, a machine learning model trained by using classification with labeled data can be used to determine the type of bone fracture in a new scan that is not labeled already. Featurization is not a machine learning type. Regression is used to predict numeric values. Clustering analyzes unlabeled data to find similarities in the data.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "clustering",
+        "explanationText": "Classification is used to predict categories of data. It can predict which category or class an item of data belongs to. In this example, a machine learning model trained by using classification with labeled data can be used to determine the type of bone fracture in a new scan that is not labeled already. Featurization is not a machine learning type. Regression is used to predict numeric values. Clustering analyzes unlabeled data to find similarities in the data.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "featurization",
+        "explanationText": "Classification is used to predict categories of data. It can predict which category or class an item of data belongs to. In this example, a machine learning model trained by using classification with labeled data can be used to determine the type of bone fracture in a new scan that is not labeled already. Featurization is not a machine learning type. Regression is used to predict numeric values. Clustering analyzes unlabeled data to find similarities in the data.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "regression",
+        "explanationText": "Classification is used to predict categories of data. It can predict which category or class an item of data belongs to. In this example, a machine learning model trained by using classification with labeled data can be used to determine the type of bone fracture in a new scan that is not labeled already. Featurization is not a machine learning type. Regression is used to predict numeric values. Clustering analyzes unlabeled data to find similarities in the data.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+
+  {
+    "id": 12,
+    "text": "Which assumption of the multiple linear regression model should be satisfied to avoid misleading predictions?",
+    "type": "multiple-choice",
+    "answer": ["Features are independent of each other."],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "Features are dependent on each other.", "explanationText": "Multiple linear regression models the relationship between several features and a single label. The features must be independent of each other, otherwise, the model's predictions will be misleading.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Features are independent of each other.", "explanationText": "Correct! Multiple linear regression models the relationship between several features and a single label. The features must be independent of each other, otherwise, the model's predictions will be misleading.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Labels are dependent on each other.", "explanationText": "Multiple linear regression models the relationship between several features and a single label. The features must be independent of each other, otherwise, the model's predictions will be misleading.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Labels are independent of each other.", "explanationText": "Multiple linear regression models the relationship between several features and a single label. The features must be independent of each other, otherwise, the model's predictions will be misleading.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 13,
+    "text": "Which feature makes regression an example of supervised machine learning?",
+    "type": "multiple-choice",
+    "answer": ["use of historical data with known label values to train a model"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "use of historical data with known label values to train a model", "explanationText": "Correct! Regression is an example of supervised machine learning due to the use of historical data with known label values to train a model. Regression does not rely on randomly generated data for training.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "use of historical data with unknown label values to train a model", "explanationText": "Regression is an example of supervised machine learning due to the use of historical data with known label values to train a model. Regression does not rely on randomly generated data for training.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "use of randomly generated data with known label values to train a model", "explanationText": "Regression is an example of supervised machine learning due to the use of historical data with known label values to train a model. Regression does not rely on randomly generated data for training.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "use of randomly generated data with unknown label values to train a model", "explanationText": "Regression is an example of supervised machine learning due to the use of historical data with known label values to train a model. Regression does not rely on randomly generated data for training.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 14,
+    "text": "In a regression machine learning algorithm, what are the characteristics of features and labels in a validation dataset?",
+    "type": "multiple-choice",
+    "answer": ["known feature and label values"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "known feature and label values", "explanationText": "Correct! In a regression machine learning algorithm, a validation set contains known feature and label values.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "known feature values and unknown label values", "explanationText": "In a regression machine learning algorithm, a validation set contains known feature and label values.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "unknown feature and label values", "explanationText": "In a regression machine learning algorithm, a validation set contains known feature and label values.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "unknown feature values and known label values", "explanationText": "In a regression machine learning algorithm, a validation set contains known feature and label values.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 15,
+    "text": "In a regression machine learning algorithm, what are the characteristics of features and labels in a training dataset?",
+    "type": "multiple-choice",
+    "answer": ["known feature and label values"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "known feature and label values", "explanationText": "Correct! In a regression machine learning algorithm, a training set contains known feature and label values.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "known feature values and unknown label values", "explanationText": "In a regression machine learning algorithm, a training set contains known feature and label values.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "unknown feature and label values", "explanationText": "In a regression machine learning algorithm, a training set contains known feature and label values.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "unknown feature values and known label values", "explanationText": "In a regression machine learning algorithm, a training set contains known feature and label values.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 16,
+    "text": "A company is using machine learning to predict house prices based on appropriate house attributes. For the machine learning model, which attribute is the label?",
+    "type": "multiple-choice",
+    "answer": ["price of the house"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "age of the house",
+        "explanationText": "The price of the house is the label you are attempting to predict through the machine learning model. This is typically done by using a regression model. Floor space size, number of bedrooms, and age of the house are all input variables for the model to help predict the house price label.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "floor space size",
+        "explanationText": "The price of the house is the label you are attempting to predict through the machine learning model. This is typically done by using a regression model. Floor space size, number of bedrooms, and age of the house are all input variables for the model to help predict the house price label.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "number of bedrooms",
+        "explanationText": "The price of the house is the label you are attempting to predict through the machine learning model. This is typically done by using a regression model. Floor space size, number of bedrooms, and age of the house are all input variables for the model to help predict the house price label.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "price of the house",
+        "explanationText": "Correct! The price of the house is the label you are attempting to predict through the machine learning model. This is typically done by using a regression model. Floor space size, number of bedrooms, and age of the house are all input variables for the model to help predict the house price label.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "text": "What should you do after preparing a dataset and before training the machine learning model?",
+    "type": "multiple-choice",
+    "answer": ["split data into training and validation datasets"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "clean missing data",
+        "explanationText": "Splitting data into training and validation datasets leaves you with two datasets, the first and largest of which is the training dataset you use to train the model. The second, smaller dataset is the held back data and is called the validation dataset, as it is used to evaluate the trained model. If normalizing or summarizing the data is required, it will be carried out as part of data transformation. Cleaning missing data is part of preparing the data and the data transformation processes.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "normalize the data",
+        "explanationText": "Splitting data into training and validation datasets leaves you with two datasets, the first and largest of which is the training dataset you use to train the model. The second, smaller dataset is the held back data and is called the validation dataset, as it is used to evaluate the trained model. If normalizing or summarizing the data is required, it will be carried out as part of data transformation. Cleaning missing data is part of preparing the data and the data transformation processes.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "split data into training and validation datasets",
+        "explanationText": "Correct! Splitting data into training and validation datasets leaves you with two datasets, the first and largest of which is the training dataset you use to train the model. The second, smaller dataset is the held back data and is called the validation dataset, as it is used to evaluate the trained model. If normalizing or summarizing the data is required, it will be carried out as part of data transformation. Cleaning missing data is part of preparing the data and the data transformation processes.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "summarize the data",
+        "explanationText": "Splitting data into training and validation datasets leaves you with two datasets, the first and largest of which is the training dataset you use to train the model. The second, smaller dataset is the held back data and is called the validation dataset, as it is used to evaluate the trained model. If normalizing or summarizing the data is required, it will be carried out as part of data transformation. Cleaning missing data is part of preparing the data and the data transformation processes.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "text": "You need to use Azure Machine Learning to train a regression model. What should you create in Machine Learning studio?",
+    "type": "multiple-choice",
+    "answer": ["a job"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "a job",
+        "explanationText": "Correct! A job must be created in Machine Learning studio to use Machine Learning to train a regression model. A workspace must be created before you can access Machine Learning studio. An Azure container instance and an AKS cluster can be created as a deployment target, after training of a model is complete.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "a workspace",
+        "explanationText": "A job must be created in Machine Learning studio to use Machine Learning to train a regression model. A workspace must be created before you can access Machine Learning studio. An Azure container instance and an AKS cluster can be created as a deployment target, after training of a model is complete.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "an Azure container instance",
+        "explanationText": "A job must be created in Machine Learning studio to use Machine Learning to train a regression model. A workspace must be created before you can access Machine Learning studio. An Azure container instance and an AKS cluster can be created as a deployment target, after training of a model is complete.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "an Azure Kubernetes Service (AKS) cluster",
+        "explanationText": "A job must be created in Machine Learning studio to use Machine Learning to train a regression model. A workspace must be created before you can access Machine Learning studio. An Azure container instance and an AKS cluster can be created as a deployment target, after training of a model is complete.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "text": "You need to use the Azure Machine Learning designer to deploy a predictive service from a newly trained model. What should you do first in the Machine Learning designer?",
+    "type": "multiple-choice",
+    "answer": ["Create an inference pipeline."],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "Add a dataset.",
+        "explanationText": "To deploy a predictive service from a newly trained model by using the Machine Learning designer, you must first create a pipeline in the Machine Learning designer. Adding training modules by using the Machine Learning designer takes place before creating a trained model, which already exists. Adding a dataset by using the Machine Learning designer requires that a pipeline already exists. To create an inferencing cluster, you must use Machine Learning studio.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "Add training modules.",
+        "explanationText": "To deploy a predictive service from a newly trained model by using the Machine Learning designer, you must first create a pipeline in the Machine Learning designer. Adding training modules by using the Machine Learning designer takes place before creating a trained model, which already exists. Adding a dataset by using the Machine Learning designer requires that a pipeline already exists. To create an inferencing cluster, you must use Machine Learning studio.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "Create an inference pipeline.",
+        "explanationText": "Correct! To deploy a predictive service from a newly trained model by using the Machine Learning designer, you must first create a pipeline in the Machine Learning designer. Adding training modules by using the Machine Learning designer takes place before creating a trained model, which already exists. Adding a dataset by using the Machine Learning designer requires that a pipeline already exists. To create an inferencing cluster, you must use Machine Learning studio.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "Create an inferencing cluster.",
+        "explanationText": "To deploy a predictive service from a newly trained model by using the Machine Learning designer, you must first create a pipeline in the Machine Learning designer. Adding training modules by using the Machine Learning designer takes place before creating a trained model, which already exists. Adding a dataset by using the Machine Learning designer requires that a pipeline already exists. To create an inferencing cluster, you must use Machine Learning studio.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "text": "Which machine learning algorithm module in the Azure Machine Learning designer is used to train a model?",
+    "type": "multiple-choice",
+    "answer": ["Linear Regression"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "Clean Missing Data",
+        "explanationText": "Linear regression is a machine learning algorithm module used for training regression models. The Clean Missing Data module is part of preparing the data and data transformation process. Select Columns in Dataset is a data transformation component that is used to choose a subset of columns of interest from a dataset. Evaluate model is a component used to measure the accuracy of trained models.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "Evaluate Model",
+        "explanationText": "Linear regression is a machine learning algorithm module used for training regression models. The Clean Missing Data module is part of preparing the data and data transformation process. Select Columns in Dataset is a data transformation component that is used to choose a subset of columns of interest from a dataset. Evaluate model is a component used to measure the accuracy of trained models.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "Linear Regression",
+        "explanationText": "Correct! Linear regression is a machine learning algorithm module used for training regression models. The Clean Missing Data module is part of preparing the data and data transformation process. Select Columns in Dataset is a data transformation component that is used to choose a subset of columns of interest from a dataset. Evaluate model is a component used to measure the accuracy of trained models.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "Select Columns in Dataset",
+        "explanationText": "Linear regression is a machine learning algorithm module used for training regression models. The Clean Missing Data module is part of preparing the data and data transformation process. Select Columns in Dataset is a data transformation component that is used to choose a subset of columns of interest from a dataset. Evaluate model is a component used to measure the accuracy of trained models.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "text": "Which natural language processing (NLP) technique assigns values to words such as plant and flower, so that they are considered closer to each other than a word such as airplane?",
+    "type": "multiple-choice",
+    "answer": ["vectorization"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "frequency analysis",
+        "explanationText": "Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space. Lemmatization, also known as stemming, normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "lemmatization",
+        "explanationText": "Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space. Lemmatization, also known as stemming, normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "N-grams",
+        "explanationText": "Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space. Lemmatization, also known as stemming, normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "vectorization",
+        "explanationText": "Correct! Vectorization captures semantic relationships between words by assigning them to locations in n-dimensional space. Lemmatization, also known as stemming, normalizes words before counting them. Frequency analysis counts how often a word appears in a text. N-grams extend frequency analysis to include multi-term phrases.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "text": "Which part of speech synthesis in natural language processing (NLP) involves breaking text into individual words such that each word can be assigned phonetic sounds?",
+    "type": "multiple-choice",
+    "answer": ["tokenization"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "lemmatization",
+        "explanationText": "Tokenization is part of speech synthesis that involves breaking text into individual words such that each word can be assigned phonetic sounds. Transcribing is part of speech recognition, which involves converting speech into a text representation. Key phrase extraction is part of language processing, not speech synthesis. Lemmatization, also known as stemming, is part of language processing, not speech synthesis.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "key phrase extraction",
+        "explanationText": "Tokenization is part of speech synthesis that involves breaking text into individual words such that each word can be assigned phonetic sounds. Transcribing is part of speech recognition, which involves converting speech into a text representation. Key phrase extraction is part of language processing, not speech synthesis. Lemmatization, also known as stemming, is part of language processing, not speech synthesis.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "tokenization",
+        "explanationText": "Correct! Tokenization is part of speech synthesis that involves breaking text into individual words such that each word can be assigned phonetic sounds. Transcribing is part of speech recognition, which involves converting speech into a text representation. Key phrase extraction is part of language processing, not speech synthesis. Lemmatization, also known as stemming, is part of language processing, not speech synthesis.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "transcribing",
+        "explanationText": "Tokenization is part of speech synthesis that involves breaking text into individual words such that each word can be assigned phonetic sounds. Transcribing is part of speech recognition, which involves converting speech into a text representation. Key phrase extraction is part of language processing, not speech synthesis. Lemmatization, also known as stemming, is part of language processing, not speech synthesis.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "text": "Which feature of the Azure AI Language service includes functionality that returns links to external websites to disambiguate terms identified in a text?",
+    "type": "multiple-choice",
+    "answer": ["entity recognition"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "entity recognition",
+        "explanationText": "Correct! Entity recognition includes the entity linking functionality that returns links to external websites to disambiguate terms (entities) identified in a text. Key phrase extraction evaluates the text of a document and identifies its main talking points. Azure AI Language detection identifies the language in which text is written. Sentiment analysis evaluates text and returns sentiment scores and labels for each sentence.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "key phrase extraction",
+        "explanationText": "Entity recognition includes the entity linking functionality that returns links to external websites to disambiguate terms (entities) identified in a text. Key phrase extraction evaluates the text of a document and identifies its main talking points. Azure AI Language detection identifies the language in which text is written. Sentiment analysis evaluates text and returns sentiment scores and labels for each sentence.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "language detection",
+        "explanationText": "Entity recognition includes the entity linking functionality that returns links to external websites to disambiguate terms (entities) identified in a text. Key phrase extraction evaluates the text of a document and identifies its main talking points. Azure AI Language detection identifies the language in which text is written. Sentiment analysis evaluates text and returns sentiment scores and labels for each sentence.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "sentiment analysis",
+        "explanationText": "Entity recognition includes the entity linking functionality that returns links to external websites to disambiguate terms (entities) identified in a text. Key phrase extraction evaluates the text of a document and identifies its main talking points. Azure AI Language detection identifies the language in which text is written. Sentiment analysis evaluates text and returns sentiment scores and labels for each sentence.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "text": "Which type of translation does the Azure AI Translator service support?",
+    "type": "multiple-choice",
+    "answer": ["text-to-text"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "speech-to-speech", "explanationText": "The Azure AI Translator service supports text-to-text translation, but it does not support speech-to-text, text-to-speech, or speech-to-speech translation.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "speech-to-text", "explanationText": "The Azure AI Translator service supports text-to-text translation, but it does not support speech-to-text, text-to-speech, or speech-to-speech translation.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "text-to-speech", "explanationText": "The Azure AI Translator service supports text-to-text translation, but it does not support speech-to-text, text-to-speech, or speech-to-speech translation.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "text-to-text", "explanationText": "Correct! The Azure AI Translator service supports text-to-text translation, but it does not support speech-to-text, text-to-speech, or speech-to-speech translation.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 25,
+    "text": "Which feature of the Azure AI Translator service is available only to Custom Translator?",
+    "type": "multiple-choice",
+    "answer": ["model training with a dictionary"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "document translation",
+        "explanationText": "Model training with a dictionary can be used with Custom Translator when you do not have enough parallel sentences to meet the 10,000 minimum requirements. The resulting model will typically complete training much faster than with full training and will use the baseline models for translation along with the dictionaries you have added.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "model training with a dictionary",
+        "explanationText": "Correct! Model training with a dictionary can be used with Custom Translator when you do not have enough parallel sentences to meet the 10,000 minimum requirements. The resulting model will typically complete training much faster than with full training and will use the baseline models for translation along with the dictionaries you have added.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "speaker recognition",
+        "explanationText": "Model training with a dictionary can be used with Custom Translator when you do not have enough parallel sentences to meet the 10,000 minimum requirements. The resulting model will typically complete training much faster than with full training and will use the baseline models for translation along with the dictionaries you have added.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "text translation",
+        "explanationText": "Model training with a dictionary can be used with Custom Translator when you do not have enough parallel sentences to meet the 10,000 minimum requirements. The resulting model will typically complete training much faster than with full training and will use the baseline models for translation along with the dictionaries you have added.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "text": "Which feature of the Azure AI Speech service can identify distinct user voices?",
+    "type": "multiple-choice",
+    "answer": ["speech recognition"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "language identification",
+        "explanationText": "Speech recognition uses audio data to analyze speech and determine recognizable patterns that can be mapped to distinct user voices. Azure AI Speech synthesis is concerned with vocalizing data, usually by converting text to speech. Azure AI Speech translation is concerned with multilanguage translation of speech. Language identification is used to identify languages spoken in audio when compared against a list of supported languages.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "speech recognition",
+        "explanationText": "Correct! Speech recognition uses audio data to analyze speech and determine recognizable patterns that can be mapped to distinct user voices. Azure AI Speech synthesis is concerned with vocalizing data, usually by converting text to speech. Azure AI Speech translation is concerned with multilanguage translation of speech. Language identification is used to identify languages spoken in audio when compared against a list of supported languages.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "speech synthesis",
+        "explanationText": "Speech recognition uses audio data to analyze speech and determine recognizable patterns that can be mapped to distinct user voices. Azure AI Speech synthesis is concerned with vocalizing data, usually by converting text to speech. Azure AI Speech translation is concerned with multilanguage translation of speech. Language identification is used to identify languages spoken in audio when compared against a list of supported languages.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "speech translation",
+        "explanationText": "Speech recognition uses audio data to analyze speech and determine recognizable patterns that can be mapped to distinct user voices. Azure AI Speech synthesis is concerned with vocalizing data, usually by converting text to speech. Azure AI Speech translation is concerned with multilanguage translation of speech. Language identification is used to identify languages spoken in audio when compared against a list of supported languages.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "text": "Which artificial intelligence (AI) technique serves as the foundation for modern image classification solutions?",
+    "type": "multiple-choice",
+    "answer": ["deep learning"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "semantic segmentation",
+        "explanationText": "Modern image classification solutions are based on deep learning techniques. Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent. Both linear regression and multiple linear regression use training and validating predictions to predict numeric values, so they are not part of image classification solutions.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "deep learning",
+        "explanationText": "Correct! Modern image classification solutions are based on deep learning techniques. Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent. Both linear regression and multiple linear regression use training and validating predictions to predict numeric values, so they are not part of image classification solutions.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "linear regression",
+        "explanationText": "Modern image classification solutions are based on deep learning techniques. Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent. Both linear regression and multiple linear regression use training and validating predictions to predict numeric values, so they are not part of image classification solutions.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "multiple linear regression",
+        "explanationText": "Modern image classification solutions are based on deep learning techniques. Semantic segmentation provides the ability to classify individual pixels in an image depending on the object that they represent. Both linear regression and multiple linear regression use training and validating predictions to predict numeric values, so they are not part of image classification solutions.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "text": "Which computer vision solution provides the ability to identify a person's age based on a photograph?",
+    "type": "multiple-choice",
+    "answer": ["facial detection"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "facial detection",
+        "explanationText": "Correct! Facial detection provides the ability to detect and analyze human faces in an image, including identifying a person's age based on a photograph. Image classification classifies images based on their contents. Object detection provides the ability to generate bounding boxes identifying the locations of different types of vehicles in an image. Semantic segmentation provides the ability to classify individual pixels in an image.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "image classification",
+        "explanationText": "Facial detection provides the ability to detect and analyze human faces in an image, including identifying a person's age based on a photograph. Image classification classifies images based on their contents. Object detection provides the ability to generate bounding boxes identifying the locations of different types of vehicles in an image. Semantic segmentation provides the ability to classify individual pixels in an image.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "object detection",
+        "explanationText": "Facial detection provides the ability to detect and analyze human faces in an image, including identifying a person's age based on a photograph. Image classification classifies images based on their contents. Object detection provides the ability to generate bounding boxes identifying the locations of different types of vehicles in an image. Semantic segmentation provides the ability to classify individual pixels in an image.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "semantic segmentation",
+        "explanationText": "Facial detection provides the ability to detect and analyze human faces in an image, including identifying a person's age based on a photograph. Image classification classifies images based on their contents. Object detection provides the ability to generate bounding boxes identifying the locations of different types of vehicles in an image. Semantic segmentation provides the ability to classify individual pixels in an image.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "text": "Which process allows you to use optical character recognition (OCR)?",
+    "type": "multiple-choice",
+    "answer": ["digitizing medical records"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "digitizing medical records",
+        "explanationText": "Correct! OCR can extract printed or handwritten text from images. In this case, it can be used to extract text from scanned medical records to produce a digital archive from paper-based documents. Identifying wildlife in an image is an example of a computer vision solution that uses object detection and is not suitable for OCR. Identifying a user requesting access to a laptop is done by taking images from the laptop’s webcam and using facial detection and recognition to identify the user requesting access. Translating speech to text is an example of using speech translation and uses the Azure AI Speech service as part of Azure AI Services.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "identifying access control for a laptop",
+        "explanationText": "OCR can extract printed or handwritten text from images. In this case, it can be used to extract text from scanned medical records to produce a digital archive from paper-based documents. Identifying wildlife in an image is an example of a computer vision solution that uses object detection and is not suitable for OCR. Identifying a user requesting access to a laptop is done by taking images from the laptop’s webcam and using facial detection and recognition to identify the user requesting access. Translating speech to text is an example of using speech translation and uses the Azure AI Speech service as part of Azure AI Services.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "identifying wildlife in an image",
+        "explanationText": "OCR can extract printed or handwritten text from images. In this case, it can be used to extract text from scanned medical records to produce a digital archive from paper-based documents. Identifying wildlife in an image is an example of a computer vision solution that uses object detection and is not suitable for OCR. Identifying a user requesting access to a laptop is done by taking images from the laptop’s webcam and using facial detection and recognition to identify the user requesting access. Translating speech to text is an example of using speech translation and uses the Azure AI Speech service as part of Azure AI Services.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "translating speech to text",
+        "explanationText": "OCR can extract printed or handwritten text from images. In this case, it can be used to extract text from scanned medical records to produce a digital archive from paper-based documents. Identifying wildlife in an image is an example of a computer vision solution that uses object detection and is not suitable for OCR. Identifying a user requesting access to a laptop is done by taking images from the laptop’s webcam and using facial detection and recognition to identify the user requesting access. Translating speech to text is an example of using speech translation and uses the Azure AI Speech service as part of Azure AI Services.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "text": "Which process allows you to use object detection?",
+    "type": "multiple-choice",
+    "answer": ["tracking livestock in a field"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "analyzing sentiment around news articles",
+        "explanationText": "Object detection can be used to track livestock animals, such as cows, to support their safety and welfare. For example, a farmer can track whether a particular animal has not been mobile. Sentiment analysis is used to return a numeric value based on the analysis of a text. Employee access to a secure building can be achieved by using facial recognition. Extracting text from manuscripts is an example of a computer vision solution that uses optical character recognition (OCR).",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "extracting text from manuscripts",
+        "explanationText": "Object detection can be used to track livestock animals, such as cows, to support their safety and welfare. For example, a farmer can track whether a particular animal has not been mobile. Sentiment analysis is used to return a numeric value based on the analysis of a text. Employee access to a secure building can be achieved by using facial recognition. Extracting text from manuscripts is an example of a computer vision solution that uses optical character recognition (OCR).",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "granting employee access to a secure building",
+        "explanationText": "Object detection can be used to track livestock animals, such as cows, to support their safety and welfare. For example, a farmer can track whether a particular animal has not been mobile. Sentiment analysis is used to return a numeric value based on the analysis of a text. Employee access to a secure building can be achieved by using facial recognition. Extracting text from manuscripts is an example of a computer vision solution that uses optical character recognition (OCR).",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "tracking livestock in a field",
+        "explanationText": "Correct! Object detection can be used to track livestock animals, such as cows, to support their safety and welfare. For example, a farmer can track whether a particular animal has not been mobile. Sentiment analysis is used to return a numeric value based on the analysis of a text. Employee access to a secure building can be achieved by using facial recognition. Extracting text from manuscripts is an example of a computer vision solution that uses optical character recognition (OCR).",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "text": "You have a set of images. Each image shows one type of bone fracture. What allows you to identify bone fractures in different X-ray images?",
+    "type": "multiple-choice",
+    "answer": ["image classification"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "conversational artificial intelligence (AI)",
+        "explanationText": "Image classification is part of computer vision and can be used to evaluate images from an X-ray machine to quickly classify specific bone fracture types. This helps improve diagnosis and treatment plans. An image classification model is trained to facilitate the categorizing of the bone fractures. Object detection is used to return identified objects in an image, such as a cat, person, or chair. Conversational AI is used to create intelligent bots that can interact with people by using natural language. Facial detection is used to detect the location of human faces in an image.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "facial detection",
+        "explanationText": "Image classification is part of computer vision and can be used to evaluate images from an X-ray machine to quickly classify specific bone fracture types. This helps improve diagnosis and treatment plans. An image classification model is trained to facilitate the categorizing of the bone fractures. Object detection is used to return identified objects in an image, such as a cat, person, or chair. Conversational AI is used to create intelligent bots that can interact with people by using natural language. Facial detection is used to detect the location of human faces in an image.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "image classification",
+        "explanationText": "Correct! Image classification is part of computer vision and can be used to evaluate images from an X-ray machine to quickly classify specific bone fracture types. This helps improve diagnosis and treatment plans. An image classification model is trained to facilitate the categorizing of the bone fractures. Object detection is used to return identified objects in an image, such as a cat, person, or chair. Conversational AI is used to create intelligent bots that can interact with people by using natural language. Facial detection is used to detect the location of human faces in an image.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "object detection",
+        "explanationText": "Image classification is part of computer vision and can be used to evaluate images from an X-ray machine to quickly classify specific bone fracture types. This helps improve diagnosis and treatment plans. An image classification model is trained to facilitate the categorizing of the bone fractures. Object detection is used to return identified objects in an image, such as a cat, person, or chair. Conversational AI is used to create intelligent bots that can interact with people by using natural language. Facial detection is used to detect the location of human faces in an image.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "text": "Which additional piece of information is included with each phrase returned by an image description task of the Azure AI Vision?",
+    "type": "multiple-choice",
+    "answer": ["confidence score"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "bounding box coordinates",
+        "explanationText": "Each phrase returned by an image description task of the Azure AI Vision includes the confidence score. An endpoint and a key must be provided to access the Azure AI Vision service. Bounding box coordinates are returned by services such as object detection, but not image description.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "confidence score",
+        "explanationText": "Correct! Each phrase returned by an image description task of the Azure AI Vision includes the confidence score. An endpoint and a key must be provided to access the Azure AI Vision service. Bounding box coordinates are returned by services such as object detection, but not image description.",
+        "explanationImg": "1.png"
+      },
+      { "answerImg": "1.png", "answerText": "endpoint", "explanationText": "Each phrase returned by an image description task of the Azure AI Vision includes the confidence score. An endpoint and a key must be provided to access the Azure AI Vision service. Bounding box coordinates are returned by services such as object detection, but not image description.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "key", "explanationText": "Each phrase returned by an image description task of the Azure AI Vision includes the confidence score. An endpoint and a key must be provided to access the Azure AI Vision service. Bounding box coordinates are returned by services such as object detection, but not image description.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 33,
+    "text": "Which natural language processing (NLP) workload is used to generate closed caption text for live presentations?",
+    "type": "multiple-choice",
+    "answer": ["Azure AI Speech"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "Azure AI Speech",
+        "explanationText": "Correct! Azure AI Speech provides speech-to-text and text-to-speech capabilities through speech recognition and synthesis. You can use prebuilt and custom Speech service models for a variety of tasks, from transcribing audio to text with high accuracy, to identifying speakers in conversations, creating custom voices, and more.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "conversational language understanding (CLU)",
+        "explanationText": "Azure AI Speech provides speech-to-text and text-to-speech capabilities through speech recognition and synthesis. You can use prebuilt and custom Speech service models for a variety of tasks, from transcribing audio to text with high accuracy, to identifying speakers in conversations, creating custom voices, and more.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "question answering models",
+        "explanationText": "Azure AI Speech provides speech-to-text and text-to-speech capabilities through speech recognition and synthesis. You can use prebuilt and custom Speech service models for a variety of tasks, from transcribing audio to text with high accuracy, to identifying speakers in conversations, creating custom voices, and more.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "text analysis",
+        "explanationText": "Azure AI Speech provides speech-to-text and text-to-speech capabilities through speech recognition and synthesis. You can use prebuilt and custom Speech service models for a variety of tasks, from transcribing audio to text with high accuracy, to identifying speakers in conversations, creating custom voices, and more.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "text": "Which type of artificial intelligence (AI) workload has the primary purpose of making large amounts of data searchable?",
+    "type": "multiple-choice",
+    "answer": ["knowledge mining"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "image analysis", "explanationText": "Knowledge mining is an artificial intelligence (AI) workload that has the purpose of making large amounts of data searchable. While other workloads leverage indexing for faster access to large amounts of data, this is not their primary purpose.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "knowledge mining", "explanationText": "Correct! Knowledge mining is an artificial intelligence (AI) workload that has the purpose of making large amounts of data searchable. While other workloads leverage indexing for faster access to large amounts of data, this is not their primary purpose.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "object detection", "explanationText": "Knowledge mining is an artificial intelligence (AI) workload that has the purpose of making large amounts of data searchable. While other workloads leverage indexing for faster access to large amounts of data, this is not their primary purpose.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "semantic segmentation", "explanationText": "Knowledge mining is an artificial intelligence (AI) workload that has the purpose of making large amounts of data searchable. While other workloads leverage indexing for faster access to large amounts of data, this is not their primary purpose.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 35,
+    "text": "Which principle of responsible artificial intelligence (AI) raises awareness about the limitations of AI-based solutions?",
+    "type": "multiple-choice",
+    "answer": ["transparency"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "accountability", "explanationText": "Transparency provides clarity regarding the purpose of AI solutions, the way they work, as well as their limitations. The privacy and security, reliability and safety, and accountability principles focus on the capabilities of AI, rather than raising awareness about its limitations.", "explanationImg": "1.png" },
+      {
+        "answerImg": "1.png",
+        "answerText": "privacy and security",
+        "explanationText": "Transparency provides clarity regarding the purpose of AI solutions, the way they work, as well as their limitations. The privacy and security, reliability and safety, and accountability principles focus on the capabilities of AI, rather than raising awareness about its limitations.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "reliability and safety",
+        "explanationText": "Transparency provides clarity regarding the purpose of AI solutions, the way they work, as well as their limitations. The privacy and security, reliability and safety, and accountability principles focus on the capabilities of AI, rather than raising awareness about its limitations.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "transparency",
+        "explanationText": "Correct! Transparency provides clarity regarding the purpose of AI solutions, the way they work, as well as their limitations. The privacy and security, reliability and safety, and accountability principles focus on the capabilities of AI, rather than raising awareness about its limitations.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "text": "Which principle of responsible artificial intelligence (AI) plays the primary role when implementing an AI solution that meet qualifications for business loan approvals?",
+    "type": "multiple-choice",
+    "answer": ["fairness"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "accountability",
+        "explanationText": "Fairness is meant to ensure that AI models do not unintentionally incorporate a bias based on criteria such as gender or ethnicity. Transparency does not apply in this case since banks commonly use their proprietary models when processing loan approvals. Inclusiveness is also out of scope since not everyone is qualified for a loan. Safety is not a primary consideration since there is no direct threat to human life or health in this case.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "fairness",
+        "explanationText": "Correct! Fairness is meant to ensure that AI models do not unintentionally incorporate a bias based on criteria such as gender or ethnicity. Transparency does not apply in this case since banks commonly use their proprietary models when processing loan approvals. Inclusiveness is also out of scope since not everyone is qualified for a loan. Safety is not a primary consideration since there is no direct threat to human life or health in this case.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "inclusiveness",
+        "explanationText": "Fairness is meant to ensure that AI models do not unintentionally incorporate a bias based on criteria such as gender or ethnicity. Transparency does not apply in this case since banks commonly use their proprietary models when processing loan approvals. Inclusiveness is also out of scope since not everyone is qualified for a loan. Safety is not a primary consideration since there is no direct threat to human life or health in this case.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "safety",
+        "explanationText": "Fairness is meant to ensure that AI models do not unintentionally incorporate a bias based on criteria such as gender or ethnicity. Transparency does not apply in this case since banks commonly use their proprietary models when processing loan approvals. Inclusiveness is also out of scope since not everyone is qualified for a loan. Safety is not a primary consideration since there is no direct threat to human life or health in this case.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "text": "Which principle of responsible artificial intelligence (AI) is applied in the design of an AI system to ensure that users understand constraints and limitations of AI?",
+    "type": "multiple-choice",
+    "answer": ["transparency"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "fairness",
+        "explanationText": "The transparency principle states that AI systems must be designed in such a way that users are made fully aware of the purpose of the systems, how they work, and which limitations can be expected during use. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. Fairness is applied to AI systems to ensure that users of the systems are treated fairly. The privacy and security principle are applied to the design of AI systems to ensure that the systems are secure and to respect user privacy.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "inclusiveness",
+        "explanationText": "The transparency principle states that AI systems must be designed in such a way that users are made fully aware of the purpose of the systems, how they work, and which limitations can be expected during use. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. Fairness is applied to AI systems to ensure that users of the systems are treated fairly. The privacy and security principle are applied to the design of AI systems to ensure that the systems are secure and to respect user privacy.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "privacy and security",
+        "explanationText": "The transparency principle states that AI systems must be designed in such a way that users are made fully aware of the purpose of the systems, how they work, and which limitations can be expected during use. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. Fairness is applied to AI systems to ensure that users of the systems are treated fairly. The privacy and security principle are applied to the design of AI systems to ensure that the systems are secure and to respect user privacy.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "transparency",
+        "explanationText": "Correct! The transparency principle states that AI systems must be designed in such a way that users are made fully aware of the purpose of the systems, how they work, and which limitations can be expected during use. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. Fairness is applied to AI systems to ensure that users of the systems are treated fairly. The privacy and security principle are applied to the design of AI systems to ensure that the systems are secure and to respect user privacy.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "text": "Which principle of responsible artificial intelligence (AI) ensures that an AI system meets any legal and ethical standards it must abide by?",
+    "type": "multiple-choice",
+    "answer": ["accountability"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      {
+        "answerImg": "1.png",
+        "answerText": "accountability",
+        "explanationText": "Correct! The accountability principle ensures that AI systems are designed to meet any ethical and legal standards that are applicable. The privacy and security principle states that AI systems must be designed to protect any personal and/or sensitive data. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. The fairness principle is applied to AI system to ensure that users of the systems are treated fairly.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "fairness",
+        "explanationText": "The accountability principle ensures that AI systems are designed to meet any ethical and legal standards that are applicable. The privacy and security principle states that AI systems must be designed to protect any personal and/or sensitive data. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. The fairness principle is applied to AI system to ensure that users of the systems are treated fairly.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "inclusiveness",
+        "explanationText": "The accountability principle ensures that AI systems are designed to meet any ethical and legal standards that are applicable. The privacy and security principle states that AI systems must be designed to protect any personal and/or sensitive data. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. The fairness principle is applied to AI system to ensure that users of the systems are treated fairly.",
+        "explanationImg": "1.png"
+      },
+      {
+        "answerImg": "1.png",
+        "answerText": "privacy and security",
+        "explanationText": "The accountability principle ensures that AI systems are designed to meet any ethical and legal standards that are applicable. The privacy and security principle states that AI systems must be designed to protect any personal and/or sensitive data. The inclusiveness principle states that AI systems must empower people in a positive and engaging way. The fairness principle is applied to AI system to ensure that users of the systems are treated fairly.",
+        "explanationImg": "1.png"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "text": "A company is currently developing driverless agriculture vehicles to help harvest crops. The vehicles will be deployed alongside people working in the crop fields, and as such, the company will need to carry out robust testing. Which principle of responsible artificial intelligence (AI) is most important in this case?",
+    "type": "multiple-choice",
+    "answer": ["reliability and safety"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "accountability", "explanationText": "The reliability and safety principles are of paramount importance here as it requires an AI system to work alongside people in a physical environment by using AI controlled machinery. The system must function safely, while ensuring no harm will come to human life.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "Inclusiveness", "explanationText": "The reliability and safety principles are of paramount importance here as it requires an AI system to work alongside people in a physical environment by using AI controlled machinery. The system must function safely, while ensuring no harm will come to human life.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "reliability and safety", "explanationText": "Correct! The reliability and safety principles are of paramount importance here as it requires an AI system to work alongside people in a physical environment by using AI controlled machinery. The system must function safely, while ensuring no harm will come to human life.", "explanationImg": "1.png" },
+      { "answerImg": "1.png", "answerText": "transparency", "explanationText": "The reliability and safety principles are of paramount importance here as it requires an AI system to work alongside people in a physical environment by using AI controlled machinery. The system must function safely, while ensuring no harm will come to human life.", "explanationImg": "1.png" }
+    ]
+  }
+]

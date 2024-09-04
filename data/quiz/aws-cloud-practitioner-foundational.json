@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "text": "Arrange the phrases in the correct order.",
+    "type": "order-phrase",
+    "answerOptions": [
+      { "answerImg": "", "answerText": "Step 1" },
+      { "answerImg": "", "answerText": "Step 2" },
+      { "answerImg": "", "answerText": "Step 3" },
+      { "answerImg": "", "answerText": "Step 4" },
+      { "answerImg": "", "answerText": "Step 5" }
+    ],
+    "answer": ["Step 1", "Step 2", "Step 3"],
+    "assignedOrder": [],
+    "explanationText": "Correct! Here is where I would describe why."
+  },
+  {
+    "id": 2,
+    "text": "Fill in the blank: The capital of Italy is ________.",
+    "type": "fill-in-the-blank",
+    "answer": ["Rome"],
+    "assignedAnswer": null,
+    "answerOptions": null,
+    "explanationText": "Correct! The capital of Italy is Rome."
+  },
+  {
+    "id": 3,
+    "text": "What is 1?",
+    "type": "multiple-choice",
+    "answer": ["1"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "1", "explanationText": "Correct! 1 equals 1.", "explanationImg": "1.png" },
+      { "answerImg": "2.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect. 1 equals 1.", "explanationImg": "2.png" },
+      { "answerImg": "3.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect. 1 equals 1.", "explanationImg": "3.png" },
+      { "answerImg": "4.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect. 1 equals 1.", "explanationImg": "4.png" }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "Match each item to its category?",
+    "type": "matching",
+    "answerPairs": [
+      ["Bird", "Animal"],
+      ["Rice", "Plant"],
+      ["Diamond", "Rock"],
+      ["Electricity", "Energy"]
+    ],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "direction": "left", "answerImg": "1.png", "answerText": "Bird" },
+      { "direction": "left", "answerImg": "2.png", "answerText": "Rice" },
+      { "direction": "left", "answerImg": "3.png", "answerText": "Diamond" },
+      { "direction": "left", "answerImg": "4.png", "answerText": "Electricity" },
+      { "direction": "right", "answerImg": "1.png", "answerText": "Animal" },
+      { "direction": "right", "answerImg": "2.png", "answerText": "Plant" },
+      { "direction": "right", "answerImg": "3.png", "answerText": "Rock" },
+      { "direction": "right", "answerImg": "4.png", "answerText": "Energy" }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "What is 4?",
+    "type": "multiple-choice",
+    "answer": ["4"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect. 4 equals 4.", "explanationImg": "1.png" },
+      { "answerImg": "2.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect. 4 equals 4", "explanationImg": "2.png" },
+      { "answerImg": "3.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect. 4 equals 4.", "explanationImg": "3.png" },
+      { "answerImg": "4.png", "answerText": "4", "explanationText": "Correct! 4 equals 4.", "explanationImg": "4.png" }
+    ]
+  }
+]

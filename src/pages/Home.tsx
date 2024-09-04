@@ -5,9 +5,9 @@ function Home() {
     <div>
       <h1>Certifications</h1>
       <ul>
-        <NavLink to={`/learn?cert=aws`} text='AWS' />
-        <NavLink to={`/learn?cert=azure`} text='Azure' />
-        <NavLink to={`/learn?cert=gcp`} text='Google Cloud Platform' />
+        <NavLink to={`/lesson?cert=aws&title=Cloud%20Practitioner&level=Foundational`} text='NEW 1' />
+        <NavLink to={`/lesson?cert=aws&title=Cloud%20Practitioner&level=Foundational`} text='NEW 2' />
+        <NavLink to={`/lesson?cert=aws&title=Cloud%20Practitioner&level=Foundational`} text='NEW 3' />
       </ul>
     </div>
   );

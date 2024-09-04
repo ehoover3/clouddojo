@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "text": "What is 1?",
+    "type": "multiple-choice",
+    "answer": ["1"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "1", "explanationText": "Correct! 1 is 1.", "explanationImg": "1.png" },
+      { "answerImg": "2.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect.", "explanationImg": "1.png" },
+      { "answerImg": "3.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect.", "explanationImg": "1.png" },
+      { "answerImg": "4.png", "answerText": "FALSE4", "explanationText": "FALSE4 is incorrect.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "What is 2?",
+    "type": "multiple-choice",
+    "answer": ["2"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect.", "explanationImg": "1.png" },
+      { "answerImg": "2.png", "answerText": "2", "explanationText": "Correct! 2 is 2.", "explanationImg": "1.png" },
+      { "answerImg": "3.png", "answerText": "FALSE3", "explanationText": "FALSE3 is incorrect.", "explanationImg": "1.png" },
+      { "answerImg": "4.png", "answerText": "FALSE4", "explanationText": "FALSE4 is incorrect.", "explanationImg": "1.png" }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "What is 3?",
+    "type": "multiple-choice",
+    "answer": ["3"],
+    "assignedAnswer": null,
+    "answerOptions": [
+      { "answerImg": "1.png", "answerText": "FALSE1", "explanationText": "FALSE1 is incorrect.", "explanationImg": "1.png" },
+      { "answerImg": "2.png", "answerText": "FALSE2", "explanationText": "FALSE2 is incorrect.", "explanationImg": "1.png" },
+      { "answerImg": "3.png", "answerText": "3", "explanationText": "Correct! 3 is 3.", "explanationImg": "1.png" },
+      { "answerImg": "4.png", "answerText": "FALSE4", "explanationText": "FALSE4 is incorrect.", "explanationImg": "1.png" }
+    ]
+  }
+]
