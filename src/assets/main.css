@@ -165,3 +165,29 @@ nav {
 .explanationImg {
   width: 15vw;
 }
+
+/* Home Page */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+.step:hover {
+  background-color: #0056b3;
+}
