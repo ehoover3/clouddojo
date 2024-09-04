@@ -2,14 +2,10 @@ import AwsCloudPractitionerFoundational from "../../data/questions/aws-cloud-pra
 import AwsDeveloperAssociate from "../../data/questions/aws-developer-associate.json";
 import AzureAIFundamentalsBeginner from "../../data/questions/azure-ai-fundamentals-beginner.json";
 
-const getQuiz = (certParameter: string | null, certTitle: string | null, certLevel: string | null) => {
-  if (certParameter === "aws") {
-    if (certTitle === "Cloud Practitioner" && certLevel === "Foundational") return AwsCloudPractitionerFoundational;
-    if (certTitle === "Developer" && certLevel === "Associate") return AwsDeveloperAssociate;
-  }
-  if (certParameter === "azure") {
-    if (certTitle === "Azure AI Fundamentals" && certLevel === "Beginner") return AzureAIFundamentalsBeginner;
-  }
+const getQuiz = (quizParameter: string | null) => {
+  if (quizParameter === "AwsCloudPractitionerFoundational") return AwsCloudPractitionerFoundational;
+  if (quizParameter === "AwsDeveloperAssociate") return AwsDeveloperAssociate;
+  if (quizParameter === "AzureAIFundamentalsBeginner") return AzureAIFundamentalsBeginner;
   return null;
 };
 

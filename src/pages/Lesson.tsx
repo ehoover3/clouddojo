@@ -36,9 +36,7 @@ export interface Question {
 const Lesson = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const certParameter = queryParams.get("cert");
-  const certTitle = queryParams.get("title");
-  const certLevel = queryParams.get("level");
+  const UrlParameter = queryParams.get("quiz");
 
   const [quiz, setQuiz] = useState<Question[] | null>(null);
   const [questionsToAsk, setQuestionsToAsk] = useState<number[]>([]);
@@ -47,13 +45,13 @@ const Lesson = () => {
   const [isQuizComplete, setIsQuizComplete] = useState(false);
 
   useEffect(() => {
-    const initialQuiz = getQuiz(certParameter, certTitle, certLevel);
+    const initialQuiz = getQuiz(UrlParameter);
     if (initialQuiz) {
       const shuffledQuizModule = shuffleAnswerOptions(initialQuiz);
       setQuiz(shuffledQuizModule);
       setQuestionsToAsk(shuffledQuizModule.map((_: any, index: any) => index));
     }
-  }, [certParameter, certTitle, certLevel]);
+  }, [UrlParameter]);
 
   const completeQuiz = () => {
     setIsQuizComplete(true);

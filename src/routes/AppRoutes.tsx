@@ -1,5 +1,4 @@
-import { Route, Routes, Navigate, useLocation } from "react-router-dom";
-import Learn from "../pages/Learn";
+import { Route, Routes } from "react-router-dom";
 import Lesson from "../pages/Lesson";
 import Home from "../pages/Home";
 
