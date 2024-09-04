@@ -1,13 +1,25 @@
-import NavLink from "../components/NavLink";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleQuizSelection = (quizType: string) => {
+    navigate("/lesson", { state: { quizType } });
+  };
+
   return (
     <div>
       <h1>Certifications</h1>
       <ul>
-        <NavLink to={`/lesson?quiz=AwsCloudPractitionerFoundational`} text='AwsCloudPractitionerFoundational' />
-        <NavLink to={`/lesson?quiz=AwsDeveloperAssociate`} text='AwsDeveloperAssociate' />
-        <NavLink to={`/lesson?quiz=AzureAIFundamentalsBeginner`} text='AzureAIFundamentalsBeginner' />
+        <li onClick={() => handleQuizSelection("AwsCloudPractitionerFoundational")}>
+          <span>AwsCloudPractitionerFoundational</span>
+        </li>
+        <li onClick={() => handleQuizSelection("AwsDeveloperAssociate")}>
+          <span>AwsDeveloperAssociate</span>
+        </li>
+        <li onClick={() => handleQuizSelection("AzureAIFundamentalsBeginner")}>
+          <span>AzureAIFundamentalsBeginner</span>
+        </li>
       </ul>
     </div>
   );
