@@ -15,6 +15,12 @@
   --gray: rgb(175, 175, 175);
   --gray-light: rgb(247, 247, 247);
   --white: rgb(255, 255, 255);
+
+  /* Dark Mode Colors */
+  --background-dark: rgb(30, 30, 30);
+  --background-dark-light: rgb(50, 50, 50);
+  --text-light: rgb(240, 240, 240);
+  --text-dark: rgb(200, 200, 200);
 }
 
 /* Success and Fail Utility Classes */

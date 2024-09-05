@@ -2,17 +2,21 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--background-dark);
+  color: var(--text-light);
 }
 
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background-color: var(--background-dark-light);
+  color: var(--text-light);
 }
 
 h1,
 h2 {
-  color: #333;
+  color: var(--text-light);
 }
 
 ul {
@@ -83,6 +87,7 @@ nav {
   width: 100px;
   text-align: center;
   cursor: pointer;
+  background-color: var(--background-dark-light);
 }
 
 .submit-button {
@@ -90,12 +95,14 @@ nav {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  color: var(--text-light);
 }
 
 .explaination {
   margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
+  color: var(--text-light);
 }
 
 .return-button {
@@ -105,6 +112,8 @@ nav {
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: var(--background-dark-light);
+  color: var(--text-light);
 }
 
 .answer {
@@ -119,7 +128,7 @@ nav {
 /* ProgressBar */
 .progress-bar-container {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: var(--gray-dark);
   height: 20px;
   border-radius: 10px;
   overflow: hidden;
