@@ -1,0 +1,323 @@
+.progress-bar-container {
+  width: 100%;
+  background-color: var(--gray-dark);
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--color-owl-always-light);
+  transition: width 0.3s ease;
+}
+
+.home-page__step-container {
+  width: 70px;
+  height: 65px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.home-page__step-container__complete {
+  background-color: var(--color-tree-frog-always-light);
+}
+
+.home-page__step-container__incomplete {
+  background-color: var(--color-polar-always-dark);
+}
+
+.home-page__step {
+  width: 70px;
+  height: 57px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page__step__complete {
+  background-color: var(--color-owl-always-light);
+}
+
+.home-page__step__incomplete {
+  background-color: var(--color-swan);
+}
+
+/* Success and Fail Utility Classes .bg-success {
+  background-color: var(--green-light);
+}
+.bg-fail {
+  background-color: var(--red);
+}
+
+.bg-green-dark {
+  background-color: var(--green-dark);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-green-light {
+  background-color: var(--green-light);
+}
+
+.bg-brown {
+  background-color: var(--brown);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-pink {
+  background-color: var(--pink);
+}
+
+.bg-purple {
+  background-color: var(--purple);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-gray-dark {
+  background-color: var(--gray-dark);
+}
+
+.bg-gray-light {
+  background-color: var(--gray-light);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.text-gray-dark {
+  color: var(--gray-dark);
+}
+
+.btn-green {
+  background-color: var(--green);
+}
+
+.btn-green:hover {
+  background-color: var(--green-dark);
+}
+
+.btn-blue {
+  background-color: var(--blue);
+}
+
+.btn-blue:hover {
+  background-color: var(--blue-dark);
+}
+
+.btn-gray {
+  background-color: var(--gray);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background-dark-light);
+  color: var(--text-light);
+}
+
+h1,
+h2 {
+  color: var(--text-light);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+ .quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.X-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.answers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.answer {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--background-dark-light);
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+.explaination {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.return-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--background-dark-light);
+  color: var(--text-light);
+}
+
+.answer {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--gray-dark);
+  padding: 10px;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  background-color: var(--white);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navLinkText {
+  font-weight: bold;
+  color: var(--gray-dark);
+  margin-bottom: 4px;
+}
+
+.navLinkSubtext {
+  color: var(--gray-dark);
+  font-weight: normal;
+}
+
+.navLink:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+.explanationImg {
+  width: 15vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+.step:hover {
+  background-color: #0056b3;
+} */

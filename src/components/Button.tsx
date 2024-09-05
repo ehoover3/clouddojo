@@ -10,7 +10,7 @@ interface ButtonProps {
   bottom?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, disabled = false, className = "btn-gray", width, position = "static", bottom = "auto" }) => {
+const Button: React.FC<ButtonProps> = ({ text, onClick, disabled = false, className = "", width, position = "static", bottom = "auto" }) => {
   return (
     <button
       onClick={onClick}

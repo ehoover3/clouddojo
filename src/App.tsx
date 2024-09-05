@@ -1,8 +1,8 @@
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import NavigationBar from "./components/NavigationBar";
-import "./assets/brandColors.css";
 import "./assets/main.css";
+import "./assets/experimental.css";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {

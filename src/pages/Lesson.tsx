@@ -81,9 +81,8 @@ const Lesson = () => {
   };
 
   return (
-    <div className='quiz'>
+    <div>
       <ProgressBar correctCount={correctCount} total={quiz ? quiz.length : 0} />
-      <LineGap margin={"16px"} />
       {!isQuizComplete ? quiz && showQuestion(quiz[questionsToAsk[currentQuestionIndex]]) : <QuizComplete restartQuiz={restartQuiz} />}
     </div>
   );

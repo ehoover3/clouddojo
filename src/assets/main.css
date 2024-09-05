@@ -1,202 +1,331 @@
+:root {
+  --color-snow: rgb(19, 31, 36);
+  --color-snow-always-light: rgb(255, 255, 255);
+  --color-snow-always-dark: rgb(19, 31, 36);
+  --color-polar: rgb(32, 47, 54);
+  --color-swan: rgb(55, 70, 79);
+  --color-swan-always-light: rgb(229, 229, 229);
+  --color-swan-always-dark: rgb(55, 70, 79);
+  --color-hare: rgb(82, 101, 109);
+  --color-hare-always-light: rgb(175, 175, 175);
+  --color-wolf: rgb(220, 230, 236);
+  --color-eel: rgb(241, 247, 251);
+  --color-squid: rgb(235, 227, 227);
+  --color-walking-fish: rgb(32, 47, 54);
+  --color-flamingo: rgb(148, 81, 81);
+  --color-pig: rgb(245, 164, 164);
+  --color-crab: rgb(255, 120, 120);
+  --color-cardinal: rgb(238, 85, 85);
+  --color-fire-ant: rgb(216, 72, 72);
+  --color-canary: rgb(32, 47, 54);
+  --color-duck: rgb(251, 229, 109);
+  --color-bee: rgb(255, 199, 0);
+  --color-bee-always-dark: rgb(255, 199, 0);
+  --color-lion: rgb(255, 177, 0);
+  --color-fox: rgb(255, 171, 51);
+  --color-cheetah: rgb(32, 47, 54);
+  --color-monkey: rgb(229, 162, 89);
+  --color-camel: rgb(231, 166, 1);
+  --color-guinea-pig: rgb(215, 148, 51);
+  --color-grizzly: rgb(187, 113, 73);
+  --color-sea-sponge: rgb(32, 47, 54);
+  --color-turtle: rgb(95, 132, 40);
+  --color-owl: rgb(147, 211, 51);
+  --color-tree-frog: rgb(121, 185, 51);
+  --color-peacock: rgb(0, 205, 156);
+  --color-iguana: rgb(32, 47, 54);
+  --color-anchovy: rgb(210, 228, 232);
+  --color-beluga: rgb(187, 242, 255);
+  --color-moon-jelly: rgb(122, 240, 242);
+  --color-blue-jay: rgb(63, 133, 167);
+  --color-macaw: rgb(73, 192, 248);
+  --color-whale: rgb(24, 153, 214);
+  --color-humpback: rgb(43, 112, 201);
+  --color-narwhal: rgb(20, 83, 163);
+  --color-manta-ray: rgb(4, 44, 96);
+  --color-starfish: rgb(255, 134, 208);
+  --color-beetle: rgb(206, 130, 255);
+  --color-betta: rgb(144, 105, 205);
+  --color-butterfly: rgb(111, 78, 161);
+  --color-dragon: rgb(204, 52, 141);
+  --color-starling: rgb(92, 108, 252);
+  --color-martin: rgb(71, 85, 223);
+  --color-grackle: rgb(167, 160, 255);
+  --color-honeycreeper: rgb(193, 187, 255);
+  --color-deep-starling: rgb(34, 33, 81);
+  --color-deep-martin: rgb(16, 15, 62);
+  --color-legendary-foreground: rgb(140, 65, 3);
+  --color-stardust: rgb(199, 255, 254);
+  --color-cosmos: rgb(60, 77, 255);
+  --color-nebula: rgb(63, 34, 236);
+  --color-nova: rgb(207, 23, 200);
+  --color-gamma: rgb(38, 246, 99);
+  --color-starlight: rgb(38, 138, 255);
+  --color-quasar: rgb(252, 85, 255);
+  --color-celestia: rgb(255, 255, 255);
+  --color-eclipse: rgb(0, 4, 55);
+  --color-black: rgb(0, 0, 0);
+  --color-aqua: rgb(43, 164, 176);
+  --color-aqua-always-light: rgb(56, 238, 255);
+  --color-ocean: rgb(56, 238, 255);
+  --color-seafoam: rgb(30, 89, 97);
+  --color-ice: rgb(23, 52, 58);
+  --color-max-shadow: rgb(20, 208, 225);
+  --color-black-white: rgb(255, 255, 255);
+  --color-diamond-stat: rgb(86, 219, 226);
+  --color-mask-green: rgb(144, 220, 72);
+  --color-pearl-stat: rgb(255, 170, 222);
+  --color-snow-dark-swan: rgb(55, 70, 79);
+  --color-black-text: rgb(241, 247, 251);
+  --color-blue-space: rgb(11, 62, 113);
+  --color-juicy-blue-space: rgb(10, 74, 130);
+  --color-juicy-blue-space-light: rgb(35, 83, 144);
+  --color-gold: rgb(250, 169, 25);
+  --color-gray-text: rgb(220, 230, 236);
+  --color-orange: rgb(255, 157, 0);
+  --color-diamond-highlight: rgb(231, 251, 251);
+  --color-diamond: rgb(56, 208, 208);
+  --color-banana: rgb(255, 176, 32);
+  --color-cloud: rgb(207, 207, 207);
+  --color-cloud-light: rgb(221, 221, 221);
+  --color-cloud-lightest: rgb(240, 240, 240);
+  --color-kiwi: rgb(122, 199, 12);
+  --color-kiwi-dark: rgb(93, 151, 9);
+  --color-kiwi-light: rgb(142, 224, 0);
+  --color-facebook: rgb(59, 89, 152);
+  --color-facebook-dark: rgb(45, 67, 115);
+  --color-google: rgb(66, 133, 244);
+  --color-twitter: rgb(29, 161, 242);
+  --color-hv-light-peach: rgb(241, 218, 179);
+  --color-hv-peach: rgb(219, 186, 131);
+  --color-hv-light-orange: rgb(255, 177, 64);
+  --color-hv-orange: rgb(204, 121, 0);
+  --color-hv-brown: rgb(140, 90, 17);
+  --color-streak-panel-extended-background: rgb(205, 121, 0);
+  --color-streak-panel-frozen-background: rgb(43, 112, 201);
+  --color-streak-panel-frozen-flair-background: rgb(73, 192, 248);
+  --color-streak-panel-frozen-subtitle: rgb(255, 255, 255);
+  --color-streak-panel-frozen-text: rgb(255, 255, 255);
+  --color-streak-panel-frozen-topbar-text: rgb(255, 255, 255);
+  --color-streak-panel-streak-society-background: rgb(215, 148, 51);
+  --color-streak-panel-streak-society-text: rgb(255, 255, 255);
+  --color-streak-panel-unextended-heading-text: rgb(82, 101, 109);
+  --color-streak-panel-unextended-heading-background: rgb(32, 47, 54);
+  --color-streak-panel-unextended-topbar-text: rgb(255, 255, 255);
+  --color-streak-panel-milestone-gradient-start: rgb(255, 147, 58);
+  --color-streak-panel-milestone-gradient-end: rgb(255, 200, 0);
+  --color-streak-society-dark-orange: rgb(255, 151, 1);
+  --color-streak-society-light-orange: rgb(255, 179, 1);
+  --color-friends-quest-own-incomplete: rgb(111, 139, 157);
+  --color-friends-quest-friend-incomplete: rgb(79, 100, 113);
+  --color-black-text-always-light: rgb(60, 60, 60);
+  --color-cardinal-always-light: rgb(255, 75, 75);
+  --color-cowbird: rgb(174, 104, 2);
+  --color-eel-always-light: rgb(75, 75, 75);
+  --color-fox-always-light: rgb(255, 150, 0);
+  --color-fire-ant-always-light: rgb(234, 43, 43);
+  --color-grizzly-lite: rgb(220, 143, 71);
+  --color-guinea-pig-always-light: rgb(205, 121, 0);
+  --color-iguana-always-light: rgb(221, 244, 255);
+  --color-macaw-always-light: rgb(28, 176, 246);
+  --color-owl-always-light: rgb(88, 204, 2);
+  --color-polar-always-light: rgb(247, 247, 247);
+  --color-sea-sponge-always-light: rgb(215, 255, 184);
+  --color-tree-frog-always-light: rgb(88, 167, 0);
+  --color-turtle-always-light: rgb(165, 237, 110);
+  --color-walking-fish-always-light: rgb(255, 223, 224);
+  --color-wolf-always-light: rgb(119, 119, 119);
+  --color-cardinal-always-dark: rgb(238, 85, 85);
+  --color-eel-always-dark: rgb(241, 247, 251);
+  --color-hare-always-dark: rgb(82, 101, 109);
+  --color-macaw-always-dark: rgb(73, 192, 248);
+  --color-owl-always-dark: rgb(147, 211, 51);
+  --color-polar-always-dark: rgb(32, 47, 54);
+  --color-wolf-always-dark: rgb(220, 230, 236);
+  --color-rookie: rgb(0, 175, 133);
+  --color-explorer: rgb(255, 100, 191);
+  --color-traveler: rgb(255, 145, 83);
+  --color-trailblazer: rgb(154, 143, 232);
+  --color-adventurer: rgb(96, 12, 199);
+  --color-discoverer: rgb(111, 44, 57);
+  --color-daredevil: rgb(46, 83, 138);
+  --color-navigator: rgb(9, 47, 119);
+  --color-champion: rgb(255, 110, 53);
+  --color-daily_refresh: rgb(0, 148, 255);
+  --color-dark-mode-locked-path-section-text-color: rgb(82, 101, 109);
+  --color-rookie-progress-bar: rgb(0, 198, 150);
+  --color-explorer-progress-bar: rgb(255, 138, 207);
+  --color-traveler-progress-bar: rgb(255, 167, 106);
+  --color-trailblazer-progress-bar: rgb(169, 157, 254);
+  --color-adventurer-progress-bar: rgb(122, 13, 199);
+  --color-discoverer-progress-bar: rgb(131, 50, 65);
+  --color-daredevil-progress-bar: rgb(54, 98, 165);
+  --color-navigator-progress-bar: rgb(12, 57, 141);
+  --color-champion-progress-bar: rgb(255, 129, 80);
+  --color-daily_refresh-progress-bar: rgb(28, 160, 255);
+  --color-course-complete-cta: rgb(120, 219, 224);
+  --color-course-complete-cta-border: rgb(94, 201, 204);
+  --color-bea-secondary: rgb(24, 153, 214);
+  --color-eddy-secondary: rgb(234, 43, 43);
+  --color-gilded-secondary: rgb(231, 166, 1);
+  --color-lily-secondary: rgb(165, 104, 204);
+  --color-vikram-secondary: rgb(163, 42, 113);
+  --color-zari-secondary: rgb(204, 107, 166);
+  --color-oscar-secondary: rgb(0, 164, 125);
+  --color-falstaff-secondary: rgb(150, 90, 58);
+  --color-bea-radio: rgb(20, 123, 172);
+  --color-duo-radio: rgb(62, 143, 1);
+  --color-eddy-radio: rgb(179, 53, 53);
+  --color-falstaff-radio: rgb(131, 79, 51);
+  --color-lin-lucy-radio: rgb(179, 105, 0);
+  --color-lily-radio: rgb(144, 91, 179);
+  --color-vikram-radio: rgb(143, 36, 99);
+  --color-zari-radio: rgb(179, 94, 146);
+  --color-oscar-radio: rgb(0, 144, 109);
+  --color-bea-junior-shine: rgb(67, 190, 248);
+  --color-duo-shine: rgb(114, 214, 39);
+  --color-eddy-shine: rgb(255, 105, 105);
+  --color-falstaff-shine: rgb(227, 165, 108);
+  --color-lily-shine: rgb(214, 150, 255);
+  --color-lin-lucy-shine: rgb(255, 168, 44);
+  --color-oscar-shine: rgb(63, 217, 181);
+  --color-vikram-shine: rgb(214, 90, 162);
+  --color-zari-shine: rgb(255, 158, 217);
+  --color-super-background-secondary: rgb(26, 30, 76);
+  --color-super-gradient-background: rgb(12, 47, 113);
+  --color-super-gradient-top-halo: rgb(12, 76, 70);
+  --color-super-gradient-bottom-halo: rgb(76, 29, 115);
+  --color-gold-shine: rgb(255, 231, 0);
+  --color-legendary-dark-background: rgb(24, 24, 24);
+  --color-roseate: rgb(223, 75, 162);
+  --color-rosefinch: rgb(180, 28, 117);
+  --color-bluebird: rgb(3, 144, 211);
+  --color-cotinga: rgb(121, 58, 227);
+  --color-sabrewing: rgb(165, 112, 255);
+  --color-blueberry: rgb(17, 82, 167);
+  --color-ether: rgb(60, 89, 141);
+  --color-diamond-tournament-purple: rgb(161, 161, 238);
+  --color-diamond-tournament-reaction: rgb(118, 163, 231);
+  --color-yir-page0: rgb(221, 244, 255);
+  --color-yir-page1: rgb(227, 255, 235);
+  --color-yir-page1-shadow: rgb(19, 31, 36);
+  --color-yir-page3-shadow: rgb(187, 172, 252);
+  --color-yir-page4-shadow: rgb(143, 219, 255);
+  --color-yir-page5-shadow: rgb(255, 183, 80);
+  --color-super-gradient-green-variant1: rgb(38, 255, 85);
+  --color-super-gradient-blue-variant1: rgb(38, 139, 255);
+  --color-super-gradient-pink-variant1: rgb(252, 85, 255);
+  --color-super-gradient-purple-variant1: rgb(17, 34, 181);
+  --color-unknown-001e2d: rgb(0, 30, 45);
+  --color-unknown-0047a4: rgb(0, 71, 164);
+  --color-unknown-0087d0: rgb(0, 135, 208);
+  --color-unknown-00aff9: rgb(0, 175, 249);
+  --color-unknown-013047: rgb(1, 48, 71);
+  --color-unknown-048fd1: rgb(4, 143, 209);
+  --color-unknown-0e0f10: rgb(14, 15, 16);
+  --color-unknown-0e3d79: rgb(14, 61, 121);
+  --color-unknown-172071: rgb(23, 32, 113);
+  --color-unknown-280378: rgb(40, 3, 120);
+  --color-unknown-3ebbf6: rgb(62, 187, 246);
+  --color-unknown-655ebb: rgb(101, 94, 187);
+  --color-unknown-696cee: rgb(105, 108, 238);
+  --color-unknown-7c0000: rgb(124, 0, 0);
+  --color-unknown-89e219: rgb(137, 226, 25);
+  --color-unknown-935051: rgb(147, 80, 81);
+  --color-unknown-959595: rgb(149, 149, 149);
+  --color-unknown-a2a2a2: rgb(162, 162, 162);
+  --color-unknown-a3dbeb: rgb(163, 219, 235);
+  --color-unknown-a4dffb: rgb(164, 223, 251);
+  --color-unknown-aaa: rgb(170, 170, 170);
+  --color-unknown-d087ff: rgb(208, 135, 255);
+  --color-unknown-d9d9d9: rgb(217, 217, 217);
+  --color-unknown-ddd: rgb(221, 221, 221);
+  --color-unknown-de8029: rgb(222, 128, 41);
+  --color-unknown-e3e3e3: rgb(227, 227, 227);
+  --color-unknown-e4ffff: rgb(228, 255, 255);
+  --color-unknown-ed8c01: rgb(237, 140, 1);
+  --color-unknown-f3484e: rgb(243, 72, 78);
+  --color-unknown-f4fafe: rgb(244, 250, 254);
+  --color-unknown-fbdec5: rgb(251, 222, 197);
+  --color-unknown-ffc700: rgb(255, 199, 0);
+  --color-unknown-fff2aa: rgb(255, 242, 170);
+  --color-unknown-fffbef: rgb(255, 251, 239);
+  --app-offset: 58px;
+}
+
+:root {
+  --viewport-height: 100dvh;
+  --web-ui_button-border-radius: 16px;
+  --rtl-sign: 1;
+  --text-pageTitle-casing-large: none;
+  --text-pageTitle-letter-spacing-large: 0;
+  --text-pageTitle-line-height-large: 2.75rem;
+  --text-pageTitle-size-large: 2.5rem;
+  --text-pageTitle-weight-large: 700;
+  --text-pageTitle-casing-small: none;
+  --text-pageTitle-letter-spacing-small: 0;
+  --text-pageTitle-line-height-small: 2.25rem;
+  --text-pageTitle-size-small: 2rem;
+  --text-pageTitle-weight-small: 700;
+  --text-heading-casing-large: none;
+  --text-heading-letter-spacing-large: 0;
+  --text-heading-line-height-large: 2rem;
+  --text-heading-size-large: 1.75rem;
+  --text-heading-weight-large: 700;
+  --text-heading-casing-medium: none;
+  --text-heading-letter-spacing-medium: 0;
+  --text-heading-line-height-medium: 2rem;
+  --text-heading-size-medium: 1.5rem;
+  --text-heading-weight-medium: 700;
+  --text-heading-casing-small: none;
+  --text-heading-letter-spacing-small: 0;
+  --text-heading-line-height-small: 1.5rem;
+  --text-heading-size-small: 1.25rem;
+  --text-heading-weight-small: 700;
+  --text-heading-casing-xsmall: none;
+  --text-heading-letter-spacing-xsmall: 0;
+  --text-heading-line-height-xsmall: 1.25rem;
+  --text-heading-size-xsmall: 1rem;
+  --text-heading-weight-xsmall: 700;
+  --text-body-casing: none;
+  --text-body-letter-spacing: 0;
+  --text-body-line-height: 1.75rem;
+  --text-body-size: 1.25rem;
+  --text-body-weight: 500;
+  --text-body-weight-bold: 700;
+  --text-body-casing-spacious: none;
+  --text-body-letter-spacing-spacious: 0;
+  --text-body-line-height-spacious: 2rem;
+  --text-body-size-spacious: 1.25rem;
+  --text-body-weight-spacious: 500;
+  --text-body-weight-spacious-bold: 700;
+  --text-caption-casing: none;
+  --text-caption-letter-spacing: 0;
+  --text-caption-line-height: 1.5rem;
+  --text-caption-size: 1rem;
+  --text-caption-weight: 500;
+  --text-caption-weight-bold: 700;
+  --text-label-casing-large: uppercase;
+  --text-label-letter-spacing-large: 0.04em;
+  --text-label-line-height-large: 1.5rem;
+  --text-label-size-large: 1.5rem;
+  --text-label-weight-large: 700;
+  --text-label-casing-medium: uppercase;
+  --text-label-letter-spacing-medium: 0.04em;
+  --text-label-line-height-medium: 1rem;
+  --text-label-size-medium: 1rem;
+  --text-label-weight-medium: 700;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.15;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-dark);
-  color: var(--text-light);
-}
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: var(--background-dark-light);
-  color: var(--text-light);
-}
-
-h1,
-h2 {
-  color: var(--text-light);
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-a {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  margin: 0 10px;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Quiz.css */
-.quiz {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.X-button-container {
-  display: flex;
-  align-items: center;
-}
-
-.answers {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.answer {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
-  width: 100px;
-  text-align: center;
-  cursor: pointer;
-  background-color: var(--background-dark-light);
-}
-
-.submit-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  color: var(--text-light);
-}
-
-.explaination {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--text-light);
-}
-
-.return-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: var(--background-dark-light);
-  color: var(--text-light);
-}
-
-.answer {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid black;
-  width: 100px;
-  text-align: center;
-  cursor: pointer;
-}
-
-/* ProgressBar */
-.progress-bar-container {
-  width: 100%;
-  background-color: var(--gray-dark);
-  height: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.progress-bar {
-  height: 100%;
-  background-color: #4caf50;
-  transition: width 0.3s ease;
-}
-
-/* NavLink */
-.navLink {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: var(--gray-dark); /* Default text color */
-  padding: 10px; /* Add padding for better spacing */
-  border: 1px solid var(--gray); /* Add border */
-  border-radius: 4px; /* Rounded corners */
-  background-color: var(--white); /* Default background color */
-  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
-}
-
-.navLinkText {
-  font-weight: bold;
-  color: var(--gray-dark); /* Link text color */
-  margin-bottom: 4px; /* Space between text and subtext */
-}
-
-.navLinkSubtext {
-  color: var(--gray-dark); /* Subtext color */
-  font-weight: normal;
-}
-
-.navLink:hover {
-  background-color: var(--blue); /* Background color on hover */
-  border-color: var(--blue); /* Border color on hover */
-}
-
-.explanationImg {
-  width: 15vw;
-}
-
-/* Home Page */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.step {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  margin: 20px 0;
-  transition: background-color 0.3s ease;
-}
-
-.step:hover {
-  background-color: #0056b3;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-snow);
+  color: var(--color-black-text);
+  font: 500 17px / 20px sans-serif;
 }
